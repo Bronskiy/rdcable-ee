@@ -1,0 +1,32 @@
+.tags {
+	margin: 0 0 10px 0;
+
+	.tag {
+		margin: 0 10px 10px 0;
+	}
+}
+
+.tag {
+	background-color: #eee;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px rgba($color-black, .3);
+	color: lighten($color-black, 30%); 	
+	display: inline-block;
+	font-size: 9px;
+	font-weight: 700;
+	line-height: 1;
+	margin: 0 0 10px 0; 
+	padding: 4px 7px;
+	text-transform: uppercase;
+	vertical-align: top;
+
+	&:hover {
+		color: lighten($color-black, 30%);
+		text-decoration: none;
+	}
+
+	&.tag-black {
+		background-color: $color-black; 
+		color: #fff;
+	}
+}

@@ -1,0 +1,174 @@
+::-webkit-input-placeholder {
+  color: $color-black;
+}
+
+label {
+	color: lighten($color-black, 30%);	
+	cursor: pointer;
+	display: block;
+	font-weight: 400;
+
+	.form-dark & {
+		color: rgba(#fff, .8);
+	}
+}
+
+fieldset {
+	background-color: #fff;
+	border: 1px solid rgba(#000, .06);
+	border-radius: 2px;
+	margin: 0 0 30px 0;
+	padding: 20px 20px 5px 20px;
+
+	legend {
+		border-bottom: 1px solid rgba(#000, .06);
+		box-sizing: border-box;
+		clear: both;
+		float: left;
+		font-size: 16px;
+		margin: 0 -20px 20px -20px;
+		min-width: calc(100% + 40px);
+		padding: 0 20px 20px 20px;
+	}
+
+	.row {
+		clear: both;
+	}
+
+	.form-group {
+		clear: both;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.form-group select[multiple].form-control {
+	height: 96px;
+}
+
+select.form-control {
+	padding-right: 40px;
+}
+
+label .required {
+	color: $color-red;
+}
+
+.form-control {
+	background-color: #fff;
+	border-radius: 2px;
+	border-color: lighten($color-black, 70%);
+	height: 35px;
+	font-size: 13px;
+	line-height: 35px;
+	padding: 0 12px;
+
+	&:focus {
+		border-color: lighten($color-black, 70%);
+	}
+
+	.form-dark & {
+		background-color: rgba(#fff, .08);
+		border-color: rgba(#fff, .2);
+		color: #fff;
+	}
+}
+
+.form-control-no-border {
+	border: 0;	
+}
+
+.form-control.form-control-xl {
+	font-size: 14px;
+	height: 44px;
+	line-height: 44px;
+	padding: 0 20px;
+}
+
+textarea.form-control {	
+	height: auto;
+	line-height: 1.5;
+	padding-bottom: 8px;
+	padding-top: 8px;	
+}
+
+.form-control::-webkit-input-placeholder {
+	color: lighten($color-black, 50%);
+}
+
+.input-group-addon {
+	border-color: lighten($color-black, 70%);
+	border-radius: 2px;
+	background-color: #fff;
+	color: lighten($color-black, 50%);
+	font-size: 12px;
+	padding-right: 0;
+
+	.fa {
+	}	
+
+	& ~ .form-control {
+		border-left: 0;
+	}
+
+	&.no-border {
+		border: 0;
+	}
+}
+
+.form-group-btn-placeholder-gap {
+	margin-top: 27px;
+}
+
+.noUi-horizontal {
+	background-color: darken($color-gray, 10%);
+	border: 0;
+	box-shadow: none;
+	height: 2px;
+	margin-top: 20px;
+
+	.noUi-tooltip {
+		background-color: $color-black;
+		border: 0;
+		border-radius: 0;
+		color: #fff;
+		font-size: 9px;
+		padding: 2px 4px;
+	}
+
+	.noUi-connect {
+		background-color: $color-primary;
+		box-shadow: none;
+
+		.filter-primary & {
+			background-color: $color-black; 
+		}
+	}
+
+	.noUi-handle {
+		border: 0;
+		border-radius: 50%;
+		box-shadow: 0 0 2px rgba($color-black, .3);
+		cursor: pointer;
+		height: 17px;
+		top: -8px;
+		width: 17px;
+
+		&:before, &:after {
+			display: none;
+		}
+
+		&:after {			
+			background-color: darken($color-gray, 5%);
+			display: block;
+			border-radius: 50%;
+			height: 7px;
+			left: 5px;
+			position: absolute;
+			top: 5px;
+			width: 7px;
+		}
+	}
+}

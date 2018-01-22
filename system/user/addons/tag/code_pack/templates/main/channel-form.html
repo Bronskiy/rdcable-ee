@@ -1,0 +1,72 @@
+{embed="%prefix%inc/index" page_title="Channel Form"}
+		<link href="{exp:tag:theme_folder_url}css/solspace-fa.css" rel="stylesheet">
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="channel-form"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>Channel Form</h1>
+				<p class="lead">The below form allows members with appropriate privileges to create new entries and use the Tag fieldtype.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>Create a new Entry</h3>
+			{if logged_in_group_id == "1"}
+				{exp:channel:form
+					channel="default_site" {!-- update to a valid channel on your site --}
+					return="%prefix%main/entry/URL_TITLE" {!-- update to a valid path on your site --}
+				}
+					<div class="form-group">
+						<label for="title">Title</label>
+						<input type="text" name="title" id="title" class="form-control" placeholder="Enter title here" maxlength="100" onkeyup="liveUrlTitle();" />
+						<input type="hidden" name="url_title" id="url_title" value="{url_title}" maxlength="75" />
+					</div>
+					<div class="form-group">
+						{status_menu}
+						<label for="status">Status</label>
+						<select name="status" id="status" class="form-control">
+							{select_options}
+						</select>
+						{/status_menu}
+					</div>
+					<div class="form-group">
+						<label for="body">Body</label>
+						<textarea name="body" id="body" class="form-control" placeholder="Enter description here" /></textarea>
+					</div>
+					<div class="form-group">
+						{!-- Tag field will populate here --}
+						<label for="tags">Tags</label>
+						{field:YOUR_TAG_FIELD_NAME} {!-- update to a valid Tag field short name on your site --}
+					</div>
+					<button type="submit" class="btn btn-md btn-success">Publish</button>
+					{if no_results}
+						<p>No Results</p>
+					{/if}
+				{/exp:channel:form}
+			{if:else}
+					<div class="alert alert-danger" role="alert">
+						<p class="lead">
+                        	<b>Error!</b> You do not have sufficient privileges to create new entries.
+						</p>
+					</div>
+			{/if}
+				</div>
+
+      		</div>
+
+			<div class="well ss-pageinfo">
+				<h2>About This Page</h2>
+				<p>The "Channel Form" page is meant to allow members with appropriate privileges to create new entries and use the Tag fieldtype.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://docs.expressionengine.com/v3/channel/channel_form/index.html">Channel:Form</a> to display the channel entry form for users to create entries.</li>
+					<li><a href="https://docs.expressionengine.com/v3/channel/channel_form/index.html#field-my-field-name">{field:MY_TAG_FIELD_NAME}</a> to display a Tag custom field using the EE Fieldtype API’s display_field method.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

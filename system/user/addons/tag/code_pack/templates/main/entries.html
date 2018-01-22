@@ -1,0 +1,105 @@
+{embed="%prefix%inc/index" page_title="Tag Entries"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="results"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>Tag Entries</h1>
+				<p class="lead">Viewing entries tagged with "{exp:tag:tag_name tag="{segment_3}" case="title"}"</p>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-8">
+					{exp:tag:entries
+						tag="{segment_3}"
+						orderby="title" sort="asc"
+						paginate="bottom"
+						limit="10"
+					}
+						<h3><a href="{url_title_path='%prefix%main/entry'}">{title}</a></h3>
+						<p>
+						{exp:tag:tags
+  							entry_id="{entry_id}"
+							orderby="tag_name" sort="asc"
+							limit="10"
+							dynamic="no"
+						}
+							<a href="{path='%prefix%main/entries'}/{websafe_tag}" class="label label-info">
+								<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {tag}
+							</a>&nbsp;
+							{if tag_no_results}
+								Sorry, no tags are assigned to this entry.
+							{/if}
+						{/exp:tag:tags}
+						</p>
+						<p>
+						{if body}
+							{body}
+						{if:else}
+							<div class="alert alert-warning" role="alert">
+								No <b>body</b> field available. These demo templates assume you have a field named "body" for the main entry data. Just update this to your actual field name if it's something different.
+							</div>
+						{/if}
+						</p>
+						<hr />
+
+					{if tag_no_results}
+						<div class="alert alert-warning" role="alert">
+							<p><strong>Sorry, no entries are assigned to this tag.</strong> If you continue to have trouble finding results, make sure that:</p>
+							<ul>
+								<li>channel entries exist for your site.</li>
+								<li>a Tag field has been created and assigned to a channel for your site.</li>
+								<li>at least 1 channel entry has been assigned the tag being searched on.</li>
+								<li>you are not searching on <i>closed</i>, <i>future</i> or <i>expired</i> date entries, etc. Just like the <i>Channel:Entries</i> tag, Tag respects those settings as well. Be sure to include the necessary parameters on the <i>Tag:Entries</i> tag for this template.</li>
+							</ul>
+						</div>
+					{/if}
+
+					{tag_paginate}
+						<ul class="pagination pagination-lg">
+						{tag_pagination_links}
+						{first_page}
+							<li><a href="{pagination_url}">First</a></li>
+						{/first_page}
+						{previous_page}
+							<li><a href="{pagination_url}">&laquo; Previous</a></li>
+						{/previous_page}
+						{page}
+							<li{if current_page} class="active"{/if}><a href="{pagination_url}">{pagination_page_number}</a></li>
+						{/page}
+						{next_page}
+							<li><a href="{pagination_url}">Next &raquo;</a></li>
+						{/next_page}
+						{last_page}
+							<li><a href="{pagination_url}">Last</a></li>
+						{/last_page}
+						{/tag_pagination_links}
+						</ul>
+					{/tag_paginate}
+					{/exp:tag:entries}
+				</div>
+
+				<div class="col-sm-4">				
+					{embed="%prefix%inc/sidebar"}
+				</div>
+      		</div>
+
+			<div class="well ss-pageinfo">
+				<h2>About This Page</h2>
+				<p>
+					The "Tag Entries" page displays a list of entries that have been assigned the tag that has been searched on.
+				</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://docs.expressionengine.com/v3/channel/channel_entries.html">EE Channel:Entries</a> to display a list of channel entries.</li>
+					<li><a href="https://solspace.com/expressionengine/tag/docs/tag_name/">Tag:Tag_Name</a> to display a nicer version of the tag name being searched on.</li>
+					<li><a href="https://solspace.com/expressionengine/tag/docs/tags/">Tag:Tags</a> to display the tags currently assigned to each entry.</li>
+					<li><a href="https://solspace.com/expressionengine/tag/docs/cloud/">Tag:Cloud</a> to display a list of most popular tags on the right sidebar.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

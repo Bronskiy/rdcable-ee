@@ -1,0 +1,70 @@
+{embed="%prefix%inc/index" page_title="Popular Tags"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="cloud"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>Popular Tags</h1>
+				<p class="lead">
+				{exp:tag:stats}
+					<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;
+					There is a total of {total_tags} tags on this site.
+					{total_channel_entries_tagged} entries are tagged ({percent_channel_entries_tagged}%).
+				{/exp:tag:stats}
+				</p>
+			</div>
+	  
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>Cloud format</h2>
+					<ul class="nav nav-pills">
+					{exp:tag:cloud
+						start="15"
+						groups="10"
+						step="3"
+						limit="25"
+						most_popular="25"
+						orderby="random"
+						sort="asc"
+					}
+						<li><a href="{path='%prefix%main/entries/{websafe_tag}'}" style="font-size:{step}px;"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {tag} <span class="badge">{total_entries}</span></a></li>
+						{if tag_no_results}
+							<li>Sorry, there currently aren't any tags for this site.</li>
+						{/if}
+					{/exp:tag:cloud}
+					</ul>
+				</div>
+					
+				<div class="col-sm-6">
+					<h2>List format</h2>
+					<div class="list-group">
+					{exp:tag:cloud
+						orderby="total_entries"
+						limit="15"
+					}
+						<a href="{path='%prefix%main/entries/{websafe_tag}'}" class="list-group-item"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {tag} <span class="badge">{total_entries}</span></a>
+						{if tag_no_results}
+							<p>Sorry, there currently aren't any tags for this site.</p>
+						{/if}
+					{/exp:tag:cloud}
+					</div>
+				</div>
+      		</div>
+	  
+			<div class="well ss-pageinfo">
+				<h2>About This Page</h2>
+				<p>
+					The "Popular Tags" page allows you to display the most popular tags on your site.
+				</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/tag/docs/cloud/">Tag:Cloud</a> to display most popular tags on your site.</li>
+					<li><a href="https://solspace.com/expressionengine/tag/docs/stats/">Tag:Stats</a> to display some tagging stats at the top of the page.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

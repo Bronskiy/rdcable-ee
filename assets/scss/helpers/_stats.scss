@@ -1,0 +1,93 @@
+.stats {
+  margin: 0 0 30px 0; 
+}
+
+.stat-box {
+  background-color: $color-primary;
+  border-radius: 2px;
+  color: #fff;
+  margin: 0 0 30px 0;
+  padding: 25px 30px;
+  position: relative;
+
+  strong, span {
+    display: block;
+    line-height: 1;
+    overflow: hidden;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  strong {
+    font-size: 34px;
+    font-weight: 300;
+  }
+
+  span {
+    color: rgba(#fff, .8);
+    font-size: 15px;
+    margin: 8px 0 0 0;
+  }
+
+  &.stat-box-cool-gray {
+    background-color: $color-cool-gray;
+  }
+
+  &.stat-box-green {
+    background-color: $color-green;
+  }
+
+  &.stat-box-blue {
+    background-color: $color-blue;
+  }
+
+  &.stat-box-red {
+    background-color: $color-red;
+  }
+
+  &.stat-box-purple {
+    background-color: $color-purple;
+  }
+}
+
+.stat-box-icon {
+  bottom: 0;
+  color: rgba(#fff, .2);
+  display: block;
+  font-size: 80px;
+  left: 0;
+  position: absolute;
+  transform: translateX(-20%) translateY(20%);
+}
+
+.stat-progress {
+  margin-bottom: 15px;
+}
+
+.stat-progress-bar {
+  background-color: $color-gray;
+  border-radius: 2px;
+  height: 9px;
+  padding: 2px;
+}
+
+.stat-progress-label {
+  color: lighten($color-black, 30%);
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0 0 5px 0;
+
+  span {
+    color: lighten($color-black, 50%);
+    float: right;
+  }
+}
+
+.stat-progress-bar-inner {
+  background-color: $color-primary;
+  background-image: linear-gradient(to right, darken($color-cool-gray, 10%), lighten($color-cool-gray, 10%));
+  border-radius: 2px;
+  height: 5px;
+}

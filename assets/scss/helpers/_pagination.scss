@@ -1,0 +1,32 @@
+.pagination {		
+	margin: 20px 0 40px 0;
+
+	.page-item {		
+		.page-link {
+			background-color: $color-black;
+			border: 0;			
+			box-shadow: 0 1px 1px rgba(#000, .12);
+			color: rgba(#fff, .8);
+			font-size: 12px;
+			padding: 9px 15px;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+
+		&.active {
+			.page-link {
+				background-color: $color-primary;
+				color: #fff;
+			}
+		}
+
+		&:first-child {
+			.page-link {
+				border-bottom-left-radius: 2px;
+				border-top-left-radius: 2px;			
+			}
+		}
+	}
+}

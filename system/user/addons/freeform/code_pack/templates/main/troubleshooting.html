@@ -1,0 +1,173 @@
+{embed="%prefix%inc/index" page_title="Troubleshooting"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="troubleshooting"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>
+					<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>&nbsp;
+					Troubleshooting
+				</h1>
+				<p class="lead">This page is a resource for helping with troubleshooting common issues with Freeform.</p>
+			</div>
+
+			<div class="row">
+
+				<div class="col-md-3">
+					<div class="list-group">
+						<a href="#support" class="list-group-item">Information For Support</a>
+						<a href="#checklist" class="list-group-item">General Checklist</a>
+						<a href="#timesavingtips" class="list-group-item">Time-Saving Tips</a>
+						<a href="#emaildoesntsend" class="list-group-item list-group-item-warning"><strong>Email Doesn't Send</strong></a>
+						<a href="#ee-contact-form" class="list-group-item list-group-item-warning">Test EE Contact Form</a>
+						<a href="#dataisntsaving" class="list-group-item">Data Isn't Saving</a>
+						<a href="#notredirectingcorrectly" class="list-group-item">Not Redirectly Correctly</a>
+						<a href="#formlooksbroken" class="list-group-item">Form Looks Broken</a>
+					</div>
+				</div>
+
+				<div class="col-md-9">
+
+					{if segment_3 == "success"}
+						<div class="alert alert-success" role="alert">
+							<p class="lead">
+                    	    	Your EE Contact Form submission has been successfully sent!
+							</p>
+						</div>
+					{/if}
+
+					<h3 id="support">Information to provide when requesting Support</h3>
+					<p>Providing the following information when <a href="https://solspace.com/expressionengine/create-ticket">submitting a support request</a> helps us understand your issue/question better and allows us serve you faster:</p>
+					<ul>
+						<li>Which version of ExpressionEngine are you using? (specify exact version number as opposed to "the latest").</li>
+						<li>Which version of Freeform / Freeform Pro are you using? (specify exact version number as opposed to "the latest").</li>
+						<li>If you get an error displayed in the control panel or in your templates, please provide the full message of this error.</li>
+					</ul>
+
+					<h3 id="checklist">General Checklist</h3>
+					<ul>
+						<li>In your templates, have you set up your parameters correctly?</li>
+						<li>In your templates, are you sure there aren’t any malformed form fields or parameters with curly/fancy/typographic quotes instead of straight quotes?</li>
+						<li>Have you checked for unclosed tags or conditionals in your code?</li>
+						<li>Have you tried isolating the affected template code in a separate template, with no use of javascript or other EE/third-party tags?</li>
+						<li>Have you tried simplifying the template code to its bare minimum for testing?</li>
+					</ul>
+
+					<h3 id="timesavingtips">Time-Saving Tips</h3>
+					<ul>
+						<li><strong>Turn on the Error Reporting and Template Debugging in EE</strong>. This can be turned on from <em>CP => Settings (cog icon) => Debugging &amp; Output</em>. Enable these two debugging tools (shows to Super Admins only). The <strong>Debugging</strong> option can be useful to see if terms are used correctly in database queries, verify if values are parsed correctly in tag parameters, or if template parsing errors are encountered.</li>
+						<li><strong>Start small, end big</strong>: Start with very simple template code alone in a test template, then build your code line by line until the error occurs.
+						<li><strong>Start big, end small</strong>: With your full non-functional template code, remove pieces of code until the error disappears.</li>
+						<li><strong>One piece at a time</strong>: With your full non-functional template code, remove one part of your code. If the problem persists, place that code back and remove another part until the error disappears.</li>
+					</ul>
+
+					<h3 id="emaildoesntsend">Email Doesn't Send</h3>
+					<ul>
+						<li>Have you checked that your email address is correct? Check it again.</li>
+						<li>Have you checked the spam folder of your email account?</li>
+						<li>Can you send email using the Communication Tool in the CP? (CP => Tools (tool icon) => Utilities)</li>
+						<li>Have you set up your parameters correctly? For example, the <a href="https://solspace.com/expressionengine/freeform/docs/form/#admin_notify">admin_notify=""</a> and <a href="https://solspace.com/expressionengine/freeform/docs/form/#admin_notification_template">admin_notification_template=""</a> parameters?</li>
+						<li>Are you sending <strong>to</strong> and <strong>from</strong> the same email address or email address domain? For example, sending FROM <i>bob@acmewidgets.com</i> TO <i>bob@acmewidgets.com</i>, OR FROM <i>bob@acmewidgets.com</i> TO <i>larry@acmewidgets.com</i>. Sometimes the email server has very aggressive spam protection and knows that the email is not actually coming from that email address, and blocks the email altogether.
+						<li>Are you sure you're using the parameters for Freeform/Freeform Pro 5.x and not 3.x (when using Freeform/Freeform Pro 5.x)?</li>
+						<li>Are you sure you're using the parameters for Freeform 3.x and not Freeform/Freeform Pro 5.x (when using Freeform 3.x)?</li>
+						<li>Are you sure there aren’t malformed form fields or parameters with curly/fancy/typographic quotes instead of straight quotes?</li>
+						<li>Can you receive email when using the <a href="#ee-contact-form">default EE Contact Form (form ready below)</a>?</li>
+						<li>Have you checked your server logs for any errors?</li>
+						<li>Are you getting redirected correctly after form submission?</li>
+						<li>Is the submitted data saving as Freeform entries, or does the form not save the submitted data as well?</li>
+					</ul>
+
+					<div id="ee-contact-form" class="well">
+						<h3>EE Contact Form (for Email testing)</h3>
+						<p>
+							Included below is the <a href="https://docs.expressionengine.com/v3/add-ons/email/contact_form.html">default EE Contact Form</a>,
+							ready to go for testing.
+						</p>
+						<div class="alert alert-warning" role="alert">
+							<strong>NOTE:</strong> if you are having similar email issues with this form as you are with a Freeform form, it's very likely that there's an issue with your server and/or your email configuration and/or ExpressionEngine itself.
+						</div>
+						{exp:email:contact_form
+							user_recipients="no"
+							recipients="admin@example.com"
+							charset="utf-8"
+							return="%prefix%main/troubleshooting/success|Return to Troubleshooting Page"
+						}
+							<div class="form-group">
+								<label for="name" class="control-label">Name</label>
+								<input type="text" id="name" name="name" class="form-control" placeholder="Your name" />
+							</div>
+							<div class="form-group">
+								<label for="from" class="control-label">Email</label>
+								<input type="text" id="from" name="from" class="form-control" placeholder="Your email address" />
+							</div>
+							<div class="form-group">
+								<label for="subject" class="control-label">Subject</label>
+								<input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" />
+							</div>
+							<div class="form-group">
+								<label for="message" class="control-label">Message</label>
+								<textarea id="message" name="message" class="form-control" rows="6" placeholder="Your message"></textarea>
+							</div>
+						{if captcha}
+							<div class="form-group">
+								<label for="captcha" class="control-label">CAPTCHA {captcha}</label>
+								<input type="text" name="captcha" id="captcha" class="form-control" placeholder="Please enter the word you see in the image above" />
+							</div>
+						{/if}
+							<button type="submit" class="btn btn-md btn-success">Submit</button>
+						{/exp:email:contact_form}
+					</div>
+
+					<h3 id="dataisntsaving">Data Isn't Saving</h3>
+					<ul>
+						<li>
+							Are you getting redirected correctly after form submission, based on your <strong>return=""</strong> parameter?
+							<ul>
+								<li>
+									<strong>NO</strong>
+									<ul>
+										<li>Have you checked your <strong>.htaccess</strong> file and tested with a simplified, or no <strong>.htaccess</strong> file? (You need <strong>index.php</strong> in the URL/EE if no <strong>.htaccess</strong> file is present)</li>
+										<li>Are you using <strong>&#123;exp:freeform:form}</strong> tag and not the <strong>&lt;form></strong> tag explicitly? (Freeform creates these for you)</li>
+										<li>Are you submitting your data through AJAX? If so, does your browser console display any warning or error?</li>
+									</ul>
+								</li>
+								<li>
+									<strong>YES</strong>
+									<ul>
+										<li>Are you sure there aren’t malformed form fields or parameters with curly/fancy/typographic quotes instead of straight quotes?</li>
+										<li>Do the form field names correspond to actual Freeform custom fields set up in the Control Panel?</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Have you checked that your site URL and the URL in the address bar match?</li>
+					</ul>
+
+					<h3 id="notredirectingcorrectly">Not Redirecting Correctly</h3>
+					<p>If Freeform isn't redirecting to the template specified in my <strong>return=""</strong> parameter...</p>
+					<ul>
+						<li>Have you checked your <strong>.htaccess</strong> file and tested with a simplified, or no <strong>.htaccess</strong> file? (You need <strong>index.php</strong> in the URL/EE if no <strong>.htaccess</strong> file is present)</li>
+						<li>Have you tried a relative (ex: "form/submit/thank_you") and absolute path (ex: "http://mysite.com/form/submit/thank_you") in the <strong>return=""</strong> parameter?</li>
+						<li>Have you checked that your site URL and the URL in the address bar match?</li>
+					</ul>
+
+					<h3 id="formlooksbroken">Form Looks Broken</h3>
+					<p>If Freeform code doesn't display properly, or looks broken...</p>
+					<ul>
+						<li>Are you sure there aren’t malformed form fields or parameters with curly/fancy/typographic quotes instead of straight quotes?</li>
+						<li>Have you checked for unclosed tags or conditionals in your code?</li>
+						<li>Have you tried the Freeform template code alone, in a separate template, with no use of javascript or other EE/third-party tags?</li>
+						<li>Are you using <strong>&#123;exp:freeform:form}</strong> tag and not the <strong>&lt;form></strong> tag explicitly? (Freeform creates these for you)</li>
+					</ul>
+
+				</div>
+
+      		</div>
+
+			<hr />
+
+{embed="%prefix%inc/footer"}

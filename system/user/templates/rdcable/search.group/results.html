@@ -1,0 +1,84 @@
+{layout="_includes/_wrapper"}
+<div class="main-wrapper">
+  <div class="main">
+    <div class="main-inner">
+      <div class="page-title">
+        <div class="container">
+          <h1>Поиск</h1>
+          {embed="_includes/_contact_info"}
+        </div>
+      </div>
+      <div class="container">
+        <nav class="breadcrumb">
+          <a class="breadcrumb-item" href="/">Каталог</a>
+          <span class="breadcrumb-item active">Поиск</span>
+        </nav>
+        <div class="box">
+          <div class="box-inner">
+            {exp:search:search_results}
+            {if count == 1}
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Наименование</th>
+                  <th>Описание</th>
+                  <th>Ед.изм.</th>
+                  <th>Наличие</th>
+                  <th>Цена</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {/if}
+                <tr>
+                  <td>{title}</td>
+                  <td>{if product_desc}{product_desc}{if:else}-{/if}</td>
+                  <td>{if product_measure}{product_measure}{if:else}-{/if}</td>
+                  <td>{if product_qty}{product_qty}{if:else}-{/if}</td>
+                  <td>{if product_price}{product_price}{if:else}-{/if}</td>
+                  <td>
+                    <form class="input-group" id="addToCart {entry_id}" method="post" action="" accept-charset="UTF-8">
+                      <input type="hidden" name="csrf_token" value="{csrf_token}">
+                      <input type="hidden" name="productId" value="{entry_id}">
+                      <input type="text" name="productQty" class="form-control" placeholder="0">
+                      <span class="input-group-btn">
+                        <input class="btn btn-secondary" type="submit" name="submit" value="Заказать">
+                      </span>
+                    </form>
+                  </td>
+                </tr>
+                {if count == total_results || count == 50}
+                <span class="test"></span>
+              </tbody>
+            </table>
+            {/if}
+            {paginate}
+            <div class="row">
+              <div class="col-md-12">
+                {pagination_links}
+                <ul class="pagination pull-right">
+                  {previous_page}
+                  <li class="page-item"><a class="page-link" href="{pagination_url}">Назад</a></li>
+                  {/previous_page}
+
+                  {page}
+                  <li class="page-item {if current_page}active{/if}"><a class="page-link" href="{pagination_url}">{pagination_page_number}</a></li>
+                  {/page}
+
+                  {next_page}
+                  <li class="page-item"><a class="page-link" href="{pagination_url}">Вперед</a></li>
+                  {/next_page}
+                </ul>
+                {/pagination_links}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/paginate}
+
+
+      </div>
+    </div>
+
+
+    {/exp:search:search_results}

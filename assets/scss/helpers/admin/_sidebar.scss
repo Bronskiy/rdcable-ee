@@ -1,0 +1,380 @@
+.admin-sidebar {
+	background-color: lighten($color-black, 2%);	
+	color: rgba(#fff, .8);
+	display: flex;
+	flex-direction: column;
+	width: 260px;	
+	z-index: 100;
+
+	.admin-sidebar-minimal & {
+		width: 70px;
+	}
+
+	@include media-breakpoint-down(md) {
+		width: 70px;
+	}
+
+	.admin-sidebar-light & {
+		background-color: #fff;
+		box-shadow: 0 0 3px rgba($color-black, .2);
+		color: lighten($color-black, 30%);
+	}
+
+	h3 {
+		color: rgba(#fff, .6);
+		font-size: 10px;
+		font-weight: 600;
+		margin: 0 0 10px 0;
+		padding: 0 18px;
+		position: relative;
+		text-transform: uppercase;
+
+		.admin-sidebar-light & {
+			color: lighten($color-black, 50%);
+
+			&:after {
+				background-color: rgba(#000, .2);
+			}
+		}
+
+		.admin-sidebar-minimal & {
+			text-indent: -99999px;
+
+			&:after {
+				background-color: rgba(#fff, .3);
+				content: '';
+				display: block;
+				height: 2px;
+				left: 50%;
+				margin: 0 auto;
+				position: absolute;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				width: 12px;
+			}
+		}
+
+		@include media-breakpoint-down(md) {
+			text-indent: -99999px;
+
+			&:after {
+				background-color: rgba(#fff, .3);
+				content: '';
+				display: block;
+				height: 2px;
+				left: 50%;
+				margin: 0 auto;
+				position: absolute;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				width: 12px;
+			}			
+		}
+	}
+
+	.nav {
+		margin: 0 0 10px 0;
+	}
+
+	.nav-item {
+		position: relative;
+
+		&.has-sub-menu {
+			> .nav-link {
+				&:after {
+					-webkit-font-smoothing: antialiased;
+					color: rgba(#fff, .8);
+					content: '\f054';
+					float: right;
+					font-family: 'FontAwesome';
+					font-size: 8px;
+					line-height: 32px;
+
+					.admin-sidebar-minimal & {
+						display: none;
+					}
+
+					@include media-breakpoint-down(md) {
+						display: none;
+					}
+
+					.admin-sidebar-light & {
+						color: $color-black;
+					}
+				}
+			}
+
+			&:hover {
+				ul {
+					opacity: 1;
+					transition: all .4s ease;
+					visibility: visible;
+				}
+			}
+		}
+
+		ul {
+			background-color: $color-black;
+			border-radius: 2px;
+			list-style: none;
+			margin: 0;
+			opacity: 0;
+			padding: 5px 0;
+			position: absolute;
+			right: -204px;
+			top: 7px;
+			visibility: hidden;
+			width: 200px;
+
+			&:after {
+				background-color: transparent;
+				content: '';
+				display: block;
+				height: 100%;
+				left: -5px;
+				position: absolute;
+				top: 0;
+				width: 5px;
+			}
+
+			a {
+				color: rgba(#fff, .8);
+				display: block;
+				font-size: 12px;
+				line-height: 22px;
+				padding: 3px 18px;
+
+				&:hover {
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.nav-link {
+		color: rgba(#fff, .6);		
+		font-weight: 400;		
+		padding: 7px 18px;
+		position: relative;
+		transition: all .2s ease;
+
+		.admin-sidebar-light & {
+			color: lighten($color-black, 30%);
+		}
+
+		&:hover {
+			color: #fff;
+
+			.fa {
+				color: #fff;
+
+				.admin-sidebar-light & {
+					color: $color-black;
+				}
+			}
+
+			.admin-sidebar-light & { 
+				background-color: rgba(#000, .02);
+				color: $color-black;
+			}
+		}
+
+		&.active {
+			color: #fff;
+
+			.fa {
+				background-color: $color-primary;
+				color: #fff;
+
+				.admin-sidebar-light & {
+					background-color: $color-primary;
+					color: #fff;					
+				}
+			}
+
+			.admin-sidebar-light & {
+				color: $color-black;
+			}
+		}
+
+		.fa {
+			background-color: rgba(#000, .4);
+			border-radius: 2px;
+			color: rgba(#fff, .5);
+			display: inline-block;
+			font-size: 13px;
+			height: 34px;
+			line-height: 34px;
+			margin: 0 12px 0 0;
+			vertical-align: middle;
+			text-align: center;
+			transition: all .2s ease;
+			width: 34px;
+
+			.admin-sidebar-light & {
+				background-color: $color-gray;
+				color: lighten($color-black, 40%);
+			}
+		}
+
+		span {
+			vertical-align: middle;
+
+			.admin-sidebar-minimal & {
+				display: none;
+			}
+
+			@include media-breakpoint-down(md) {
+				display: none;
+			}
+		}
+
+		.label {
+			background-color: $color-red;
+			border-radius: 2px;
+			color: #fff;
+			font-size: 9px;
+			float: right;
+			font-weight: 700;
+			padding: 2px 5px;
+			position: absolute;
+			right: 15px;
+			top: 14px;
+			text-transform: uppercase;			
+		}
+
+		.label-info {
+			background-color: $color-blue;
+		}
+	}
+}
+
+.admin-sidebar-header {
+	overflow: hidden;
+}
+
+.admin-sidebar-logo {
+	box-shadow: 0 0 3px rgba(#fff, .2);
+	height: 60px;
+	margin: 0 0 30px 0;	
+	padding: 16px 16px;
+
+	a {
+		color: #fff;
+		line-height: 1;		
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		.admin-sidebar-light & {
+			color: $color-black;
+		}
+	}
+
+	.admin-sidebar-light & {
+		box-shadow: 0 0 3px rgba($color-black, .2);
+	}
+
+	.admin-sidebar-minimal & {
+		text-align: center;
+	}
+
+	@include media-breakpoint-down(md) {
+		text-align: center;
+	}
+
+	img, svg {
+		float: left;
+		margin: 0 10px 0 0;
+		max-height: 32px;
+		vertical-align: middle;
+		width: auto;
+		
+		#logo-background {
+			fill: $color-primary;
+		}
+
+		#Triangle-4 {
+			fill: $color-primary;
+		}
+
+		.admin-sidebar-minimal & {
+			float: none;
+			margin: 0;
+		}
+
+		@include media-breakpoint-down(md) {
+			float: none;
+			margin: 0;
+		}
+	}	
+}
+
+.admin-sidebar-logo-title {
+	font-size: 14px;
+
+	strong {
+		font-weight: 700;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+	span {
+		color: rgba(#fff, .8);		
+		display: block;
+		font-size: 12px;
+		margin: 0px 0 0 0;
+
+		.admin-sidebar-light & {
+			color: lighten($color-black, 30%);
+		}
+	}
+
+	.admin-sidebar-minimal & {
+		display: none;
+	}
+
+	@include media-breakpoint-down(md) {
+		display: none;
+	}
+}
+
+.admin-sidebar-content {
+	flex-grow: 1;
+}
+
+.admin-sidebar-footer {
+	border-top: 1px solid rgba(#fff, .12);	
+	padding: 8px 16px;
+
+	.admin-sidebar-light & {
+		border-top-color: rgba(#000, .09);
+	}
+
+	span, strong {
+		display:  block;
+		font-size: 12px;
+	}
+
+	strong {				
+		font-weight: 400;
+	}
+
+	span {
+		color: #fff;		
+
+		.admin-sidebar-light & {
+			color: $color-black;
+		}
+	}
+
+	.admin-sidebar-minimal & {
+		display: none;
+	}
+
+	@include media-breakpoint-down(md) {
+		display: none;
+	}
+}

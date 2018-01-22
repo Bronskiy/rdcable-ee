@@ -1,0 +1,45 @@
+.alert {
+  border: 0;
+  border-radius: 2px;
+  padding: 18px 14px;
+
+  p {
+    color: rgba(#fff, .8);
+  }
+}
+
+.alert-warning {
+  background-color: $color-orange;
+  color: #fff;
+
+  .alert-link {
+    color: #fff;
+  }
+}
+
+.alert-danger {
+  background-color: $color-red;
+  color: #fff;
+
+  .alert-link {
+    color: #fff;
+  }
+}
+
+.alert-info {
+  background-color: $color-blue;
+  color: #fff;
+
+  .alert-link {
+    color: #fff;
+  }
+}
+
+.alert-success {
+  background-color: $color-green;
+  color: #fff;
+
+  .alert-link {
+    color: #fff;
+  }
+}

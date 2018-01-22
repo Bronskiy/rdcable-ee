@@ -1,0 +1,86 @@
+{layout="_includes/_wrapper"}
+<div class="main-wrapper">
+  <div class="main">
+    <div class="main-inner">
+      <div class="page-title">
+        <div class="container">
+          <h1>Контакты</h1>
+          {embed="_includes/_contact_info"}
+        </div>
+      </div>
+      <div class="container">
+        <nav class="breadcrumb">
+          <a class="breadcrumb-item" href="/">Главная</a>
+          <span class="breadcrumb-item active">Контакты</span>
+        </nav>
+        <div class="row mb30">
+          <div class="col-sm-6">
+            <h2 class="page-title-small">Контакты</h2>
+            <p>Тел.: <a href="tel:{redan_phone_formatted}">{redan_phone}</a></p>
+            <p>Email: <a href="mailto:{redan_email}">{redan_email}</a></p>
+            <p>ОГРН: {redan_ogrn}</p>
+          </div>
+          <div class="col-sm-6">
+            <h2 class="page-title-small">Адреса</h2>
+            <p>Адрес офиса: {redan_address_official}</p>
+            <p>Адрес склада: {redan_address_stock}</p>
+          </div>
+        </div>
+        <div class="row mb30">
+          <div class="col-sm-6">
+            <h3>Если у вас остались вопросы, напишите нам</h3>
+            <div class="contact-form-wrapper mb80">
+              {exp:freeform:form
+                form_name="contact"
+                class="contact-form"
+                return="contact/thank-you"
+              }
+
+              <div class="form-group">
+                <label for="name">ФИО *</label>
+                {freeform:field:name attr:required="required" attr:class="form-control"}
+              </div>
+
+
+              <div class="form-group">
+                <label for="phone">Телефон *</label>
+                {freeform:field:phone attr:required="required" attr:class="form-control"}
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                {freeform:field:email attr:class="form-control"}
+              </div>
+
+              <div class="form-group">
+                <label for="contact-form-message">Сообщение *</label>
+                {freeform:field:user_message attr:required="required" attr:class="form-control"}
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <div class="checkbox-wrapper">
+                    <input type="checkbox" class="form-check-input" required>
+                    <span class="indicator"></span>
+                  </div>
+                  Согласие на обработку персональных данных *
+                </label>
+                <small id="fileHelp" class="form-text text-muted">* Поля обязательные для заполнения</small>
+              </div>
+              <div class="clearfix">
+                <button class="btn btn-primary pull-right" type="submit" name="action">Отправить</button>
+              </div>
+
+
+              {/exp:freeform:form}
+
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="background-white p30 mt30 mb30">
+              {redan_map}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

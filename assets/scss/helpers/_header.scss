@@ -1,0 +1,122 @@
+.header-wrapper {
+	background-color: #fff;
+	box-shadow: 0 0 3px rgba($color-black, .2);
+	height: 60px;
+	position: relative;
+	z-index: 99999;
+
+	&.header-transparent {
+		background-color: transparent;
+		box-shadow: none;
+		margin-bottom: -60px;
+	}
+}
+
+.header-logo {
+	float: left;
+	line-height: 60px;
+	margin: 0 20px 0 0;
+
+	img {
+		margin: 0 10px 0 0;
+		max-height: 33px;
+		vertical-align: middle;
+		width: auto;
+	}
+	
+	svg {
+		width: 34px;
+	}
+
+	svg {
+		margin: 0 10px 0 0;
+		max-height: 34px;
+		vertical-align: middle;		
+		
+		#logo-background {
+			fill: $color-primary;
+		}
+
+		#Triangle-4 {
+			fill: $color-primary;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	&.header-logo-white {
+		svg {
+			#logo-background {
+				fill: darken($color-black, 10%);
+			}
+
+			#Triangle-4 {
+				fill: darken($color-black, 10%);
+			}
+		}
+	}
+}
+
+.header-title {
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	line-height: 1;
+	text-transform: uppercase;
+	vertical-align: -1px;
+
+	&:hover {
+		color: $color-black;
+	}
+
+	.header-light & {
+		color: #fff;
+	}
+}
+
+.header-actions {
+	float: right;
+	margin: 12px 20px 0 0;
+
+	@include media-breakpoint-down(sm) {
+		display: none;
+	}
+	
+	.nav-link {
+		background-color: $color-primary;
+		border-radius: 2px;
+		color: #fff;
+		font-size: 14px;
+		line-height: 34px;
+		padding: 0 20px;
+
+		.fa {			
+			font-size: 12px;
+			margin: 0 8px 0 -6px;
+			opacity: .7;			
+		}
+
+		span {
+			vertical-align: middle;
+		}
+
+		&:active, &:focus {
+			box-shadow: none;
+			outline: none;
+		}
+	}
+
+	&.header-action-black {
+		.nav-link {
+			background-color: $color-black;
+		}
+	}
+}
+
+.header-search {
+	float: right;
+	margin: 12px 15px 0 0;
+	min-width: 260px;
+}

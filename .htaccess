@@ -1,0 +1,37 @@
+<IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteBase /
+
+        # Removes index.php from ExpressionEngine URLs
+        RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
+        RewriteCond %{REQUEST_URI} !/system/.* [NC]
+        RewriteRule (.*?)index\.php/*(.*) /$1$2 [R=301,NE,L]
+
+        # Directs all EE web requests through the site index file
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^(.*)$ /index.php?/$1 [L,QSA]
+
+        RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+        RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+        RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+        RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=302,L]
+
+</IfModule>
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/pdf "access plus 1 month"
+ExpiresByType text/x-javascript "access plus 1 month"
+ExpiresByType application/x-shockwave-flash "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresDefault "access plus 1 month"
+</IfModule>
+## EXPIRES CACHING ##

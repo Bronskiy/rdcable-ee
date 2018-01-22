@@ -1,0 +1,1692 @@
+/* line 62, scss/composer_interface.scss */
+.solspace-wrapper {
+  position: relative;
+  /*This gets overridden with some awful 10px rounded border in ie9. What the ever loving crap?*/
+  color: #5f6c74;
+  line-height: 13px;
+}
+/* line 68, scss/composer_interface.scss */
+.solspace-wrapper p,
+.solspace-wrapper table {
+  margin-bottom: 14px;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+/* line 75, scss/composer_interface.scss */
+.solspace-wrapper p tr:last-child td:last-child,
+.solspace-wrapper table tr:last-child td:last-child {
+  border-radius: 0;
+}
+/* line 80, scss/composer_interface.scss */
+.solspace-wrapper table.mainTable td,
+.solspace-wrapper table.mainTable th {
+  padding: 12px 14px !important;
+}
+/* line 92, scss/composer_interface.scss */
+.solspace-wrapper .button a,
+.solspace-wrapper .cp_button a,
+.solspace-wrapper div.contentMenu {
+  border-radius: 3px;
+}
+/* line 104, scss/composer_interface.scss */
+.solspace-wrapper * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 108, scss/composer_interface.scss */
+.solspace-wrapper h4, .solspace-wrapper table, .solspace-wrapper p {
+  margin-bottom: 14px;
+}
+/* line 112, scss/composer_interface.scss */
+.solspace-wrapper table tr th {
+  text-align: left;
+}
+/* line 119, scss/composer_interface.scss */
+.solspace-wrapper .header_checkbox {
+  margin-left: 3px;
+}
+/* line 128, scss/composer_interface.scss */
+.solspace-wrapper label {
+  font-weight: bold;
+  line-height: 140%;
+  margin-bottom: 3px;
+}
+/* line 134, scss/composer_interface.scss */
+.solspace-wrapper .placeholder {
+  color: #aaa;
+}
+/* line 138, scss/composer_interface.scss */
+.solspace-wrapper .sub_box {
+  background-color: #f4f6f6;
+  border-radius: 3px;
+  border: 1px solid #d0d7df;
+  margin-bottom: 14px;
+  padding: 10px 10px 0 10px;
+}
+/* line 145, scss/composer_interface.scss */
+.solspace-wrapper .sub_box p {
+  margin-bottom: 9px;
+}
+/* line 150, scss/composer_interface.scss */
+.solspace-wrapper .insert_element_width {
+  width: 200px !important;
+  min-height: 18px;
+}
+/* line 154, scss/composer_interface.scss */
+.solspace-wrapper .insert_element_width.taller {
+  min-height: 24px;
+}
+/* line 159, scss/composer_interface.scss */
+.solspace-wrapper .ss_notice {
+  color: #ce0000 !important;
+  font-weight: bold;
+}
+/* line 163, scss/composer_interface.scss */
+.solspace-wrapper .bullet-list {
+  margin: 0 0 15px 20px;
+  list-style: disc;
+}
+
+/* line 170, scss/composer_interface.scss */
+.solspace-wrapper p {
+  margin-top: 0 !important;
+}
+
+/* line 174, scss/composer_interface.scss */
+.solspace-wrapper table p.last {
+  margin-bottom: 0;
+}
+
+/* line 178, scss/composer_interface.scss */
+.composer-mcp-nav-toggle {
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------------
+	UI Elements
+--------------------------------------------------------------------*/
+/* line 186, scss/composer_interface.scss */
+.freeform_ui_element {
+  background-image: -webkit-linear-gradient(top, #ffffff, #ededed);
+  background-image: linear-gradient(to bottom, #ffffff, #ededed);
+}
+/* line 189, scss/composer_interface.scss */
+.freeform_ui_element:hover, .freeform_ui_element:active, .freeform_ui_element.active {
+  background-image: -webkit-linear-gradient(top, #cccccc, #dfdfdf);
+  background-image: linear-gradient(to bottom, #cccccc, #dfdfdf);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* line 197, scss/composer_interface.scss */
+.freeform_ui_button {
+  border-radius: 3px;
+  border: solid #aaa 1px;
+  color: #5f6c74;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin: 0;
+  padding: 5px 8px 3px;
+}
+
+/* line 208, scss/composer_interface.scss */
+a.freeform_ui_button,
+.freeform_ui_button a,
+a.freeform_ui_button:hover,
+.freeform_ui_button a:hover {
+  color: #5f6c74;
+  text-decoration: none;
+}
+
+/*----------------------------------
+	pill buttons n' stuff
+----------------------------------*/
+/* line 220, scss/composer_interface.scss */
+.pill {
+  border: solid #aaa;
+  border-width: 1px 0 1px 1px;
+  color: #444;
+  cursor: pointer;
+  float: left;
+  font-weight: bold;
+  margin: 0;
+  padding: 3px 8px 4px;
+  text-shadow: 1px 1px #fff;
+}
+/* line 231, scss/composer_interface.scss */
+.pill.active {
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* line 236, scss/composer_interface.scss */
+.pill_label {
+  float: left;
+  margin: 3px 14px 0 0;
+}
+
+/* line 241, scss/composer_interface.scss */
+.pill_first {
+  border-radius: 3px 0px 0px 3px;
+}
+
+/* line 245, scss/composer_interface.scss */
+.pill_last {
+  border-radius: 0px 3px 3px 0px;
+  border-right-width: 1px;
+}
+
+/*----------------------------------
+	basic
+----------------------------------*/
+/* line 254, scss/composer_interface.scss */
+.freeform_text_center {
+  text-align: center;
+}
+/* line 257, scss/composer_interface.scss */
+.freeform_text_center * {
+  margin: 0 auto;
+}
+
+/* line 262, scss/composer_interface.scss */
+.push_bottom {
+  margin-bottom: 14px;
+}
+
+/* line 266, scss/composer_interface.scss */
+.submit_block {
+  margin-left: 30%;
+  margin-bottom: 14px;
+  padding-left: 14px;
+}
+/* line 271, scss/composer_interface.scss */
+.submit_block .submit {
+  margin-right: 14px;
+}
+/* line 275, scss/composer_interface.scss */
+.submit_block .submit_info {
+  font-weight: bold;
+}
+
+/* doing this because we don't want to affect the label everywhere*/
+/* line 281, scss/composer_interface.scss */
+td:first-child div.subtext {
+  margin-top: 5px;
+}
+
+/* line 285, scss/composer_interface.scss */
+table.freeform_table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+/* line 290, scss/composer_interface.scss */
+table.freeform_table .header_checkbox {
+  float: right;
+  margin-right: 2px;
+  margin-top: 2px;
+}
+/* line 296, scss/composer_interface.scss */
+table.freeform_table tr th.icon_holder {
+  text-align: center;
+  width: 50px;
+}
+/* line 301, scss/composer_interface.scss */
+table.freeform_table tr td {
+  padding-right: 14px;
+}
+/* line 309, scss/composer_interface.scss */
+table.freeform_table .list_labels {
+  position: relative;
+}
+/* line 313, scss/composer_interface.scss */
+table.freeform_table .list_labels .freeform_info_button {
+  float: right;
+  margin-top: 9px;
+  white-space: normal;
+  font-size: 100%;
+  position: relative;
+  overflow: visible;
+}
+/* line 322, scss/composer_interface.scss */
+table.freeform_table .list_labels .freeform_info_button:hover .tooltip {
+  display: block;
+}
+/* line 328, scss/composer_interface.scss */
+table.freeform_table .form_submissions,
+table.freeform_table .form_moderate {
+  cursor: pointer;
+}
+/* line 333, scss/composer_interface.scss */
+table.freeform_table .item_total {
+  border-radius: 3px;
+  background-color: #aaa;
+  color: white;
+  font-size: 90%;
+  margin-left: 5px;
+  padding: 3px 5px;
+}
+/* line 342, scss/composer_interface.scss */
+table.freeform_table .word_count {
+  color: #aaa;
+}
+/* line 346, scss/composer_interface.scss */
+table.freeform_table .small_label {
+  font-weight: normal;
+  font-size: 11px;
+  color: #aaa;
+}
+/* line 352, scss/composer_interface.scss */
+table.freeform_table .checkbox_label {
+  padding-left: 5px;
+}
+/* line 356, scss/composer_interface.scss */
+table.freeform_table.headless {
+  border-top: 1px solid #d0d7df !important;
+  border-left: 1px solid #d0d7df !important;
+}
+/* line 360, scss/composer_interface.scss */
+table.freeform_table.headless tr td {
+  border-left: none;
+  /* overrides default */
+}
+/* line 363, scss/composer_interface.scss */
+table.freeform_table.headless tr td:first-child {
+  vertical-align: top;
+}
+
+/* line 371, scss/composer_interface.scss */
+#notification_edit_form h4.tag_heading {
+  margin: 14px 0;
+  font-size: 100%;
+}
+
+/* line 376, scss/composer_interface.scss */
+#standard_tags {
+  margin-bottom: 10px;
+}
+/* line 379, scss/composer_interface.scss */
+#standard_tags .standard_tag {
+  color: red;
+  margin-left: 20px;
+}
+
+/*
+	Prefs table override
+*/
+/* line 392, scss/composer_interface.scss */
+table#preferences td:first-child label,
+table#global_preferences td:first-child label {
+  font-size: 110%;
+}
+/* line 396, scss/composer_interface.scss */
+table#preferences td:first-child .subtext,
+table#global_preferences td:first-child .subtext {
+  line-height: 16px;
+  font-size: 96%;
+  color: #969494;
+}
+
+/* line 403, scss/composer_interface.scss */
+.ss_clearfix:before, .list_holder_input:before,
+.value_label_holder_input:before,
+.ss_clearfix:after,
+.list_holder_input:after,
+.value_label_holder_input:after,
+.ss_clearfix_left:before,
+.ss_clearfix_left:after {
+  content: "";
+  display: table;
+}
+
+/* line 410, scss/composer_interface.scss */
+.ss_clearfix:after, .list_holder_input:after,
+.value_label_holder_input:after,
+.right-pull-submit:after {
+  clear: both;
+}
+
+/* line 415, scss/composer_interface.scss */
+.ss_clearfix_left:after {
+  clear: left;
+}
+
+/*----------------------------------
+	field lists
+----------------------------------*/
+/* line 425, scss/composer_interface.scss */
+#edit_field_layout_holder .field_list,
+#edit_field_layout_holder .chosen_field_list {
+  width: 100%;
+}
+
+/* line 431, scss/composer_interface.scss */
+.value_label_header {
+  margin-bottom: 5px;
+}
+/* line 433, scss/composer_interface.scss */
+.value_label_header span {
+  width: 25%;
+  display: inline-block;
+}
+
+/* line 439, scss/composer_interface.scss */
+.list_holder_input,
+.value_label_holder_input {
+  margin-bottom: 5px;
+  position: relative;
+}
+/* line 445, scss/composer_interface.scss */
+.list_holder_input > div,
+.list_holder_input > input,
+.value_label_holder_input > div,
+.value_label_holder_input > input {
+  float: left;
+  margin-right: 5px;
+}
+/* line 451, scss/composer_interface.scss */
+.list_holder_input .list_input,
+.value_label_holder_input .list_input {
+  float: none;
+}
+/* line 454, scss/composer_interface.scss */
+.list_holder_input .list_input > div,
+.list_holder_input .list_input > input,
+.value_label_holder_input .list_input > div,
+.value_label_holder_input .list_input > input {
+  float: left;
+  margin-right: 5px;
+}
+/* line 461, scss/composer_interface.scss */
+.list_holder_input .freeform_delete_button,
+.value_label_holder_input .freeform_delete_button {
+  position: relative;
+  top: 5px;
+}
+
+/*----------------------------------
+	field create
+----------------------------------*/
+/* line 471, scss/composer_interface.scss */
+#field_settings_inner input[type="text"] {
+  width: 40%;
+}
+
+/* line 475, scss/composer_interface.scss */
+#settings_table_holder,
+#field_settings {
+  display: none;
+}
+
+/* line 480, scss/composer_interface.scss */
+#field_settings table tr td:first-child {
+  vertical-align: top;
+}
+
+/* line 486, scss/composer_interface.scss */
+#field_edit_form .field_option_holder {
+  /*
+  	this is needed to override a blanket css
+  	might change
+  */
+}
+/* line 488, scss/composer_interface.scss */
+#field_edit_form .field_option_holder input[type="text"] {
+  width: 25%;
+}
+/* line 492, scss/composer_interface.scss */
+#field_edit_form .field_option_holder textarea {
+  width: 50%;
+}
+/* line 500, scss/composer_interface.scss */
+#field_edit_form .field_option_holder div.freeform_delete_button,
+#field_edit_form .field_option_holder div.freeform_add_button {
+  display: inline-block;
+}
+/* line 506, scss/composer_interface.scss */
+#field_edit_form .field_type_desc.hidden {
+  display: none;
+}
+
+/* line 515, scss/composer_interface.scss */
+#template_edit_form .field_option_holder input[type="text"],
+#template_edit_form .field_option_holder .value_label_header_sub {
+  width: 40%;
+}
+/* line 520, scss/composer_interface.scss */
+#template_edit_form .field_option_holder .freeform_delete_button {
+  display: inline-block;
+}
+
+/*----------------------------------
+	entries
+----------------------------------*/
+/* line 530, scss/composer_interface.scss */
+#edit_field_layout {
+  margin: 0;
+}
+
+/* line 534, scss/composer_interface.scss */
+#edit_field_layout_holder {
+  display: none;
+  width: 750px;
+}
+/* line 539, scss/composer_interface.scss */
+#edit_field_layout_holder .field_layout_head {
+  background-color: #3e4c54;
+  padding: 10px;
+  color: #fff;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+/* line 547, scss/composer_interface.scss */
+#edit_field_layout_holder .chosen_field_list .field_tag {
+  background-image: none;
+  padding: 5px 5px 5px 8px;
+}
+/* line 551, scss/composer_interface.scss */
+#edit_field_layout_holder .chosen_field_list .field_tag .freeform_delete_button {
+  float: left;
+  margin: -1px 5px 0 0;
+}
+
+/* line 560, scss/composer_interface.scss */
+.field_list_header {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 3px 3px 0px 0px;
+  font-weight: bold;
+  padding: 6px 10px;
+  font-size: 13px;
+  width: 100%;
+}
+/* line 570, scss/composer_interface.scss */
+.field_list_header .action_description {
+  float: right;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 95%;
+  margin-right: 5px;
+  color: #aaa;
+}
+/* line 579, scss/composer_interface.scss */
+.field_list_header.search {
+  padding: 6px;
+}
+
+/* line 585, scss/composer_interface.scss */
+#unused_columns {
+  padding-right: 5px;
+  float: left;
+  width: 50%;
+}
+
+/* line 591, scss/composer_interface.scss */
+#visible_columns {
+  padding-left: 5px;
+  float: right;
+  width: 50%;
+}
+
+/*----------------------------------
+	Notic Window
+----------------------------------*/
+/* line 601, scss/composer_interface.scss */
+#for_member_group {
+  margin: 10px 0;
+}
+/* line 605, scss/composer_interface.scss */
+#for_member_group .leading_lang {
+  font-weight: bold;
+  margin: 2px;
+}
+/* line 610, scss/composer_interface.scss */
+#for_member_group .choice_holder {
+  display: inline-block;
+  margin: 2px;
+  width: 20%;
+}
+/* line 615, scss/composer_interface.scss */
+#for_member_group .choice_holder input[type="checkbox"] {
+  margin-right: 2px;
+}
+/* line 619, scss/composer_interface.scss */
+#for_member_group .choice_holder label.disabled {
+  color: #aaa;
+}
+
+/*----------------------------------
+	Export Dialog
+----------------------------------*/
+/* line 630, scss/composer_interface.scss */
+#export_dialog_holder {
+  display: none;
+}
+
+/* export dialog box */
+/* line 635, scss/composer_interface.scss */
+#export_dialog {
+  width: 350px;
+}
+/* line 639, scss/composer_interface.scss */
+#export_dialog table {
+  margin-bottom: 10px;
+}
+/* line 643, scss/composer_interface.scss */
+#export_dialog table tr {
+  margin-bottom: 5px;
+}
+/* line 647, scss/composer_interface.scss */
+#export_dialog table tr > td:first-child {
+  font-weight: bold;
+  width: 90px;
+}
+/* line 652, scss/composer_interface.scss */
+#export_dialog table tr > td {
+  padding: 5px 0;
+}
+/* line 657, scss/composer_interface.scss */
+#export_dialog input[type="radio"] {
+  margin-right: 2px;
+}
+/* line 661, scss/composer_interface.scss */
+#export_dialog p {
+  margin-bottom: 14px;
+}
+
+/*----------------------------------
+	misc field add
+----------------------------------*/
+/* line 671, scss/composer_interface.scss */
+.solspace-wrapper fieldset.search_fieldset, .solspace-wrapper .right_side_filter {
+  padding: 10px 10px 0 10px;
+}
+/* line 675, scss/composer_interface.scss */
+.solspace-wrapper fieldset.search_fieldset legend, .solspace-wrapper .right_side_filter legend {
+  font-weight: bold;
+}
+/* line 679, scss/composer_interface.scss */
+.solspace-wrapper fieldset.search_fieldset > input[type="text"], .solspace-wrapper .right_side_filter > input[type="text"],
+.solspace-wrapper fieldset.search_fieldset .filter_row > input[type="text"],
+.solspace-wrapper .right_side_filter .filter_row > input[type="text"],
+.solspace-wrapper fieldset.search_fieldset form > input[type="text"],
+.solspace-wrapper .right_side_filter form > input[type="text"] {
+  width: 200px;
+  margin-right: 8px;
+  margin-top: 1px;
+  padding: 4px;
+  height: 24px;
+}
+/* line 689, scss/composer_interface.scss */
+.solspace-wrapper fieldset.search_fieldset > select, .solspace-wrapper .right_side_filter > select,
+.solspace-wrapper fieldset.search_fieldset .filter_row > select,
+.solspace-wrapper .right_side_filter .filter_row > select,
+.solspace-wrapper fieldset.search_fieldset form > select,
+.solspace-wrapper .right_side_filter form > select {
+  width: 200px;
+}
+/* line 695, scss/composer_interface.scss */
+.solspace-wrapper fieldset.search_fieldset > input[type="text"].datepicker, .solspace-wrapper .right_side_filter > input[type="text"].datepicker,
+.solspace-wrapper fieldset.search_fieldset .filter_row > input[type="text"].datepicker,
+.solspace-wrapper .right_side_filter .filter_row > input[type="text"].datepicker,
+.solspace-wrapper fieldset.search_fieldset form > input[type="text"].datepicker,
+.solspace-wrapper .right_side_filter form > input[type="text"].datepicker {
+  width: 100px;
+  background-image: url("../images/calendar.png");
+  background-position: 96% 3px;
+  background-repeat: no-repeat;
+}
+/* line 704, scss/composer_interface.scss */
+.solspace-wrapper fieldset.search_fieldset .filter_row, .solspace-wrapper .right_side_filter .filter_row {
+  margin-bottom: 10px;
+}
+/* line 707, scss/composer_interface.scss */
+.solspace-wrapper fieldset.search_fieldset .filter_row > *, .solspace-wrapper .right_side_filter .filter_row > * {
+  margin-right: 8px;
+  float: left;
+}
+
+/* line 716, scss/composer_interface.scss */
+.solspace-wrapper .right_side_filter {
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+/* line 723, scss/composer_interface.scss */
+.solspace-wrapper .right_side_filter form > * {
+  float: left;
+}
+/* line 728, scss/composer_interface.scss */
+.solspace-wrapper .right_side_filter [name*=submit]:last-child {
+  margin-right: 0;
+}
+/* line 732, scss/composer_interface.scss */
+.solspace-wrapper .right_side_filter select {
+  width: 150px;
+}
+/* line 736, scss/composer_interface.scss */
+.solspace-wrapper .right_side_filter input[type="text"],
+.solspace-wrapper .right_side_filter input[type="email"],
+.solspace-wrapper .right_side_filter input[type="url"],
+.solspace-wrapper .right_side_filter input[type="number"],
+.solspace-wrapper .right_side_filter input[type="password"],
+.solspace-wrapper .right_side_filter select,
+.solspace-wrapper .right_side_filter div.chzn-container {
+  margin-right: 10px;
+}
+/* line 746, scss/composer_interface.scss */
+.solspace-wrapper .right_side_filter .freeform_loading_image {
+  margin-left: -29px;
+  margin-right: 13px;
+  margin-top: 5px;
+  position: absolute;
+}
+
+/*-------------------------------------
+	freeform standard icons
+-------------------------------------*/
+/* line 758, scss/composer_interface.scss */
+.freeform_default_button, .freeform_add_button, .freeform_approved_button, .freeform_close_button, .freeform_cog_button, .freeform_composer_button, .freeform_delete_button, .freeform_drag_button, .freeform_duplicate_button, .freeform_edit_button, .freeform_info_button, .freeform_locked_button, .freeform_reorder_button, .freeform_settings_button, .freeform_warning_button, .freeform_loading_image {
+  background-color: transparent;
+  background-position: top left;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+}
+/* line 769, scss/composer_interface.scss */
+.freeform_default_button::after, .freeform_add_button::after, .freeform_approved_button::after, .freeform_close_button::after, .freeform_cog_button::after, .freeform_composer_button::after, .freeform_delete_button::after, .freeform_drag_button::after, .freeform_duplicate_button::after, .freeform_edit_button::after, .freeform_info_button::after, .freeform_locked_button::after, .freeform_reorder_button::after, .freeform_settings_button::after, .freeform_warning_button::after, .freeform_loading_image::after {
+  color: #999;
+  content: '\E052';
+  font-size: 12px;
+  margin-right: 5px;
+  position: relative;
+  top: 1px;
+  left: 2px;
+  font-weight: 100;
+  /* loaded in CP automatically by EE*/
+  font-family: "solspace-fa";
+}
+
+/* line 783, scss/composer_interface.scss */
+.freeform_add_button {
+  background-image: url("../images/add.png");
+}
+
+/* line 788, scss/composer_interface.scss */
+.disabled .freeform_add_button,
+.disabled.freeform_add_button {
+  background-image: url("../images/add_disabled.png");
+}
+
+/* line 793, scss/composer_interface.scss */
+.freeform_approved_button {
+  cursor: default;
+}
+
+/* line 805, scss/composer_interface.scss */
+.freeform_cog_button::after {
+  content: '\e80f';
+}
+
+/* line 818, scss/composer_interface.scss */
+.freeform_composer_button::after {
+  content: '\e808';
+}
+
+/* line 825, scss/composer_interface.scss */
+.freeform_delete_button::after {
+  content: '\e809';
+}
+
+/* line 830, scss/composer_interface.scss */
+.freeform_drag_button {
+  cursor: move;
+}
+/* line 834, scss/composer_interface.scss */
+.freeform_drag_button::after {
+  content: '\e810';
+}
+
+/* line 841, scss/composer_interface.scss */
+.ie11 .freeform_drag_button::after {
+  left: 2px;
+}
+
+/* line 846, scss/composer_interface.scss */
+.freeform_duplicate_button {
+  background-image: url("../images/page_white_copy.png");
+}
+
+/* line 853, scss/composer_interface.scss */
+.freeform_edit_button::after {
+  content: '\e807';
+}
+
+/* line 858, scss/composer_interface.scss */
+.freeform_info_button {
+  cursor: default;
+}
+/* line 861, scss/composer_interface.scss */
+.freeform_info_button::after {
+  content: '\E196';
+  left: -28px;
+}
+
+/* line 867, scss/composer_interface.scss */
+.freeform_locked_button {
+  background-image: url("../images/lock.png");
+  cursor: default;
+}
+
+/* line 873, scss/composer_interface.scss */
+.freeform_reorder_button {
+  background-image: url("../images/re-order.png");
+}
+
+/* line 881, scss/composer_interface.scss */
+.freeform_settings_button::after {
+  content: '\E137';
+  left: -28px;
+}
+
+/* line 889, scss/composer_interface.scss */
+.ie11 .freeform_settings_button::after {
+  left: 2px;
+}
+
+/* line 894, scss/composer_interface.scss */
+.freeform_warning_button {
+  background-image: url("../images/warning.png");
+}
+
+/* line 899, scss/composer_interface.scss */
+.freeform_approve_button {
+  padding: 3px 8px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  text-shadow: 0 1px white;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* line 908, scss/composer_interface.scss */
+.freeform_approve_button a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 913, scss/composer_interface.scss */
+.freeform_loading_image {
+  background-image: url("../images/loading.gif");
+}
+
+/*----------------------------------
+	composer
+----------------------------------*/
+/* line 922, scss/composer_interface.scss */
+#composer_wrapper {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+/* line 928, scss/composer_interface.scss */
+#composer_wrapper .disabled {
+  color: #ccc;
+  cursor: default;
+}
+
+/*----------------------------------
+	i dislike this, but due to color
+	coding this is how i am doing this
+----------------------------------
+	p.s. screw MS/IE in its stupid
+	ear for having such bad css
+	support in ie8 and only having
+	ie9 on vista+ WHAT THE CRAP?
+----------------------------------*/
+/* line 944, scss/composer_interface.scss */
+.row_button {
+  border-radius: 2px;
+  border: 1px solid #aaa;
+  display: inline-block;
+  height: 16px;
+  margin-left: 3px;
+  width: 41px;
+  cursor: pointer;
+  padding: 0;
+}
+/* line 954, scss/composer_interface.scss */
+.row_button .first,
+.row_button .second,
+.row_button .third {
+  border-left: 1px solid #aaa;
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  margin-right: -3px;
+}
+
+/* line 965, scss/composer_interface.scss */
+.single_row_button .first {
+  border: none;
+}
+
+/* line 969, scss/composer_interface.scss */
+.double_row_button .first {
+  margin-left: 50%;
+}
+
+/* line 973, scss/composer_interface.scss */
+.triple_row_button .first,
+.triple_row_button .second {
+  margin-left: 33%;
+}
+
+/* line 978, scss/composer_interface.scss */
+.quadruple_row_button .first,
+.quadruple_row_button .second,
+.quadruple_row_button .third {
+  margin-left: 21.5%;
+}
+
+/*----------------------------------
+	composer side bar
+----------------------------------*/
+/* line 988, scss/composer_interface.scss */
+#composer_side_bar {
+  display: block;
+}
+/* line 992, scss/composer_interface.scss */
+#composer_side_bar.sticky {
+  position: fixed;
+  top: 20px;
+}
+/* line 997, scss/composer_interface.scss */
+#composer_side_bar.sticky-bottom {
+  position: absolute;
+  bottom: 0;
+}
+/* line 1002, scss/composer_interface.scss */
+#composer_side_bar > div {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+/* line 1007, scss/composer_interface.scss */
+#composer_side_bar > div > *:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+/* line 1012, scss/composer_interface.scss */
+#composer_side_bar > div .header {
+  padding: 6px;
+  border-bottom: 1px solid #ddd;
+}
+/* line 1016, scss/composer_interface.scss */
+#composer_side_bar > div .header .form_subtext {
+  font-style: italic;
+}
+/* line 1021, scss/composer_interface.scss */
+#composer_side_bar > div .content {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #fff;
+  background-color: #f9f9f9;
+  padding: 6px;
+}
+/* line 1027, scss/composer_interface.scss */
+#composer_side_bar > div .content.last {
+  border-bottom: none;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+/* line 1033, scss/composer_interface.scss */
+#composer_side_bar > div .content.dark {
+  background-color: #ebebeb;
+}
+/* line 1038, scss/composer_interface.scss */
+#composer_side_bar > div #insert_elements {
+  padding-bottom: 0;
+}
+/* line 1042, scss/composer_interface.scss */
+#composer_side_bar > div .field_list {
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  padding: 0;
+}
+/* line 1048, scss/composer_interface.scss */
+#composer_side_bar > div .field_list .field_tag {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 24px;
+  padding-left: 8px;
+  position: relative;
+}
+/* line 1059, scss/composer_interface.scss */
+#composer_side_bar > div .field_list .field_tag .freeform_edit_button {
+  margin-top: -12px;
+  position: absolute;
+  top: 50%;
+  right: 6px;
+}
+/* line 1066, scss/composer_interface.scss */
+#composer_side_bar > div .field_list .field_tag.disabled .field_label {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+/* line 1072, scss/composer_interface.scss */
+#composer_side_bar > div .field_list .field_label {
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 1079, scss/composer_interface.scss */
+#composer_side_bar > div.last {
+  margin-bottom: 14px;
+}
+/* line 1083, scss/composer_interface.scss */
+#composer_side_bar h4 {
+  margin-bottom: 2px;
+}
+/* line 1088, scss/composer_interface.scss */
+#composer_side_bar #actions .freeform_ui_button {
+  margin-right: 5px;
+  font-weight: normal;
+}
+/* line 1096, scss/composer_interface.scss */
+#composer_side_bar #insert_elements .freeform_ui_button {
+  margin-right: 5px;
+  font-weight: normal;
+  margin-bottom: 6px;
+}
+/* line 1101, scss/composer_interface.scss */
+#composer_side_bar #insert_elements .freeform_ui_button.last {
+  margin-right: 0;
+}
+
+/* line 1111, scss/composer_interface.scss */
+#composer_elements .header .freeform_info_button {
+  float: right;
+  margin-top: 6px;
+  white-space: normal;
+  font-size: 100%;
+  position: relative;
+  overflow: visible;
+}
+/* line 1119, scss/composer_interface.scss */
+#composer_elements .header .freeform_info_button:hover .tooltip {
+  display: block;
+}
+
+/* line 1126, scss/composer_interface.scss */
+#new_field_button {
+  float: right;
+}
+
+/*----------------------------------
+	composer main
+----------------------------------*/
+/* line 1135, scss/composer_interface.scss */
+.solspace-wrapper #composer > table {
+  margin-top: 0 !important;
+}
+
+/*----------------------------------
+	box-sizing:border-box; +
+	min-height/width is broken
+	in firefox <= 12 and we have
+	jquery doing a support test
+	then adding this class if false
+----------------------------------*/
+/* line 1151, scss/composer_interface.scss */
+.broken_min_border_box #composer .row_control {
+  min-height: 48px;
+}
+/* line 1156, scss/composer_interface.scss */
+.broken_min_border_box #composer .element_wrapper {
+  min-height: 35px;
+}
+/* line 1161, scss/composer_interface.scss */
+.broken_min_border_box #composer .page_break {
+  min-height: 13px;
+}
+
+/* line 1167, scss/composer_interface.scss */
+#composer {
+  display: block;
+  min-height: 500px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  /*----------------------------------
+  	element wrapper
+  ----------------------------------*/
+  /* ie8 version comes in later */
+}
+/* line 1175, scss/composer_interface.scss */
+#composer .editor {
+  margin-top: 14px;
+}
+/* line 1178, scss/composer_interface.scss */
+#composer .editor input[type="text"] {
+  margin-bottom: 7px;
+}
+/* line 1182, scss/composer_interface.scss */
+#composer .editor h4 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+/* line 1188, scss/composer_interface.scss */
+#composer > table {
+  margin-bottom: 55px;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  /* need this for safari so it wont barf on divs next to TR */
+  /* need this for safari so rows wont bleed to the side */
+}
+/* line 1196, scss/composer_interface.scss */
+#composer > table thead {
+  visibility: hidden;
+}
+/* line 1199, scss/composer_interface.scss */
+#composer > table thead th {
+  padding: 0;
+}
+/* line 1204, scss/composer_interface.scss */
+#composer > table td {
+  border: solid #ddd;
+  border-width: 0 0 1px 1px;
+  position: relative;
+  padding: 0px;
+  vertical-align: top;
+}
+/* line 1211, scss/composer_interface.scss */
+#composer > table td:first-child {
+  border-width: 0 0 1px 0;
+}
+/* line 1216, scss/composer_interface.scss */
+#composer > table tr {
+  background-color: #fff;
+}
+/* line 1222, scss/composer_interface.scss */
+#composer > table .row_button.ui-sortable-placeholder + tr,
+#composer > table .page_break.ui-sortable-placeholder + tr {
+  border-top: 1px solid #ddd;
+}
+/* line 1228, scss/composer_interface.scss */
+#composer > table tbody > div.ui-sortable-placeholder {
+  display: table-row;
+  min-height: 40px;
+}
+/* line 1234, scss/composer_interface.scss */
+#composer > table tbody > .ui-sortable-helper {
+  left: 0;
+}
+/* line 1238, scss/composer_interface.scss */
+#composer > table tr.ui-sortable-helper {
+  border-top: 1px solid #ddd;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.1);
+}
+/* line 1243, scss/composer_interface.scss */
+#composer > table .row_button.ui-sortable-placeholder {
+  height: 55px;
+}
+/* line 1247, scss/composer_interface.scss */
+#composer > table tr.sort_active td {
+  border-width: 1px;
+  background: lightyellow;
+}
+/* line 1251, scss/composer_interface.scss */
+#composer > table tr.sort_active td:first-child {
+  border-width: 1px;
+}
+/* line 1259, scss/composer_interface.scss */
+#composer .row_control_holder {
+  background-image: -webkit-linear-gradient(left, #fdfdfd, #f3f3f3);
+  background-image: linear-gradient(to right, #fdfdfd, #f3f3f3);
+  box-shadow: inset -1px 0px 4px -1px rgba(0, 0, 0, 0.1);
+}
+/* line 1264, scss/composer_interface.scss */
+#composer .row_control {
+  min-height: 55px;
+  text-align: center;
+  padding-top: 7px;
+}
+/* line 1271, scss/composer_interface.scss */
+#composer .row_control ul {
+  margin: 0;
+  list-style: none;
+}
+/* line 1278, scss/composer_interface.scss */
+#composer .row_control [class*="_button"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 1284, scss/composer_interface.scss */
+#composer .row_control .freeform_cog_button {
+  margin-bottom: 8px;
+  position: relative;
+  overflow: visible;
+}
+/* line 1289, scss/composer_interface.scss */
+#composer .row_control .freeform_cog_button .control_flyout {
+  position: absolute;
+  right: 0;
+  display: none;
+}
+/* line 1295, scss/composer_interface.scss */
+#composer .row_control .freeform_cog_button .control_flyout .flyout_petal {
+  background-color: #fff;
+  background-position: 4px 3px;
+  background-repeat: no-repeat;
+  border-radius: 0 3px 3px 0;
+  border: solid #ddd;
+  border-width: 1px 1px 1px 0px;
+  display: block;
+  height: 25px;
+  position: absolute;
+  right: -5px;
+  top: -4px;
+  width: 25px;
+  z-index: 62;
+}
+/* line 1311, scss/composer_interface.scss */
+#composer .row_control .freeform_cog_button .control_flyout .flyout_petal::after {
+  					/* This only seems to work as an after element and not directly
+  onto the element.*/
+  color: #999;
+  content: '\e80f';
+  font-size: 12px;
+  margin-right: 5px;
+  position: relative;
+  top: 4px;
+  left: 2px;
+  font-weight: 100;
+  /* loaded in CP automatically by EE*/
+  font-family: "solspace-fa";
+}
+/* line 1327, scss/composer_interface.scss */
+#composer .row_control .freeform_cog_button .control_flyout .flyout_container {
+  background-color: #fff;
+  border-radius: 3px 0 3px 3px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  display: block;
+  font-size: 13px;
+  padding: 5px 10px;
+  position: absolute;
+  right: 19px;
+  text-align: left;
+  text-indent: 0px;
+  top: -4px;
+  min-width: 115px;
+  z-index: 61;
+}
+/* line 1343, scss/composer_interface.scss */
+#composer .row_control .freeform_cog_button .control_flyout .flyout_container ul li {
+  margin: 5px 0;
+  text-align: right;
+}
+/* line 1351, scss/composer_interface.scss */
+#composer .row_control .freeform_cog_button:hover .control_flyout {
+  display: block;
+}
+/* line 1363, scss/composer_interface.scss */
+#composer .subfield_instructions {
+  color: #aaa;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 1370, scss/composer_interface.scss */
+#composer .subfield_instructions.bottom {
+  top: 100%;
+}
+/* line 1375, scss/composer_interface.scss */
+#composer .element_wrapper {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  min-height: 55px;
+}
+/* line 1383, scss/composer_interface.scss */
+#composer .element_wrapper:hover {
+  background-color: lightyellow;
+}
+/* line 1386, scss/composer_interface.scss */
+#composer .element_wrapper:hover .subfield_instructions {
+  display: block;
+}
+/* line 1391, scss/composer_interface.scss */
+#composer .element_wrapper.ui-sortable-helper {
+  display: block;
+  border: 1px solid #ccc;
+  background-color: lightyellow;
+  /*width: 				400px;*/
+  min-height: 55px;
+  cursor: move;
+}
+/* line 1399, scss/composer_interface.scss */
+#composer .element_wrapper.ui-sortable-helper .subfield_instructions {
+  display: none;
+}
+/* line 1404, scss/composer_interface.scss */
+#composer .element_wrapper .inner_element {
+  position: relative;
+}
+/* line 1408, scss/composer_interface.scss */
+#composer .element_wrapper .finished {
+  float: right;
+  cursor: pointer;
+}
+/* line 1413, scss/composer_interface.scss */
+#composer .element_wrapper .element_cover {
+  cursor: move;
+  display: block;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  z-index: 60;
+}
+/* line 1426, scss/composer_interface.scss */
+#composer .element_wrapper .element_required {
+  color: #f00;
+  display: none;
+  height: 10px;
+  padding: 2px 5px;
+}
+/* line 1433, scss/composer_interface.scss */
+#composer .element_wrapper .element_label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  position: relative;
+}
+/* line 1440, scss/composer_interface.scss */
+#composer .element_wrapper .element_name {
+  float: right;
+  display: none;
+  color: #ccc;
+  margin-top: -5px;
+  margin-bottom: 5px;
+  font-size: 11px;
+  position: absolute;
+  right: 12px;
+  top: 10px;
+}
+/* line 1452, scss/composer_interface.scss */
+#composer .element_wrapper .element_unrequire {
+  display: none;
+}
+/* line 1458, scss/composer_interface.scss */
+#composer .element_wrapper[data-required="yes"] .element_required {
+  display: inline-block;
+}
+/* line 1462, scss/composer_interface.scss */
+#composer .element_wrapper[data-required="yes"] .element_unrequire {
+  display: block;
+}
+/* line 1466, scss/composer_interface.scss */
+#composer .element_wrapper[data-required="yes"] .element_require {
+  display: none;
+}
+/* line 1471, scss/composer_interface.scss */
+#composer .element_wrapper.ui-draggable-dragging .element_control, #composer .element_wrapper:hover .element_control, #composer .element_wrapper:hover .element_name {
+  display: block;
+}
+/* line 1479, scss/composer_interface.scss */
+#composer .element_control {
+  border-radius: 3px 3px 0 0;
+  box-shadow: 1px -1px 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+  bottom: 0;
+  cursor: pointer;
+  display: none;
+  left: 3px;
+  padding: 4px 6px;
+  position: absolute;
+  width: 30px;
+  z-index: 61;
+}
+/* line 1494, scss/composer_interface.scss */
+#composer .element_control ul {
+  margin: 0;
+  list-style: none;
+}
+/* line 1500, scss/composer_interface.scss */
+#composer .element_control .freeform_cog_button {
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+}
+/* line 1504, scss/composer_interface.scss */
+#composer .element_control .freeform_cog_button .control_flyout {
+  position: absolute;
+  right: 0;
+  display: none;
+}
+/* line 1510, scss/composer_interface.scss */
+#composer .element_control .freeform_cog_button .control_flyout .flyout_petal {
+  background-color: #fff;
+  border-radius: 0 3px 3px 0;
+  border: solid #ddd;
+  border-width: 1px 1px 1px 0px;
+  display: block;
+  height: 25px;
+  position: absolute;
+  right: -5px;
+  top: -4px;
+  width: 25px;
+  z-index: 63;
+}
+/* line 1523, scss/composer_interface.scss */
+#composer .element_control .freeform_cog_button .control_flyout .flyout_petal::after {
+  /* This only seems to work as an
+  after element and not directly
+  onto the element.*/
+  color: #999;
+  content: '\e80f';
+  font-size: 12px;
+  margin-right: 5px;
+  position: relative;
+  top: 4px;
+  left: 6px;
+  font-weight: 100;
+  /* loaded in CP automatically by EE*/
+  font-family: "solspace-fa";
+}
+/* line 1541, scss/composer_interface.scss */
+#composer .element_control .freeform_cog_button .control_flyout .flyout_container {
+  background-color: #fff;
+  border-radius: 3px 0 3px 3px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  display: block;
+  font-size: 13px;
+  padding: 5px 10px;
+  position: absolute;
+  right: 19px;
+  text-align: left;
+  text-indent: 0px;
+  top: -4px;
+  min-width: 115px;
+  z-index: 62;
+}
+/* line 1557, scss/composer_interface.scss */
+#composer .element_control .freeform_cog_button .control_flyout .flyout_container ul li {
+  color: #aaa;
+  margin: 5px 0;
+  text-align: right;
+}
+/* line 1566, scss/composer_interface.scss */
+#composer .element_control .freeform_cog_button:hover .control_flyout {
+  display: block;
+}
+/* line 1577, scss/composer_interface.scss */
+#composer .page_break {
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #ececec);
+  background-image: linear-gradient(to bottom, #f6f6f6, #ececec);
+  font-size: 14px;
+  font-weight: bold;
+  min-height: 25px;
+  padding: 5px 4% 7px 0;
+  position: relative;
+  text-align: center;
+  text-shadow: 1px 1px 1px #fff;
+}
+/* line 1589, scss/composer_interface.scss */
+#composer .page_break .freeform_delete_button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: none;
+}
+/* line 1598, scss/composer_interface.scss */
+#composer .page_break_holder .row_control {
+  padding-top: 4px;
+  min-height: 25px;
+  height: 25px;
+}
+/* line 1604, scss/composer_interface.scss */
+#composer .page_break_holder .row_control .freeform_cog_button {
+  display: none;
+}
+/* line 1610, scss/composer_interface.scss */
+#composer .page_break_holder:hover .freeform_delete_button {
+  display: block;
+}
+
+/* line 1618, scss/composer_interface.scss */
+.field_dragger {
+  background-color: lightyellow;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.1);
+  min-height: 35px;
+  font-weight: bold;
+  min-width: 200px;
+  width: 200px;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+/* line 1631, scss/composer_interface.scss */
+#new_field_button {
+  cursor: pointer;
+}
+
+/* line 1637, scss/composer_interface.scss */
+#dynrec_editor h4 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+/* line 1642, scss/composer_interface.scss */
+#dynrec_editor .inner_wrapper {
+  padding: 0 2px;
+}
+/* line 1648, scss/composer_interface.scss */
+#dynrec_editor .type_value_label_holder .value_label_header_sub {
+  width: 40%;
+}
+/* line 1651, scss/composer_interface.scss */
+#dynrec_editor .type_value_label_holder .value_label_header_sub.short {
+  width: 18%;
+}
+/* line 1658, scss/composer_interface.scss */
+#dynrec_editor .type_value_label_holder .value_label_holder_input input[type="text"] {
+  width: 40%;
+}
+/* line 1662, scss/composer_interface.scss */
+#dynrec_editor .type_value_label_holder .value_label_holder_input select {
+  width: 18%;
+}
+/* line 1666, scss/composer_interface.scss */
+#dynrec_editor .type_value_label_holder .value_label_holder_input textarea {
+  width: 50%;
+}
+/* line 1670, scss/composer_interface.scss */
+#dynrec_editor .type_value_label_holder .value_label_holder_input div.freeform_delete_button,
+#dynrec_editor .type_value_label_holder .value_label_holder_input div.freeform_add_button {
+  display: inline-block;
+  position: relative;
+  bottom: 5px;
+}
+/* line 1679, scss/composer_interface.scss */
+#dynrec_editor .type_value_label_holder .field_type_desc.hidden {
+  display: none;
+}
+/* line 1684, scss/composer_interface.scss */
+#dynrec_editor .submit {
+  float: right;
+}
+
+/*----------------------------------
+	fancybox override
+----------------------------------*/
+/* line 1695, scss/composer_interface.scss */
+#fancybox-outer,
+#fancybox-content {
+  border-radius: 5px;
+}
+
+/*----------------------------------
+	ui-datepicker override
+----------------------------------*/
+/* line 1704, scss/composer_interface.scss */
+#ui-datepicker-div {
+  border-color: #B6C0C2;
+}
+
+/* line 1708, scss/composer_interface.scss */
+.ss_jqui_dialog {
+  border: 1px solid #aaa;
+  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* line 1713, scss/composer_interface.scss */
+.bottom_right_submit_block {
+  float: right;
+}
+/* line 1716, scss/composer_interface.scss */
+.bottom_right_submit_block form {
+  display: inline-block;
+}
+
+/* line 1721, scss/composer_interface.scss */
+.bottom_left_submit_block {
+  text-align: left;
+  float: left;
+}
+
+/* line 1726, scss/composer_interface.scss */
+#composer_template_select {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 25px;
+}
+
+/* line 1732, scss/composer_interface.scss */
+.mcp-side-nav-dropdown {
+  margin-bottom: 10px;
+}
+/* line 1733, scss/composer_interface.scss */
+.mcp-side-nav-dropdown .composer-mcp-nav-toggle {
+  display: block;
+  padding: 11px 10px 9px 10px;
+  /* This only seems to work as an after element and not directly
+  onto the element.*/
+}
+/* line 1737, scss/composer_interface.scss */
+.mcp-side-nav-dropdown .composer-mcp-nav-toggle i {
+  font-style: normal;
+  float: right;
+}
+/* line 1744, scss/composer_interface.scss */
+.mcp-side-nav-dropdown .composer-mcp-nav-toggle i:after {
+  color: #999;
+  content: '\e80e';
+  font-size: 12px;
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
+  font-weight: 100;
+  /* loaded in CP automatically by EE*/
+  font-family: "solspace-fa";
+}
+/* line 1759, scss/composer_interface.scss */
+.mcp-side-nav-dropdown h2 {
+  display: none;
+}
+/* line 1763, scss/composer_interface.scss */
+.mcp-side-nav-dropdown ul {
+  display: none;
+}
+/* line 1769, scss/composer_interface.scss */
+.mcp-side-nav-dropdown.shown h2 {
+  display: block;
+}
+/* line 1772, scss/composer_interface.scss */
+.mcp-side-nav-dropdown.shown ul {
+  display: block;
+}
+
+/* line 1778, scss/composer_interface.scss */
+.ui-dialog {
+  z-index: 150;
+  background: #ffffff;
+  border-radius: 3px;
+}
+/* line 1783, scss/composer_interface.scss */
+.ui-dialog .ui-dialog-titlebar {
+  position: relative;
+  padding: 5px;
+  border-bottom: 1px solid #aaa;
+}
+/* line 1788, scss/composer_interface.scss */
+.ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+  font-weight: bold;
+}
+/* line 1792, scss/composer_interface.scss */
+.ui-dialog .ui-dialog-titlebar .ui-button {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+/* line 1797, scss/composer_interface.scss */
+.ui-dialog .ui-dialog-titlebar .ui-button:after {
+  content: '\e208';
+  color: #bc4848;
+  font-family: 'Glyphicons Regular', sans-serif;
+}
+/* line 1803, scss/composer_interface.scss */
+.ui-dialog .ui-dialog-titlebar .ui-button .ui-button-text {
+  display: none;
+}
+/* line 1809, scss/composer_interface.scss */
+.ui-dialog .ui-dialog-content {
+  padding: 5px;
+}
+/* line 1813, scss/composer_interface.scss */
+.ui-dialog .ui-dialog-buttonpane {
+  padding: 0 5px 5px;
+}
+/* line 1817, scss/composer_interface.scss */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
+  margin-right: 5px !important;
+}
+
+/* line 1827, scss/composer_interface.scss */
+.inner_element .editable_submit button, .inner_element .editable_submit_previous button {
+  border-radius: 3px;
+  border: solid #aaa 1px;
+  color: #5f6c74;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin: 0;
+  padding: 5px 8px 6px;
+  background-image: -webkit-linear-gradient(top, #ffffff, #ededed);
+  background-image: linear-gradient(to bottom, #ffffff, #ededed);
+}
+/* line 1839, scss/composer_interface.scss */
+.inner_element .editable_submit button:hover, .inner_element .editable_submit button:active, .inner_element .editable_submit button.active, .inner_element .editable_submit_previous button:hover, .inner_element .editable_submit_previous button:active, .inner_element .editable_submit_previous button.active {
+  background-image: -webkit-linear-gradient(top, #cccccc, #dfdfdf);
+  background-image: linear-gradient(to bottom, #cccccc, #dfdfdf);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
+}

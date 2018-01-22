@@ -1,0 +1,12 @@
+/* line 2, scss/custom_filters.scss */
+#custom-filters a {
+  cursor: pointer;
+}
+/* line 6, scss/custom_filters.scss */
+#custom-filters #date-range-inputs {
+  display: none;
+}
+/* line 10, scss/custom_filters.scss */
+#custom-filters .filter-clear {
+  display: none;
+}

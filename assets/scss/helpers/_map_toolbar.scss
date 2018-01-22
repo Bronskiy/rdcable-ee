@@ -1,0 +1,52 @@
+.map-toolbar {
+  background-color: $color-black;
+  border-radius: 2px;
+  bottom: 15px;
+  padding: 8px 2px;
+  position: absolute;
+  right: 15px;
+}
+
+.map-toolbar-top-right {
+  bottom: auto;
+  top: 15px;
+}
+
+.map-toolbar-group {;
+  float: left;
+  margin: 0 10px 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.map-toolbar-group-item {
+  border-right: 1px solid rgba(#fff, .2);
+  cursor: pointer;
+  color: rgba(#fff, .8);
+  float: left;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 0 12px;
+  transition: color .2s ease;
+
+  .fa {
+    font-size: 10px;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:last-child {
+    border-right: 0;
+  }
+
+  &.active {
+    background-color: $color-primary;
+    color: #fff;
+    margin: -8px 0;
+    padding: 8px 12px;
+  }
+}

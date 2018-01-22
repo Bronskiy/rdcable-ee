@@ -1,0 +1,78 @@
+{layout="_includes/_wrapper"}
+<div class="main-wrapper">
+  <div class="main">
+    <div class="main-inner">
+      <div class="page-title">
+        <div class="container">
+          <h1>Каталог кабельно-проводниковой продукции</h1>
+          {embed="_includes/_contact_info"}
+        </div>
+      </div>
+      <div class="container">
+        <div class="content">
+          <div class="block mt-80 pt30">
+            <div class="block-inner">
+              {embed="_includes/_spec"}
+              <div class="page-header">
+                <p>Вы можете узнать спецификацию и параметры, интересующего вас кабеля или провода и заказать его с доставкой на сайте или по телефону.</p>
+              </div>
+              <div class="categories-wrapper">
+                <div class="categories">
+                  <div class="row">
+
+                    {exp:channel:categories channel="product_categories" style="linear"}
+                    <div class="col-md-4">
+                      <div class="category-column">
+                        <h3><a href="{path='catalog/category/{category_url_title}'}">{category_name}</a></h3>
+                        <ul>
+                          {exp:channel:entries category="{category_id}"}
+                          <li>
+                            <a href="{url_title_path='catalog/products'}">{title}
+                              {!--
+                                |{count}|{total_entries}
+                                {parents field="product_categoies" limit="1"}
+                                {if parents:count == "1"}<span>{parents:total_results}</span>{/if}
+                                {/parents}
+                                --}
+
+                              </a>
+                            </li>
+                            {/exp:channel:entries}
+                          </ul>
+                        </div>
+                      </div>
+                      {/exp:channel:categories}
+                      {!--
+                        {exp:gwcode_categories channel="products" entry_count="yes" style="linear" show_empty="no"}
+                        {if depth1_start}
+                        <div class="col-md-4">
+                          <div class="category-column">
+                            {if has_children}
+                            <h3><a href="{path='catalog/category/{cat_url_title}'}">{cat_name}</a></h3>
+                            <ul>
+                              {if:else}
+                              <h3><a href="{path='catalog/category/{cat_url_title}'}">{cat_name} <span>{entry_count}</span></a></h3>
+                              {/if}
+                              {/if}
+                              {if depth == 2}
+                              <li><a href="{path='catalog/category/{cat_url_title}'}">{cat_name} <span>{entry_count}</span></a></li>
+                              {/if}
+                              {if depth1_end}
+                              {if has_children}
+                            </ul>
+                            {/if}
+                          </div>
+                        </div>
+                        {/if}
+                        {/exp:gwcode_categories}
+                        --}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

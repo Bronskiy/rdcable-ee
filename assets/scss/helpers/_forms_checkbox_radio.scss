@@ -1,0 +1,151 @@
+.form-check {
+  @include clearfix();
+
+  clear: both;
+}
+
+.checkbox {
+  .label {
+    background-color: $color-gray;
+    border-radius: 2px;
+    color: lighten($color-black, 30%);
+    font-size: 9px;
+    font-weight: 600;
+    float: right;
+    padding: 2px 6px;
+
+    .filter-gray & {
+      background-color: $color-black;
+      color: rgba(#fff, .8);
+    }
+  }
+}
+
+.checkbox-list {
+  > div {
+    float: left;
+    width: 33.3333%;
+  }
+}
+
+.checkbox-inline {
+  display: inline-block;
+  margin: 0 10px 0 0;
+
+  label {
+    margin: 0;
+  }
+}
+
+.form-check-label { 
+  padding-left: 0;
+}
+
+input[type=checkbox]::-ms-expand {
+  display: none;
+}
+
+input[type=radio]::-ms-expand {
+  display: none;
+}
+
+.checkbox-wrapper {
+  background-color: #fff;
+  border: 1px solid rgba(#000, .12);
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  height: 17px;
+  line-height: 1;
+  margin: 0 6px 0 0;
+  outline: none;
+  position: relative;
+  vertical-align: -3px;
+  width: 17px;
+
+  input[type=checkbox] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    cursor: pointer;
+    height: 14px;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    width: 14px;
+    z-index: 10;
+  }
+
+  input[type=checkbox]:checked + .indicator {
+    background-color: $color-primary;
+    border-radius: 2px;
+    bottom: -1px;
+    content: '';
+    cursor: pointer;
+    display: block;
+    left: -1px;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+
+    .filter-primary & {
+      background-color: $color-black;
+    }
+    
+    &:after {
+      -webkit-font-smoothing: antialiased;
+      color: #fff;
+      content: '\f00c';
+      display: block;
+      font-family: 'FontAwesome';
+      font-size: 8px;
+      left: 5px;
+      position: absolute;
+      top: 4px;
+
+    }
+  }
+}
+
+.radio-wrapper {
+  background-color: #fff;
+  border: 1px solid rgba(#000, .12);
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 14px;
+  line-height: 1;
+  margin: 0 6px 0 0;
+  outline: none;
+  position: relative;
+  vertical-align: -3px;
+  width: 14px;
+
+  input[type=radio] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    cursor: pointer;
+    height: 14px;
+    position: absolute;
+    opacity: 0;
+    width: 14px;
+    z-index: 10;
+  }
+
+  input[type=radio]:checked + .indicator {
+    background-color: $color-primary;
+    border-radius: 50%;
+    content: '';
+    cursor: pointer;
+    display: block;
+    height: 8px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 8px;
+  }
+}

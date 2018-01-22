@@ -1,0 +1,66 @@
+{embed="%prefix%inc/index" page_title="Composer-based Form"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="composer"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>
+					Composer-based Form&nbsp;
+					<small><span class="label label-warning">
+						<span class="glyphicon glyphicon-star"></span> Freeform Pro only
+					</span></small>
+				</h1>
+				<p class="lead">This page contains an example form built with Freeform Pro using the Composer-based approach.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-md-9">
+
+				{if segment_3 == "success"}
+					<div class="alert alert-success" role="alert">
+						<p class="lead">
+                        	Freeform entry has been successfully submitted!
+						</p>
+					</div>
+				{/if}
+
+					<h3>Contact Us</h3>
+					<p>Please fill out the form below to get in touch with us.</p>
+					{exp:freeform:composer
+						form_name="COMPOSER_FORM_NAME" {!-- Change this to your form short name --}
+						status="open"
+						return="%prefix%main/composer/success"
+					}
+					<div class="alert alert-warning">
+						<h4>Important</h4>
+						<p>
+							This page will not immediately work like the other pages. You'll need to create a
+							Composer-based form in the Freeform Pro control panel first, and then update the name
+							in the <strong>form_name</strong> parameter in this template.
+						</p>
+					</div>
+				</div>
+
+				<div class="col-md-3">				
+{embed="%prefix%inc/sidebar"}
+				</div>
+
+      		</div>
+
+			<div class="well ss-pageinfo">
+				<h2>About This Page</h2>
+				<p>This page makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/composer">Freeform:Composer</a> to display a prebuilt contact form for users to fill out and submit.</li>
+				</ul>
+				<p>The global sidebar on the right makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/form_info">Freeform:Form_Info</a> to display a list of available Freeform forms.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

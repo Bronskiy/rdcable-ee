@@ -1,0 +1,66 @@
+.page-header {
+	margin: 0 0 40px 0;
+	text-align: center;
+
+	h2 {
+		font-size: 26px;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+
+	p {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 26px;
+		margin: 0 auto;
+		max-width: 60%;	
+
+		@include media-breakpoint-down(md) {
+			max-width: 100%;
+		}
+	}
+}
+
+.page-title {
+	background-color: #fff;
+	box-shadow: 0 0 3px rgba($color-black, .2);
+	margin: 0 0 40px 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	z-index: 10;
+
+	h1 {
+		color: $color-primary;
+		font-size: 20px;
+		font-weight: 400;
+		float: left;
+		line-height: 60px;
+		margin: 0;
+		padding: 0;
+
+		small {
+			color: lighten($color-black, 50%);
+			font-size: 15px;
+			font-weight: 400;
+		}		
+	}
+
+	.switcher {
+		border-right: 1px solid $color-gray;
+		float: right;
+		margin: 14px 20px 0 0;
+		padding: 0 20px 0 0;
+
+		&:first-child {
+			border-right: 0;
+			margin-right: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.page-title-small {
+	border-bottom: 1px solid rgba(#000, .06);
+	padding-bottom: 15px;
+}

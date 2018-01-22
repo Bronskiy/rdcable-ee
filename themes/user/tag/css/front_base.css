@@ -1,0 +1,33 @@
+.solspace_tag_group {
+	font-family: 	Arial,'Helvetica Neue',Helvetica,sans-serif;
+	font-size:		12.5px;
+	color:			#5F6C74;
+}
+
+.solspace_tag_group .tag_section_name {
+	width:	15%;
+}
+
+	.solspace_tag_group .tag_section_name .staticwrap {
+		width: 	110px;
+	}
+
+.solspace_tag_group .tag_section_data {
+	width:	75%;
+}
+
+	.solspace_tag_group .tag_section_data.all_closed {
+		width:	100%;
+	}
+	
+/* When browsers are open larger, this looks bad, so adjust on media */	
+
+@media only screen and (min-width : 900px) {
+	.solspace_tag_group .tag_section_name {
+		width:	11%;
+	}
+
+	.solspace_tag_group .tag_section_data {
+		width:	80%;
+	}
+}	

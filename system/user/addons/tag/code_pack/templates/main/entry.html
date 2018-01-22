@@ -1,0 +1,75 @@
+{embed="%prefix%inc/index" page_title="Entry Details"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="entry"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>Entry Details</h1>
+				<p class="lead"></p>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-8">
+					{exp:channel:entries require_entry="yes"}
+						<h3>{title}</h3>
+						<p>By <b>{author}</b> on <b>{entry_date format="%F %j, %Y"}</b></p>
+						<p>
+						{exp:tag:tags
+  							entry_id="{entry_id}"
+							orderby="tag_name" sort="asc"
+							limit="10"
+							dynamic="no"
+						}
+							<a href="{path='%prefix%main/entries'}/{websafe_tag}" class="label label-info">
+								<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {tag}
+							</a>&nbsp;
+							{if tag_no_results}
+								Sorry, no tags are assigned to this entry.
+							{/if}
+						{/exp:tag:tags}
+						</p>
+						<p>
+						{if body}
+							{body}
+						{if:else}
+							<div class="alert alert-warning" role="alert">
+								No <b>body</b> field available. These demo templates assume you have a field named "body" for the main entry data. Just update this to your actual field name if it's something different.
+							</div>
+						{/if}
+						</p>
+						{embed="%prefix%inc/entry_relationships" entry_id="{entry_id}"}
+
+					{if no_results}
+						<div class="alert alert-warning" role="alert">
+							<p><strong>Sorry, no entry was found.</strong> If you continue to have trouble displaying an entry, make sure that:</p>
+							<ul>
+								<li>channel entries exist for your site.</li>
+								<li>the channel entry is not <i>closed</i>, have a <i>future</i> or <i>expired</i> date, etc.</li>
+							</ul>
+						</div>
+					{/if}
+					{/exp:channel:entries}
+				</div>
+
+				<div class="col-sm-4">				
+					{embed="%prefix%inc/sidebar"}
+				</div>
+      		</div>
+
+			<div class="well ss-pageinfo">
+				<h2>About This Page</h2>
+				<p>The "Entry Details" page displays info for the selected channel entry.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://docs.expressionengine.com/v3/channel/channel_entries.html">EE Channel:Entries</a> to display channel entry data.</li>
+					<li><a href="https://solspace.com/expressionengine/tag/docs/tags/">Tag:Tags</a> to display the tags currently assigned to the entry.</li>
+					<li><a href="https://solspace.com/expressionengine/tag/docs/related_entries/">Tag:Related_Entries</a> to display a list of entries that share some of the same tag(s).</li>
+					<li><a href="https://solspace.com/expressionengine/tag/docs/cloud/">Tag:Cloud</a> to display a list of most popular tags on the right sidebar.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

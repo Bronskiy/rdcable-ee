@@ -1,0 +1,235 @@
+{if segment_3 == ''}
+{redirect="404"}
+{/if}
+<?php
+session_start();
+
+foreach ($_POST as $key => $val) {
+  if (!isset($_SESSION[$key]) || ($val !== $_SESSION[$key])) {
+    $_SESSION[$key] = $val;
+  }
+}
+
+?>
+{layout="_includes/_wrapper"}
+
+
+{exp:switchee variable="{segment_2}" parse="inward"}
+
+{case value="category"}
+<?php
+{exp:channel:category_heading channel="product_categories"}
+$val_category = '{category_name}';
+{/exp:channel:category_heading}
+?>
+<div class="main-wrapper">
+  <div class="main">
+    <div class="main-inner">
+      <div class="page-title">
+        <div class="container">
+          <h1><?php echo $val_category; ?></h1>
+          {embed="_includes/_contact_info"}
+        </div>
+      </div>
+      <div class="container">
+        <nav class="breadcrumb">
+          <a class="breadcrumb-item" href="/">Каталог</a>
+          <span class="breadcrumb-item active"><?php echo $val_category; ?></span>
+        </nav>
+        <div class="row">
+          <div class="col-md-8 col-lg-9">
+            {exp:channel:entries channel="product_categories"}
+            <div class="listing-row">
+              <div class="listing-row-inner">
+                <div class="listing-row-content">
+                  <div class="listing-row-content-header">
+                    <h2><a href="{url_title_path='catalog/products'}">{title}</a></h2>
+                  </div>
+                  <div class="listing-row-content-body">
+                    {exp:snippet total="500"  ellipsis="..."}{category_description}{/exp:snippet}
+                    <div class="listing-row-content-read-more">
+                      <a href="{url_title_path='catalog/products'}">Продукция</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/exp:channel:entries}
+          </div>
+          {embed="_includes/_sidebar"}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/case}
+
+{case value="products"}
+{exp:channel:entries url_title="{segment_3}" disable="member_data|pagination" }
+{if no_results}
+{redirect="404"}
+{/if}
+<div class="main-wrapper">
+  <div class="main">
+    <div class="main-inner">
+      <div class="page-title">
+        <div class="container">
+          <h1>{title}</h1>
+          {embed="_includes/_contact_info"}
+
+        </div>
+      </div>
+      <div class="container">
+        <nav class="breadcrumb">
+          <a class="breadcrumb-item" href="/">Каталог</a>
+          {categories}<a class="breadcrumb-item" href="/catalog/category/{category_url_title}">{category_name}</a>{/categories}
+          <span class="breadcrumb-item active">{title}</span>
+        </nav>
+        {if category_image}
+        <div class="box">
+          <div class="box-inner">
+
+            <div class="category-image">
+              <img src="" alt="{title}">
+            </div>
+
+          </div>
+        </div>
+        {/if}
+
+        <div class="box">
+          <div class="box-inner">
+            {parents field="product_categoies" orderby="title" sort="asc" }
+            {if parents:count == 1}
+            <table class="table table-hover product-table">
+              <thead>
+                <tr>
+                  <th>Наименование</th>
+                  <th class="desc">Описание</th>
+                  <th>Ед.изм.</th>
+                  <th>Наличие</th>
+                  <th>Цена</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {/if}
+                <tr>
+                  <td>{parents:title}</td>
+                  <td><div>{if parents:product_desc}{parents:product_desc}{if:else}-{/if}</div></td>
+                  <td>{if parents:product_measure}{parents:product_measure}{if:else}-{/if}</td>
+                  <td>{if parents:product_qty}{parents:product_qty}{if:else}-{/if}</td>
+                  <td>{if parents:product_price}{parents:product_price}{if:else}-{/if}</td>
+                  <td>
+                    <form class="input-group" id="addToCart {parents:entry_id}" method="post" action="" accept-charset="UTF-8">
+                      <input type="hidden" name="csrf_token" value="{csrf_token}">
+                      <input type="hidden" name="stopDuplicate" id="stopDuplicate{parents:entry_id}" value="<?php echo microtime(); ?>" />
+                      <input type="hidden" name="productId" value="{parents:entry_id}">
+                      <input type="hidden" name="productTitle" value="{parents:title}">
+                      <input type="hidden" name="productPrice" value="{parents:product_price}" placeholder="0">
+                      <input type="text" name="productQty" class="form-control" placeholder="0">
+                      <span class="input-group-btn">
+                        <input class="btn btn-secondary" type="submit" name="submitprod" onclick="document.getElementById('stopDuplicate{parents:entry_id}').value=randomString();" value="Заказать">
+                      </span>
+                    </form>
+                  </td>
+                </tr>
+                {if parents:count == parents:total_results}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        {/if}
+        {!--
+          {paginate}
+          <div class="row">
+            <div class="col-md-12">
+              {pagination_links}
+              <ul class="pagination pull-right">
+                {previous_page}
+                <li class="page-item"><a class="page-link" href="{pagination_url}">Назад</a></li>
+                {/previous_page}
+
+                {page}
+                <li class="page-item {if current_page}active{/if}"><a class="page-link" href="{pagination_url}">{pagination_page_number}</a></li>
+                {/page}
+
+                {next_page}
+                <li class="page-item"><a class="page-link" href="{pagination_url}">Вперед</a></li>
+                {/next_page}
+              </ul>
+              {/pagination_links}
+            </div>
+          </div>
+          {/paginate}
+          --}
+
+          {/parents}
+          <div class="listing-tabs">
+            <div class="listing-tabs-header">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#category_description" data-toggle="tab">Описание</a>
+                </li>
+                {if category_specs}
+                <li class="nav-item">
+                  <a class="nav-link" href="#category_specs" data-toggle="tab">Характеристики</a>
+                </li>
+                {/if}
+                {if category_weight}
+                <li class="nav-item">
+                  <a class="nav-link" href="#category_weight" data-toggle="tab">Вес, диаметры</a>
+                </li>
+                {/if}
+              </ul>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane active" id="category_description" role="tabpanel">
+                <div class="listing-boxes">
+                  <div class="row">
+                    {category_description}
+                  </div>
+                </div>
+              </div>
+              {if category_specs}
+              <div class="tab-pane" id="category_specs" role="tabpanel">
+                <div class="listing-boxes">
+                  <div class="row">
+                    {category_specs}
+                  </div>
+                </div>
+              </div>
+              {/if}
+              {if category_weight}
+              <div class="tab-pane" id="category_weight" role="tabpanel">
+                <div class="listing-boxes">
+                  <div class="row">
+                    {category_weight}
+                  </div>
+                </div>
+              </div>
+              {/if}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      {/exp:channel:entries}
+      <script language="javascript" type="text/javascript">
+      function randomString() {
+      	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+      	var string_length = 8;
+      	var randomstring = '';
+      	for (var i=0; i<string_length; i++) {
+      		var rnum = Math.floor(Math.random() * chars.length);
+      		randomstring += chars.substring(rnum,rnum+1);
+      	}
+      	return randomstring;
+      }
+      </script>
+      {/case}
+      {case value="|#.#"}
+      {redirect="404"}
+      {/case}
+      {/exp:switchee}

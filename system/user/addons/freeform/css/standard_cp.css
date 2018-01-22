@@ -1,0 +1,92 @@
+.chosen_field_list, .field_list {
+	border: 1px solid darkgrey;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 250px;
+	background-color: #fff;
+	width: 48.5%;
+}
+
+.chosen_field_list .field_tag, .field_list .field_tag {
+	color: #000;
+	border-bottom: 1px solid darkgrey;
+	padding: 5px 5px 5px 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.field_list .field_tag:before, .chosen_field_list .field_tag:before {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Regular', sans-serif;
+}
+
+.field_list .field_tag:before {
+	content: '\002B';
+	color: #7baf55;
+}
+
+.chosen_field_list .field_tag:before {
+	content: '\E208';
+	color: #bc4848;
+}
+
+.chosen_field_list .field_tag .field_label, .field_list .field_tag .field_label {
+	font-weight: bold;
+}
+
+.chosen_field_list .field_tag.sort_active, .field_list .field_tag.sort_active {
+	border: 1px solid darkgrey;
+	background-color: inherit;
+	-webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.chosen_field_list .field_tag.ui-sortable-helper, .field_list .field_tag.ui-sortable-helper {
+	background-color: inherit;
+	border: 1px solid darkgrey;
+	height: 25px !important;
+	-webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.chosen_field_list .field_tag .freeform_edit_button, .field_list .field_tag .freeform_edit_button {
+	float: right;
+	margin-left: 5px;
+	margin-top: -1px;
+}
+
+.chosen_field_list.uses_header, .field_list.uses_header {
+	border-top: none;
+	-webkit-border-radius: 0px 0px 3px 3px;
+	-moz-border-radius: 0px 0px 3px 3px;
+	-ms-border-radius: 0px 0px 3px 3px;
+	-o-border-radius: 0px 0px 3px 3px;
+	border-radius: 0px 0px 3px 3px;
+}
+
+.chosen_field_list.uses_header .field_tag, .field_list.uses_header .field_tag {
+	font-weight: normal;
+	color: inherit;
+}
+
+.field_list {
+	float: left;
+}
+
+.field_list.field_list_full {
+	width: 100%;
+	float: none;
+}
+
+.chosen_field_list {
+	float: right;
+}

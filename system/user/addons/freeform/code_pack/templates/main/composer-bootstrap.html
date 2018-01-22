@@ -1,0 +1,163 @@
+{embed="%prefix%inc/index" page_title="Composer-based Form with Bootstrap Template"}
+		<style type="text/css">
+			.freeform_composer .form-group.required .field_label:after { content: "*"; color: red; }
+			.freeform_composer ul.dynamic_recipients { list-style: none; padding: 0; }
+			.freeform_composer ul.dynamic_recipients label { font-weight: normal; }
+		</style>
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="composer"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>
+					Composer-based Form with Bootstrap Template&nbsp;
+					<small><span class="label label-warning">
+						<span class="glyphicon glyphicon-star"></span> Freeform Pro only
+					</span></small>
+				</h1>
+				<p class="lead">This page contains an example form built with Freeform Pro using the Composer-based approach, formatted and styled with Bootstrap in a custom Composer Template. Composer Templates can be created inside the Freeform control panel and assigned to Composer-based form(s), or coded directly into an EE template. This example has the Composer Template code directly inside this EE Template.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-md-9">
+
+				{if segment_3 == "success"}
+					<div class="alert alert-success" role="alert">
+						<p class="lead">
+                        	Freeform entry has been successfully submitted!
+						</p>
+					</div>
+				{/if}
+
+					{exp:freeform:composer
+						form_name="COMPOSER_FORM_NAME" {!-- Change this to your form short name --}
+						status="open"
+						return="%prefix%main/composer-bootstrap/success"
+					}
+					<div class="freeform_composer">
+					{composer:page}
+						{composer:rows}
+							<div class="row">
+							{composer:columns}
+								<div class="{if composer:column_total == "1"}col-sm-12{if:elseif composer:column_total == "2"}col-sm-6{if:elseif composer:column_total == "3"}col-sm-4{if:elseif composer:column_total == "4"}col-sm-3{/if}">
+								{if composer:field_total == 0}&nbsp;{/if}
+								{composer:fields}
+									{if composer:field_type == 'nonfield_title'}
+										<h3>{composer:field_output}</h3>
+									{if:elseif composer:field_type == 'nonfield_paragraph'}
+										{composer:field_output}
+									{if:else}
+										<div class="form-group{if composer:field_required} required{/if}">
+										{if composer:field_label}
+											{if composer:field_type == 'nonfield_captcha'}
+												{if freeform:captcha}
+													<label class="field_label" for="freeform_captcha">
+														Captcha
+													</label>
+												{/if}
+											{if:elseif composer:field_type == 'checkbox'}
+												{!-- We'll display its label later down the page --}
+											{if:else}
+												<label class="field_label" {if composer:field_name != ''}for="freeform_{composer:field_name}"{/if}>
+													{composer:field_label}
+												</label>
+											{/if}
+										{/if}
+										{if composer:field_output}
+											{if composer:field_type == 'nonfield_captcha'}
+												{if freeform:captcha}
+												<div class="row">
+													<div class="col-sm-6">
+														<input type="text" name="captcha" id="freeform_captcha" class="form-control" placeholder="Enter the word you see in the image" />
+													</div>
+													<div class="col-sm-6">
+														{freeform:captcha}
+													</div>
+												</div>
+												{/if}
+											{if:elseif composer:field_type == 'checkbox_group'}
+												{freeform:field:{composer:field_name}
+													wrapper_open="" wrapper_close=""
+													row_wrapper_open="<div class='checkbox'><label>" row_wrapper_close="</label></div>"
+													label_wrapper_open="" label_wrapper_close=""
+													input_wrapper_open="" input_wrapper_close=""
+													order="CL"
+												    attr:id="freeform_{composer:field_name}"
+												}
+											{if:elseif composer:field_type == 'checkbox'}
+												<div class="checkbox">
+													<label>
+														<input type="hidden" name="{composer:field_name}" value="n" />
+														<input type="checkbox" name="{composer:field_name}" id="freeform_{composer:field_name}" value="y">
+														{composer:field_label}
+													</label>
+												</div>
+											{if:elseif composer:field_type == 'radio'}
+												{freeform:field:{composer:field_name}
+													wrapper_open="" wrapper_close=""
+													row_wrapper_open="<div class='radio'><label for='%id%'>" row_wrapper_close="</label></div>"
+													label_wrapper_open="" label_wrapper_close=""
+													input_wrapper_open="" input_wrapper_close=""
+													order="RL"
+						   							attr:id="freeform_{composer:field_name}"
+												}
+											{if:elseif composer:field_type == 'file_upload'}
+												{composer:field_output}
+											{if:elseif composer:field_type == 'nonfield_dynamic_recipients'}
+												{composer:field_output}
+											{if:elseif composer:field_type == 'nonfield_submit'}
+												<button type="submit" class="btn btn-success">Submit</button>
+											{if:elseif composer:field_type == 'nonfield_submit_previous'} {!-- for multi-page forms --}
+												<input type="submit" name="submit_to_previous" value="Previous" class="btn btn-success" />
+											{if:else}
+												{freeform:field:{composer:field_name}
+													attr:id="freeform_{composer:field_name}"
+													attr:class="form-control"
+													attr:placeholder="{composer:field_label}"
+												}
+											{/if}
+										{/if}
+										</div>
+									{/if}
+								{/composer:fields}
+								</div>
+							{/composer:columns}
+							</div>
+						{/composer:rows}
+					{/composer:page}
+					</div>
+					{/exp:freeform:composer}
+
+					<div class="alert alert-warning">
+						<h4>Important</h4>
+						<p>
+							This page will not immediately work like the other pages. You'll need to create a
+							Composer-based form in the Freeform Pro control panel first, and then update the name
+							in the <strong>form_name</strong> parameter in this template.
+						</p>
+					</div>
+				</div>
+
+				<div class="col-md-3">				
+{embed="%prefix%inc/sidebar"}
+				</div>
+
+      		</div>
+
+			<div class="well ss-pageinfo">
+				<h2>About This Page</h2>
+				<p>This page makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/composer">Freeform:Composer</a> to display a prebuilt contact form for users to fill out and submit.</li>
+				</ul>
+				<p>The global sidebar on the right makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/form_info">Freeform:Form_Info</a> to display a list of available Freeform forms.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

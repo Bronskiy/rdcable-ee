@@ -1,0 +1,32 @@
+.listing-user {
+  @include clearfix();
+  margin: 0 0 30px 0;
+
+  .avatar {
+    float: left;
+    height: 48px;
+    margin: 0 20px 0 0;
+    width: 48px;
+  }
+
+  .listing-user-title {
+    float: left;
+
+    h2 {
+      color: $color-black;
+      font-size: 17px;
+      margin: 6px 0 0 0;
+    }
+
+    h3 {
+      color: lighten($color-black, 30%);
+      font-size: 14px;
+      margin: 4px 0 0 0;
+    }
+  }
+
+  .social {
+    float: right;
+    margin: 10px 0 0 0;
+  }
+}

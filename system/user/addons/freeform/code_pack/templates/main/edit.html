@@ -1,0 +1,137 @@
+{embed="%prefix%inc/index" page_title="Edit Entry"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="basic"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>
+					Edit Entry
+					<small><span class="label label-warning">
+						<span class="glyphicon glyphicon-star"></span> Freeform Pro only
+					</span></small>
+				</h1>
+				<p class="lead">This page contains a form for editing Freeform entries for a form using the EE Template-based approach. Entries can be edited by authors of the entry, but in this example we have restricted editing to Super Admins only.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-md-9">
+
+					<h3>Edit Freeform Entry</h3>
+					<p>Modify the form submission below.</p>
+				{if logged_in_group_id == "1"}
+					{exp:freeform:edit
+						form_name="contact"
+						entry_id="{segment_3}"
+						allow_status_edit="yes"
+						required="first_name|last_name|email|user_message"
+						inline_errors="yes"
+						return="%prefix%main/entry/{segment_3}/updated"
+					}
+						{if freeform:general_errors}
+							<p class="text-danger"><strong>There were some error(s) with your submission:</strong></p>
+							<ul class="text-danger">
+							{freeform:general_errors}
+								<li>{freeform:error_message}</li>
+							{/freeform:general_errors}
+							</ul>
+						{/if}
+						<div class="form-group{if freeform:error:first_name OR freeform:error:last_name} has-error{/if}">
+							<label for="first_name" class="control-label">Name</label>
+							<div class="row">
+								<div class="col-sm-6">
+									{freeform:field:first_name
+										attr:id="first_name"
+										attr:class="form-control"
+										attr:placeholder="Your first name"
+									}
+								</div>
+								<div class="clearfix visible-xs" style="height: 10px;"></div>
+								<div class="col-sm-6">
+									{freeform:field:last_name
+										attr:id="last_name"
+										attr:class="form-control"
+										attr:placeholder="Your last name"
+									}
+								</div>
+							</div>
+							{if freeform:error:first_name}
+								<span class="help-block">{freeform:error:first_name}</span>
+							{/if}
+							{if freeform:error:last_name}
+								<span class="help-block">{freeform:error:last_name}</span>
+							{/if}
+						</div>
+						<div class="form-group{if freeform:error:email} has-error{/if}">
+							<label for="email" class="control-label">Email</label>
+							{freeform:field:email
+								attr:id="email"
+								attr:class="form-control"
+								attr:placeholder="Your email address"
+							}
+							{if freeform:error:email}
+								<span class="help-block">{freeform:error:email}</span>
+							{/if}
+						</div>
+						<div class="form-group{if freeform:error:user_message} has-error{/if}">
+							<label for="user_message" class="control-label">Message</label>
+							{freeform:field:user_message
+								attr:id="user_message"
+								attr:class="form-control"
+								attr:rows="6"
+								attr:placeholder="Your message"
+							}
+							{if freeform:error:user_message}
+								<span class="help-block">{freeform:error:user_message}</span>
+							{/if}
+						</div>
+						<div class="form-group">
+							<label for="status" class="control-label">Status</label>
+							<select name="status" id="status" class="form-control">
+							{freeform:statuses}
+								<option value="{status_name}"{if freeform:edit_data:status == "{status_name}"} selected="selected"{/if}>
+									{status_label}
+								</option>
+							{/freeform:statuses}
+							</select>
+						</div>
+						<button type="submit" class="btn btn-md btn-success">Update</button>
+					{if freeform:no_results}
+						<div class="alert alert-warning">
+							<h4>Freeform Entry Not Found</h4>
+							<p>
+								Please make sure you're specifying the correct Freeform entry ID and/or Freeform form short name.
+							</p>
+						</div>
+					{/if}
+					{/exp:freeform:edit}
+				{if:else}
+					<div class="alert alert-danger" role="alert">
+						<p class="lead">Sorry, you do not have sufficient privileges to edit this entry.</p>
+					</div>
+				{/if}
+
+				</div>
+
+				<div class="col-md-3">				
+{embed="%prefix%inc/sidebar"}
+				</div>
+
+      		</div>
+
+			<div class="well ss-pageinfo">
+				<h2>About This Page</h2>
+				<p>This page makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/edit">Freeform:Edit</a> to display a form for editing Freeform entries.</li>
+				</ul>
+				<p>The global sidebar on the right makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/form_info">Freeform:Form_Info</a> to display a list of available Freeform forms.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

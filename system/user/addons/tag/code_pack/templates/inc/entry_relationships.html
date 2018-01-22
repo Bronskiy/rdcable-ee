@@ -1,0 +1,54 @@
+				{exp:tag:related_entries
+					entry_id="{embed:entry_id}"
+					orderby="relevance" sort="desc"
+					limit="5"
+					dynamic="no"
+   				}
+					{if count == "1"}
+						<div class="list-group">
+							<span class="list-group-item list-group-item-info">
+								<h5>Entries with Similar Tags</h5>
+							</span>
+					{/if}
+							<a href="{url_title_path='%prefix%main/entry'}" class="list-group-item">
+								<b>{title}</b> &nbsp;<small class="text-info"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp; {tag_relevance} matches ({tag_relevance_percent}%)</small>
+								{!-- Begin Testing and Debugging --}
+								<ul class="solspace-debug">
+									<li>Count: <kbd>{count}</kbd></li>
+									<li>Total Results: <kbd>{total_results}</kbd></li>
+									<li>Absolute Count: <kbd>{absolute_count}</kbd></li>
+									<li>Absolute Results: <kbd>{absolute_results}</kbd></li>
+									<li>Embed Entry ID: <kbd>{embed:entry_id}</kbd></li>
+								</ul>
+								{!-- End Testing and Debugging --}
+							</a>
+						{if tag_no_results}
+							<div class="alert alert-warning" role="alert">
+								There are no entries with related tags.
+							</div>
+						{/if}
+					{if count == total_results}
+						</div>
+					{/if}
+					{tag_paginate}
+						<ul class="pagination pagination-sm">
+						{tag_pagination_links}
+						{first_page}
+							<li><a href="{pagination_url}">First</a></li>
+						{/first_page}
+						{previous_page}
+							<li><a href="{pagination_url}">&laquo; Previous</a></li>
+						{/previous_page}
+						{page}
+							<li{if current_page} class="active"{/if}><a href="{pagination_url}">{pagination_page_number}</a></li>
+						{/page}
+						{next_page}
+							<li><a href="{pagination_url}">Next &raquo;</a></li>
+						{/next_page}
+						{last_page}
+							<li><a href="{pagination_url}">Last</a></li>
+						{/last_page}
+						{/tag_pagination_links}
+						</ul>
+					{/tag_paginate}
+				{/exp:tag:related_entries}

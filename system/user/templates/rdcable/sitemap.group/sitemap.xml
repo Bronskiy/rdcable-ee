@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>
+      https://rdcable.ru/about
+    </loc>
+    <lastmod>2017-09-04T06:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>
+      https://rdcable.ru/news
+    </loc>
+    <lastmod>2017-09-04T06:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  {exp:channel:categories category_group="1" limit="10000" style="linear"}
+  <url>
+    <loc>{path='catalog'}</loc>
+    <lastmod>2017-09-04T06:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  {/exp:channel:categories}
+  
+  {exp:channel:entries channel="product_categories" disable="categories|category_fields|custom_fields|member_data|pagination" dinamic="no" limit="10000"}
+  <url>
+    <loc>{url_title_path='catalog/products'}</loc>
+    <lastmod>{entry_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  {/exp:channel:entries}
+
+  {exp:channel:entries channel="news"  disable="categories|category_fields|custom_fields|member_data|pagination" dinamic="no" limit="10000"}
+  <url>
+    <loc>{url_title_path='news'}</loc>
+    <lastmod>{entry_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  {/exp:channel:entries}
+</urlset>

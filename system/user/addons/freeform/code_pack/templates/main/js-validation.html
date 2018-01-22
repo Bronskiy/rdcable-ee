@@ -1,0 +1,109 @@
+{embed="%prefix%inc/index" page_title="JS Validated Contact Form"}
+		<link rel="stylesheet" href="{exp:freeform:theme_folder_url}code_pack/bootstrapValidator/bootstrapValidator.css"/>
+		<style>
+			.bv-form .help-block { font-size: 15px; }
+			/* Icon position fix for Name double column */
+			.col-sm-6 .glyphicon { margin-right: 15px; }
+			/* Icon position fix for Captcha */
+			.ss-captcha .glyphicon { margin-top: 10px; }
+		</style>
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="js-validation"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>JS Validated Contact Form</h1>
+				<p class="lead">This page contains a basic example contact form with JS validation built with Freeform using the EE Template-based approach.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-md-9">
+
+					<h3>Contact Us</h3>
+					<p>Please fill out the form below to get in touch with us.</p>
+					{exp:freeform:form
+						form_name="contact"
+						form:id="contactForm"
+						status="open"
+						required="first_name|last_name|email|user_message"
+						return="%prefix%main/entry/%%entry_id%%/success"
+					}
+						<div class="form-group">
+							<label for="first_name" class="control-label">Name</label>
+							<div class="row">
+								<div class="col-sm-6">
+									{freeform:field:first_name
+										attr:id="first_name"
+										attr:class="form-control"
+										attr:placeholder="Your first name"
+									}
+								</div>
+								<div class="clearfix visible-xs" style="height: 10px;"></div>
+								<div class="col-sm-6">
+									{freeform:field:last_name
+										attr:id="last_name"
+										attr:class="form-control"
+										attr:placeholder="Your last name"
+									}
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="email" class="control-label">Email</label>
+							{freeform:field:email
+								attr:id="email"
+								attr:class="form-control"
+								attr:placeholder="Your email address"
+							}
+						</div>
+						<div class="form-group">
+							<label for="user_message" class="control-label">Message</label>
+							{freeform:field:user_message
+								attr:id="user_message"
+								attr:class="form-control"
+								attr:rows="6"
+								attr:placeholder="Your message"
+							}
+						</div>
+					{if freeform:captcha}
+						<div class="form-group ss-captcha">
+							<label for="captcha" class="control-label">CAPTCHA {freeform:captcha}</label>
+							<input type="text" name="captcha" id="captcha" class="form-control" placeholder="Please enter the word you see in the image above" />
+						</div>
+					{/if}
+						<button type="submit" class="btn btn-md btn-success">Submit</button>
+					{if freeform:no_results}
+						<div class="alert alert-warning">
+							<h4>Form Not Found</h4>
+							<p>
+								Please make sure you're specifying the correct Freeform form short name,
+								or be sure to create a form in the Freeform control panel.
+							</p>
+						</div>
+					{/if}
+					{/exp:freeform:form}
+
+				</div>
+
+				<div class="col-md-3">				
+{embed="%prefix%inc/sidebar"}
+				</div>
+
+      		</div>
+
+			<div class="well ss-pageinfo">
+				<h2>About This Page</h2>
+				<p>This page makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/form">Freeform:Form</a> to display a contact form for users to fill out and submit.</li>
+				</ul>
+				<p>The global sidebar on the right makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/form_info">Freeform:Form_Info</a> to display a list of available Freeform forms.</li>
+				</ul>
+			</div>
+{embed="%prefix%inc/footer"}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|Roboto:300,400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+
+	<link href="/assets/css/trackpad-scroll-emulator.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/chartist.min.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/jquery.raty.css" rel="stylesheet" type="text/css">
+	<link href="/assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/print.min.css">
+	<link href="/assets/css/normalize.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/explorer.css" rel="stylesheet" type="text/css">
+	{exp:seo_lite use_last_segment="yes"}
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+	<link rel="manifest" href="/assets/favicons/manifest.json">
+	<link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+	{if segment_1 == 'cart'}
+	<script type="text/javascript" src="/assets/js/print.min.js"></script>
+	{/if}
+</head>
+<body class="{{ bodyClass is defined ? bodyClass }}">
+	<div class="page-wrapper">
+		<div class="header-wrapper">
+			<div class="header">
+				<div class="container">
+					<div class="header-inner">
+						<div class="navigation-toggle toggle">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<!-- /.header-toggle -->
+						<div class="header-logo">
+							<a href="/">
+								<img src="/assets/img/logo.svg" class="svg" alt="{site_name}">
+							</a>
+						</div>
+						<!-- /.header-logo -->
+						<div class="header-nav">
+							<div class="primary-nav-wrapper">
+								<ul class="nav">
+									{exp:channel:entries channel="menu" disable="member_data|categories|pagination" orderby="menu_order" dynamic="no" sort="asc" cache="yes" refresh="576"}
+									<li class="nav-item"><a href="{menu_link}" class="nav-link ">{title}</a></li>
+									{/exp:channel:entries}
+								</ul>
+							</div>
+						</div>
+						<div class="header-toggle toggle">
+							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+						</div>
+						<div class="search-toggle toggle">
+							<i class="fa fa-search" aria-hidden="true"></i>
+							{exp:super_search:form
+									form:class="app-search"
+                    form:id="filter"
+                    return="search/results"
+                    {if segment_2 == "saved"}
+                    search_id="{segment_3}"
+                    {/if}
+                  }
+
+                  <input class="form-control" name="keywords" id="keywords" autocomplete="off" maxlength="100" value="" placeholder="Поиск..." type="text">
+									<a class="srh-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                  {/exp:super_search:form}
+									{!--
+							<form class="app-search" id="filter" role="form" type="search" autocomplete="off" method="post" action="{path='search/results'}">
+								<input type="text" id="keywords" class="form-control" placeholder="Поиск...">
+								<a class="srh-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+							</form>
+							--}
+						</div>
+						<div id="header-results"></div>
+						<div class="header-actions">
+							<ul class="nav nav-pills">
+								<li class="nav-item">
+									<a href="/cart" class="nav-link order-button" >
+										<i class="fa fa-check"></i> <span>Оформить заказ</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{layout:contents}
+
+		<div class="footer-wrapper">
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="widget">
+									<ul class="nav nav-pills">
+										{exp:channel:categories channel="products" style="linear" parent_only="yes"}
+										<li class="nav-item"><a class="nav-link" href="{path='catalog'}">{category_name}</a></li>
+										{/exp:channel:categories}
+									</ul>
+								</div>
+								<!-- /.widget -->
+							</div>
+							<div class="col-md-12">
+
+								<div class="row mt25">
+									<div class="col-md-4">
+										<div class="widget">
+											<div class="footer-logo">
+												<img src="/assets/img/logo.svg" class="svg" alt="{site_name}">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-8">
+										<div class="widget">
+											{embed="_includes/_contact_info_footer"}
+											<p class="footer-description">{about_footer}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /.col-* -->
+							<!-- /.col-* -->
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+				</div>
+				<!-- /.footer-inner -->
+			</div>
+			<!-- /.footer -->
+		</div>
+		<!-- /.footer-wrapper -->
+	</div>
+	<!-- /.page-wrapper -->
+	<div class="side-wrapper">
+		<div class="side">
+			<div class="side-inner">
+				<div class="side-user">
+					<span class="side-user-avatar-name">
+						<strong>В вашей корзине</strong>
+						<span>1 позиция</span>
+					</span>
+				</div>
+				<!-- /.side-user -->
+				<div id="cart-results" style="color: #fff;">
+          test
+        </div>
+				<ul class="nav flex-column">
+					<?php
+					$i = 0;
+					foreach ($_SESSION['cart'] as $item) {
+						if ($item['p_id'] > 0 ) {
+						$i++; ?>
+						<li class="nav-item"><a href="admin-dashboard.html" class="nav-link"><?php echo $i . '. ' . $item['p_title']; ?></a>
+							<span class="remove-product"><i class="fa fa-times" aria-hidden="true"></i></span>
+							<p><?php echo $item['p_qty']; ?></p>
+					</li>
+				<?php };
+			} ?>
+
+					<li class="nav-item"><a href="admin-dashboard.html" class="nav-link">ВВГ-П нг(А) 2*1,5 </a><span class="remove-product"><i class="fa fa-times" aria-hidden="true"></i></span></li>
+				</ul>
+				<h3>Сделать заказ</h3>
+				<form class="form-dark" method="post" action="?">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="ФИО">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Телефон">
+					</div>
+					<button class="btn btn-primary pull-right" type="submit">Заказать</button>
+				</form>
+			</div>
+		</div>
+		<!-- /.side -->
+	</div>
+	<!-- /.side-wrapper -->
+	<div class="side-overlay"></div>
+	<!-- /.side-overlay -->
+	<script type="text/javascript" src="/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/assets/js/popper.min.js"></script>
+	<script type="text/javascript" src="/assets/js/tether.min.js"></script>
+	<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/chartist.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.inlinesvg.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.affix.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.scrollTo.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.raty.js"></script>
+	<script type="text/javascript" src="/assets/js/wNumb.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.form.min.js"></script>
+	<script type="text/javascript" src="/assets/js/explorer.js"></script>
+	{analytics}
+</body>
+</html>

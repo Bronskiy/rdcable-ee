@@ -1,0 +1,69 @@
+<h5>
+  {super_search_total_results}
+  results for the keyword search:
+  "{super_search_keywords}"
+</h5>
+
+{exp:super_search:results
+  orderby="channel_id+desc+date+desc"
+  sticky="off"
+  channel="products"
+  limit="30"
+  status="not closed"
+}
+{if '{count}' == '1'}
+<div class="box">
+  <div class="box-inner">
+    <table class="table table-hover product-table">
+      <thead>
+        <tr>
+          <th>Наименование</th>
+          <th class="desc">Описание</th>
+          <th>Ед.изм.</th>
+          <th>Наличие</th>
+          <th>Цена</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {/if}
+        <tr>
+          <td>{title}</td>
+          <td><div>{if product_desc}{product_desc}{if:else}-{/if}</div></td>
+          <td>{if product_measure}{product_measure}{if:else}-{/if}</td>
+          <td>{if product_qty}{product_qty}{if:else}-{/if}</td>
+          <td>{if product_price}{product_price}{if:else}-{/if}</td>
+          <td>
+            <form class="input-group" id="addToCart {entry_id}" method="post" action="" accept-charset="UTF-8">
+              <input type="hidden" name="csrf_token" value="{csrf_token}">
+              <input type="hidden" name="productId" value="{entry_id}">
+              <input type="hidden" name="productTitle" value="{title}">
+              <input type="hidden" name="productPrice" value="{product_price}" placeholder="0">
+              <input type="text" name="productQty" class="form-control" placeholder="0">
+              <span class="input-group-btn">
+                <input class="btn btn-secondary" type="submit" name="submit" value="Заказать">
+              </span>
+            </form>
+          </td>
+        </tr>
+        {if '{count}' == '{total_results}'}
+      </tbody>
+    </table>
+  </div>
+</div>
+{/if}
+
+{if super_search_no_results}
+<p><strong>Ничего не найдено.</strong></p>
+{/if}
+
+{/exp:super_search:results}
+<script>
+$('form.input-group').submit(function() {
+  $(this).ajaxSubmit({
+    target: '#cart-results',
+    url: 'https://rdcable.ru/cart'
+  });
+  return false;
+});
+</script>

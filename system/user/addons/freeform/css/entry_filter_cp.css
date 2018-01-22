@@ -1,0 +1,50 @@
+/*----------------------------------
+	misc field add
+----------------------------------*/
+/* line 4, scss/entry_filter_cp.scss */
+#freeform-entry-filters {
+  padding: 0  0 10px 0;
+}
+/* line 8, scss/entry_filter_cp.scss */
+#freeform-entry-filters b {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+/* line 14, scss/entry_filter_cp.scss */
+#freeform-entry-filters > input[type="text"],
+#freeform-entry-filters .filter_row > input[type="text"],
+#freeform-entry-filters form > input[type="text"] {
+  width: 200px;
+  margin-right: 8px;
+  margin-top: 1px;
+  padding: 4px;
+  height: 24px;
+}
+/* line 24, scss/entry_filter_cp.scss */
+#freeform-entry-filters > select,
+#freeform-entry-filters .filter_row > select {
+  width: 200px;
+  height: 27px;
+}
+/* line 31, scss/entry_filter_cp.scss */
+#freeform-entry-filters .btn {
+  height: 25px;
+  padding: 5px 8px 6px;
+}
+/* line 36, scss/entry_filter_cp.scss */
+#freeform-entry-filters > input[type="text"].datepicker,
+#freeform-entry-filters .filter_row > input[type="text"].datepicker {
+  width: 100px;
+  background-position: 96% 3px;
+  background-repeat: no-repeat;
+}
+/* line 43, scss/entry_filter_cp.scss */
+#freeform-entry-filters .filter_row {
+  margin-bottom: 10px;
+}
+/* line 46, scss/entry_filter_cp.scss */
+#freeform-entry-filters .filter_row > * {
+  margin-right: 8px;
+  float: left;
+}

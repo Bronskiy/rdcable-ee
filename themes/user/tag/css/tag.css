@@ -1,0 +1,328 @@
+.solspace_tag_group {
+	margin-top:		10px;
+	line-height:	14px;
+	font-family:	Helvetica,Arial,sans-serif;
+}
+
+	.solspace_tag_group .tag_error_dialog {
+		display:		none;
+		margin: 		5px 0 0 0;
+		position: 		absolute;
+	}
+
+	.solspace_tag_group .tag_note {
+		margin: 		0 0 10px 0;
+	}
+
+		.solspace_tag_group .tag_note label {
+			display:inline;
+			font-weight:bold;
+			font-size: 94%;
+		}
+
+		.solspace_tag_group .tag_note_contents {
+			margin-right:5px;
+		}
+
+		.solspace_tag_group .tag_note_contents .tag_sep {
+			font-weight:bold;
+		}
+
+		.solspace_tag_group .tag_note_contents.disabled,
+		.solspace_tag_group .tag_note_contents.disabled label {
+			color: #aaa;
+		}
+
+/*----------------------
+	current tags
+-----------------------*/
+
+.solspace_tag_group .current_tag,
+.solspace_tag_group .top_tag,
+.solspace_tag_group .suggest_tag {
+	background-color		: #fff;
+	border-color			: #cdcdcd;
+	-webkit-border-radius	: 4px;
+	-moz-border-radius		: 4px;
+	border-radius			: 4px;
+	border-style			: solid;
+	border-width			: 1px;
+	box-shadow				: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+	color					: #1f80bd;
+	display					: inline;
+	float					: left;
+	font-size				: 13px;
+	font-weight				: 400;
+	height					: 16px;
+	margin					: 0 5px 5px 0;
+	padding					: 3px 7px 1px 7px;
+	zoom					: 1;
+	cursor:					pointer;
+}
+
+	.solspace_tag_group .top_tag.used {
+		border: 				1px solid #cfcfcf;
+		color:					#b9b9b9;
+		cursor:					default;
+	}
+
+	.solspace_tag_group .top_tag .tag_count {
+		background: 			#aaa;
+		-moz-border-radius: 	3px;
+		-webkit-border-radius: 	3px;
+		border-radius: 			3px;
+		color: 					#fff;
+		float: 					right;
+		font-size: 				11px;
+		line-height:			13px;
+		margin: 				0px -3px 0 8px;
+		padding: 				1px 4px 0 4px;
+	}
+
+.solspace_tag_group .solspace_tag_current_tags {
+	margin-top:					5px;
+	margin-bottom:				10px;
+}
+
+.solspace_tag_group .solspace_tag_input_area {
+	margin-bottom:			10px;
+}
+
+.solspace_tag_group .tag_input {
+	/*width:					400px;  removed to work with responsive*/
+	margin-right:			10px;
+	display:				block;
+	/*float:					left;*/
+}
+
+.solspace_tag_group .solspace_tag_top_tags,
+.solspace_tag_group .solspace_tag_suggest_tags {
+	border-top:				1px solid #D1D5DE;
+	margin-top:				0;
+	padding:				5px 0 10px; 0;
+	display:				none;
+}
+
+
+.solspace_tag_group .solspace_tag_new_tags .tag_section_name {
+	display:				none;
+}
+
+.solspace_tag_group .tag_section_name {
+	display:				block;
+	color:					#515151;
+	/*float:				left;*/
+	font-size:				101%;
+	margin-bottom:			10px;
+	padding:				2px 20px 0 0;
+	/*width:					11%;*/
+}
+
+	/*this dirty trick helps how things break when the screen gets too small*/
+	.solspace_tag_group .tag_section_name .staticwrap {
+		/*width:					105px;*/
+		padding-top:			2px;
+		display:block;
+	}
+
+.solspace_tag_group .tag_section_data {
+	/*float:					left;
+	width:					80%;*/
+}
+
+
+
+/*----------------------
+	buttons
+-----------------------*/
+
+.solspace_tag_group .suggest_tags,
+.solspace_tag_group .top_tags,
+.solspace_tag_group .refresh_suggest_tags {
+	border: 				1px solid #cdcdcd;
+	color:					#1f80bd;
+	cursor:					pointer;
+	display:				block;
+	float:					left;
+	font-size:				101%;
+	margin:					0px 5px 10px 0;
+	padding:				4px 8px 2px 8px;
+	text-align:				right;
+	-moz-border-radius: 	3px;
+	-webkit-border-radius: 	3px;
+	border-radius: 			3px;
+}
+
+.solspace_tag_group .suggest_tags,
+.solspace_tag_group .top_tags {
+	height:	16px;
+}
+
+.solspace_tag_group .refresh_suggest_tags {
+	float:					left;
+	padding:				2px 4px 4px 5px;
+	margin-top:				0;
+}
+
+.solspace_tag_group .glass {
+	display: 				block;
+	float:					left;
+	height: 				14px;
+	margin:					-1px 8px 0px 0px;
+	width: 					13px;
+}
+
+	.solspace_tag_group .glass:after {
+		color				: #515151;
+		content				: '\e800';
+		font-size			: 12px;
+		margin-right		: 5px;
+		/* loaded in CP automatically by EE*/
+		font-family			: 'solspace-fa'
+	}
+
+.solspace_tag_group .star {
+	display: 				block;
+	float:					left;
+	height: 				16px;
+	margin:					-2px 4px 0px 0px;
+	width: 					16px;
+	font-weight: 			bold;
+}
+
+	.solspace_tag_group .star:after {
+		color				: #515151;
+		content				: '\e815';
+		font-size			: 12px;
+		margin-right		: 5px;
+		position			: relative;
+		top					: 1px;
+		/* loaded in CP automatically by EE*/
+		font-family			: 'solspace-fa'
+	}
+
+.solspace_tag_group .refresh {
+	display: 				block;
+	float:					left;
+	height: 				14px;
+	width: 					14px;
+}
+	.solspace_tag_group .refresh:after {
+		color				: #515151;
+		content				: '\e813';
+		font-size			: 12px;
+		margin-right		: 5px;
+		position			: relative;
+		top					: 0;
+		left        : 1px;
+		/* loaded in CP automatically by EE*/
+		font-family			: 'solspace-fa'
+	}
+
+.solspace_tag_group .loading {
+	background: 			transparent url('../images/indicator.gif') top left no-repeat;
+	display: 				none;
+	float:					left;
+	height: 				16px;
+	width: 					16px;
+	margin:					-1px;
+}
+
+.solspace_tag_group .plus,
+.solspace_tag_group .ex {
+	cursor:					pointer;
+	display: 				block;
+	height: 				16px;
+	width: 					16px;
+}
+
+	.solspace_tag_group .ex:after {
+		color				: #999;
+		content				: '\e802';
+		font-size			: 10px;
+		margin-left			: 3px;
+		position			: relative;
+		/* loaded in CP automatically by EE*/
+		font-family			: 'solspace-fa'
+	}
+
+	.solspace_tag_group .plus:after {
+		color				: #999;
+		content				: '\e803';
+		font-size			: 10px;
+		margin-left			: 3px;
+		position			: relative;
+		/* loaded in CP automatically by EE*/
+		font-family			: 'solspace-fa'
+	}
+
+.solspace_tag_group .plus {
+	float:					left;
+	margin:					-1px 4px 0 -3px;
+}
+
+.solspace_tag_group .ex {
+	float:					right;
+	margin:					-1px -3px 0 3px;
+}
+
+/* autocomplete css*/
+
+.tag_ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.tag_ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.tag_ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/*
+	if width will be 100% horizontal scrollbar will apear
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/*
+	it is very important, if line-height not setted or setted
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+}
+
+	.tag_ac_results li strong, .tag_ac_results li b {
+		font-style:		normal;
+	}
+
+.tag_ac_loading {
+	background: white url('../images/indicator.gif') right center no-repeat;
+}
+
+.tag_ac_odd {
+	background-color: #eee;
+}
+
+.tag_ac_over {
+	background-color: #555;
+	color: #fff;
+}
+
+
+/* yes we have our own, but its because this can be used on the front end as well */
+.tag_clear {
+	clear:both;
+}

@@ -1,0 +1,55 @@
+.progress-steps {
+	border-bottom: 2px solid $color-gray;
+	margin: 0 0 60px 0;	
+}
+
+.progress-step {
+	display: block;
+	padding-bottom: 16px;
+	position: relative;
+
+	&:hover {
+		text-decoration: none;
+
+		span {
+			color: $color-primary;
+		}
+	}
+
+	&:before {
+		background-color: $color-gray;
+		bottom: 0;
+		content: '';
+		display: block;
+		height: 8px;
+		left: 18px;
+		position: absolute;
+		width: 2px;
+	}
+
+	.fa {
+		background-color: $color-gray;
+		border: 3px solid #fff;
+		border-radius: 50%;
+		color: lighten($color-black, 50%);		
+		display: inline-block;
+		height: 40px;
+		line-height: 34px;
+		margin: 0 12px 0 0;
+		text-align: center;
+		width: 40px;
+	}
+
+	.title {
+		color: lighten($color-black, 30%);
+		display: inline-block;
+		font-size: 14px;
+	}
+
+	&.done {
+		.fa {
+			background-color: $color-primary;
+			color: #fff;
+		}
+	}
+}

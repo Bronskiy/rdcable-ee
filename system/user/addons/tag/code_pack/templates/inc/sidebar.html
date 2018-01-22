@@ -1,0 +1,15 @@
+					<h2>Popular Tags</h2>
+					<div class="list-group">
+					{exp:tag:cloud
+						orderby="total_entries"
+						limit="10"
+					}
+						<a href="{path='%prefix%main/entries/{websafe_tag}'}" class="list-group-item">
+							<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>&nbsp;
+							{tag} <span class="badge">{total_entries}</span>
+						</a>
+						{if tag_no_results}
+							<p>Sorry, there currently aren't any tags for this site.</p>
+						{/if}
+					{/exp:tag:cloud}
+					</div>

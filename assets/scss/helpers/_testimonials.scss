@@ -1,0 +1,90 @@
+.testimonials-wrapper {
+	margin: 80px 0;	
+	position: relative;
+
+	&:before {
+		background-color: rgba(#000, .09);
+		content: '';
+		display: block;
+		height: 1px;
+		padding: 0 1600px;
+		position: absolute;
+		top: 50%;
+		margin: 0 -1600px;
+		width: 100%;
+	}
+}
+
+.testimonial-inner {
+	background-color: $color-background;
+	padding: 0 30px;
+	position: relative;
+	z-index: 2;
+
+	blockquote {
+		background-color: transparent;
+		color: lighten($color-black, 30%);
+		font-size: 15px;
+		font-style: italic;
+		line-height: 26px;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.testimonial-user {
+	margin: 20px 0 0 0;
+}
+
+.testimonial-user-avatar {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	box-shadow: 0 0 3px rgba($color-black, .3);
+	display: inline-block;
+	height: 40px;
+	margin: 0 12px 0 0;
+	vertical-align: middle;
+	width: 40px;
+}
+
+.testimonial-user-name {
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 500;
+	vertical-align: middle;
+
+	span, strong {		
+		display: block;
+	}
+
+	strong {
+		font-weight: 600;
+	}
+
+	span {
+		color: lighten($color-black, 30%);
+	}
+}
+
+.testimonial-block {
+	border-radius: 2px;
+	border: 1px dashed darken($color-gray, 10%);
+	margin: 0 0 30px 0;
+	overflow: hidden;
+	padding: 16px; 
+	position: relative;
+
+	&:after {
+	    -webkit-font-smoothing: antialiased;
+	    bottom: -30px;
+	    content: '\f10d';
+	    color: $color-primary;
+	    font-family: 'FontAwesome';
+	    font-size: 60px;
+	    opacity: .6;
+	    position: absolute;
+	    right: -5px;	
+	}
+}

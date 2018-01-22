@@ -1,0 +1,12 @@
+.admin-footer {
+	background-color: #fff;
+	box-shadow: 0 0 3px rgba($color-black, .2);
+	color: lighten($color-black, 30%);
+	font-size: 12px;
+	line-height: 52px;
+
+	a {
+		color: $color-primary;
+		text-decoration: underline;
+	}
+}

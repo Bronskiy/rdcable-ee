@@ -1,0 +1,19 @@
+					<h3>Available Forms</h3>
+					<div class="list-group">
+					{exp:freeform:form_info
+						orderby="label" sort="asc"
+						limit="10"
+					}
+						<span class="list-group-item">
+							<span class="badge pull-right">{freeform:total_entries}</span>
+							{freeform:form_label}
+						</span>
+					{/exp:freeform:form_info}
+					</div>
+					<div class="alert alert-info" role="alert">
+						<h4>
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>&nbsp;
+							<a href="%prefix%main/troubleshooting" class="alert-link">Not Working Right?</a>
+						</h4>
+						If you're having issues with this form, check out the <a href="%prefix%main/troubleshooting" class="alert-link">Troubleshooting guide</a> for help with common issues
+					</div>

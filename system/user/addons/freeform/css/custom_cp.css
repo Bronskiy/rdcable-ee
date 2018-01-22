@@ -1,0 +1,549 @@
+/*	overrides
+	all of these are going to be prefixed with #mainContent so
+	css will take it as precedence over anything else
+*/
+/*
+jquery ui dialog overrides
+*/
+/* line 60, scss/custom_cp.scss */
+.ui-dialog .ui-dialog-titlebar {
+  -moz-box-shadow: inset 0px 1px #cfd8dc !important;
+  -webkit-box-shadow: inset 0px 1px #cfd8dc !important;
+  box-shadow: inset 0px 1px #cfd8dc !important;
+  background-color: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #607983), color-stop(100%, #304249)) !important;
+  background-image: -moz-linear-gradient(top, #607983, #304249) !important;
+  background-image: -webkit-linear-gradient(top, #607983, #304249) !important;
+  background-image: linear-gradient(to bottom, #607983, #304249) !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #777 !important;
+  border: 1px solid #304249 !important;
+  font-weight: normal;
+  text-shadow: -1px -1px 0 #333;
+  -moz-border-radius: 3px !important;
+  -webkit-border-radius: 3px;
+  border-radius: 3px !important;
+}
+/* line 67, scss/custom_cp.scss */
+.ui-dialog .submit {
+  -moz-box-shadow: inset 0px 1px #cfd8dc !important;
+  -webkit-box-shadow: inset 0px 1px #cfd8dc !important;
+  box-shadow: inset 0px 1px #cfd8dc !important;
+  background-color: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f83964), color-stop(100%, #d30c4b)) !important;
+  background-image: -moz-linear-gradient(top, #f83964, #d30c4b) !important;
+  background-image: -webkit-linear-gradient(top, #f83964, #d30c4b) !important;
+  background-image: linear-gradient(to bottom, #f83964, #d30c4b) !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #777 !important;
+  border: 1px solid #d30c4b !important;
+  color: #fff;
+  padding: 9px 13px 7px;
+}
+/* line 30, scss/custom_cp.scss */
+.ui-dialog .submit:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5093e), color-stop(100%, #a3093a)) !important;
+  background-image: -moz-linear-gradient(top, #f5093e, #a3093a) !important;
+  background-image: -webkit-linear-gradient(top, #f5093e, #a3093a) !important;
+  background-image: linear-gradient(to bottom, #f5093e, #a3093a) !important;
+}
+/* line 71, scss/custom_cp.scss */
+.ui-dialog .ui-dialog-buttonpane {
+  padding: 0;
+}
+
+/* line 76, scss/custom_cp.scss */
+#go_pro_button {
+  display: inline-block;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 6px 10px 5px;
+  margin-top: -10px;
+  color: #764c12;
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), inset 0px 1px rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), inset 0px 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), inset 0px 1px rgba(255, 255, 255, 0.3);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9b94d), color-stop(100%, #ef9528));
+  background-image: -moz-linear-gradient(top, #f9b94d, #ef9528);
+  background-image: -webkit-linear-gradient(top, #f9b94d, #ef9528);
+  background-image: linear-gradient(to bottom, #f9b94d, #ef9528);
+  text-shadow: 0 1px 0 #bbb;
+}
+/* line 87, scss/custom_cp.scss */
+#go_pro_button:hover {
+  text-decoration: none;
+}
+
+/* line 92, scss/custom_cp.scss */
+#mainContent,
+.solspace_ui_wrapper {
+  /* version number */
+  /* header */
+  /* navigation menu */
+  /* right nav submit */
+  /* general submit */
+  /* NSM override override*/
+}
+/* line 95, scss/custom_cp.scss */
+#mainContent hr,
+.solspace_ui_wrapper hr {
+  border-style: none;
+  border-bottom: 1px solid #d0d7df;
+  margin: 10px 0;
+}
+/* line 101, scss/custom_cp.scss */
+#mainContent textarea,
+#mainContent input[type="text"],
+#mainContent input[type="email"],
+#mainContent input[type="url"],
+#mainContent input[type="number"],
+#mainContent input[type="password"],
+.solspace_ui_wrapper textarea,
+.solspace_ui_wrapper input[type="text"],
+.solspace_ui_wrapper input[type="email"],
+.solspace_ui_wrapper input[type="url"],
+.solspace_ui_wrapper input[type="number"],
+.solspace_ui_wrapper input[type="password"] {
+  -moz-box-shadow: inset 1px 1px 8px 0px rgba(0, 0, 0, 0.1) !important;
+  -webkit-box-shadow: inset 1px 1px 8px 0px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: inset 1px 1px 8px 0px rgba(0, 0, 0, 0.1) !important;
+  border-color: #d1d1d1 !important;
+  -moz-border-radius: 3px !important;
+  -webkit-border-radius: 3px;
+  border-radius: 3px !important;
+}
+/* line 112, scss/custom_cp.scss */
+#mainContent .chzn-container,
+#mainContent .chzn-container *,
+#mainContent .chosen_field_list,
+#mainContent .field_list,
+#mainContent .chosen_field_list .field_tag,
+#mainContent .field_list .field_tag,
+#mainContent .freeform_ui_button,
+#mainContent .pill,
+#mainContent .row_button .first,
+#mainContent .row_button .second,
+#mainContent .row_button .third,
+.solspace_ui_wrapper .chzn-container,
+.solspace_ui_wrapper .chzn-container *,
+.solspace_ui_wrapper .chosen_field_list,
+.solspace_ui_wrapper .field_list,
+.solspace_ui_wrapper .chosen_field_list .field_tag,
+.solspace_ui_wrapper .field_list .field_tag,
+.solspace_ui_wrapper .freeform_ui_button,
+.solspace_ui_wrapper .pill,
+.solspace_ui_wrapper .row_button .first,
+.solspace_ui_wrapper .row_button .second,
+.solspace_ui_wrapper .row_button .third {
+  border-color: #d1d1d1;
+}
+/* line 127, scss/custom_cp.scss */
+#mainContent .pageContents,
+.solspace_ui_wrapper .pageContents {
+  border: 1px solid #d0d7df !important;
+  -moz-border-radius: 0 0 5px 5px !important;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 5px 5px !important;
+  background-color: #ecf1f4;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+/* line 128, scss/custom_cp.scss */
+#mainContent .pageContents #solspace_version_number,
+.solspace_ui_wrapper .pageContents #solspace_version_number {
+  margin: -28px 0 0 -300px;
+  font-size: 13px;
+  font-weight: normal;
+  /* I know i know.*/
+}
+/* line 134, scss/custom_cp.scss */
+#mainContent .pageContents #solspace_version_number strong,
+.solspace_ui_wrapper .pageContents #solspace_version_number strong {
+  font-weight: normal;
+}
+/* line 147, scss/custom_cp.scss */
+#mainContent .heading,
+.solspace_ui_wrapper .heading {
+  -moz-border-radius: 5px 5px 0 0 !important;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 5px 0 0 !important;
+  background: none;
+  -moz-box-shadow: inset 0px 1px #cfd8dc !important;
+  -webkit-box-shadow: inset 0px 1px #cfd8dc !important;
+  box-shadow: inset 0px 1px #cfd8dc !important;
+  background-color: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a0b2bb), color-stop(100%, #76878f)) !important;
+  background-image: -moz-linear-gradient(top, #a0b2bb, #76878f) !important;
+  background-image: -webkit-linear-gradient(top, #a0b2bb, #76878f) !important;
+  background-image: linear-gradient(to bottom, #a0b2bb, #76878f) !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #777 !important;
+  border: 1px solid #76878f !important;
+  margin: 0 !important;
+}
+/* line 153, scss/custom_cp.scss */
+#mainContent .heading h2,
+.solspace_ui_wrapper .heading h2 {
+  background: none;
+  padding: 10px 15px;
+  border: none !important;
+  text-shadow: 0 1px 0 #777 !important;
+}
+/* line 163, scss/custom_cp.scss */
+#mainContent .tab_menu,
+.solspace_ui_wrapper .tab_menu {
+  /*NSM override override*/
+  border: none !important;
+  background: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b0c0c8), color-stop(100%, #93a3aa)) !important;
+  background-image: -moz-linear-gradient(top, #b0c0c8, #93a3aa) !important;
+  background-image: -webkit-linear-gradient(top, #b0c0c8, #93a3aa) !important;
+  background-image: linear-gradient(to bottom, #b0c0c8, #93a3aa) !important;
+  height: auto;
+  padding: 6px 9px 0;
+}
+/* line 171, scss/custom_cp.scss */
+#mainContent .tab_menu li,
+.solspace_ui_wrapper .tab_menu li {
+  margin: 0 5px 8px;
+  border: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: none;
+  -moz-box-shadow: inset 0px 1px #cfd8dc !important;
+  -webkit-box-shadow: inset 0px 1px #cfd8dc !important;
+  box-shadow: inset 0px 1px #cfd8dc !important;
+  background-color: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #99a9b1), color-stop(100%, #80949e)) !important;
+  background-image: -moz-linear-gradient(top, #99a9b1, #80949e) !important;
+  background-image: -webkit-linear-gradient(top, #99a9b1, #80949e) !important;
+  background-image: linear-gradient(to bottom, #99a9b1, #80949e) !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #777 !important;
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px rgba(255, 255, 255, 0.3) !important;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px rgba(255, 255, 255, 0.3) !important;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px rgba(255, 255, 255, 0.3) !important;
+  padding-bottom: 3px !important;
+}
+/* line 30, scss/custom_cp.scss */
+#mainContent .tab_menu li:hover,
+.solspace_ui_wrapper .tab_menu li:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7c919b), color-stop(100%, #667b85)) !important;
+  background-image: -moz-linear-gradient(top, #7c919b, #667b85) !important;
+  background-image: -webkit-linear-gradient(top, #7c919b, #667b85) !important;
+  background-image: linear-gradient(to bottom, #7c919b, #667b85) !important;
+}
+/* line 180, scss/custom_cp.scss */
+#mainContent .tab_menu li.current,
+.solspace_ui_wrapper .tab_menu li.current {
+  background: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #738790), color-stop(100%, #586b74)) !important;
+  background-image: -moz-linear-gradient(top, #738790, #586b74) !important;
+  background-image: -webkit-linear-gradient(top, #738790, #586b74) !important;
+  background-image: linear-gradient(to bottom, #738790, #586b74) !important;
+  margin: 0 5px 8px;
+  border: none;
+}
+/* line 186, scss/custom_cp.scss */
+#mainContent .tab_menu li.current a,
+.solspace_ui_wrapper .tab_menu li.current a {
+  color: #fff;
+}
+/* line 193, scss/custom_cp.scss */
+#mainContent .tab_menu li:first-child.current,
+.solspace_ui_wrapper .tab_menu li:first-child.current {
+  margin-left: 5px;
+}
+/* line 197, scss/custom_cp.scss */
+#mainContent .tab_menu li a,
+.solspace_ui_wrapper .tab_menu li a {
+  text-shadow: 0 1px 0 #666;
+  font-weight: normal;
+  /*nsm override override*/
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  margin: 0 !important;
+  padding: 7px 12px 4px 12px !important;
+  font-size: 13px !important;
+  text-transform: none !important;
+}
+/* line 214, scss/custom_cp.scss */
+#mainContent .rightNav,
+.solspace_ui_wrapper .rightNav {
+  /*NSM override override*/
+}
+/* line 215, scss/custom_cp.scss */
+#mainContent .rightNav .submit,
+.solspace_ui_wrapper .rightNav .submit {
+  -moz-box-shadow: inset 0px 1px #cfd8dc !important;
+  -webkit-box-shadow: inset 0px 1px #cfd8dc !important;
+  box-shadow: inset 0px 1px #cfd8dc !important;
+  background-color: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f83964), color-stop(100%, #d30c4b)) !important;
+  background-image: -moz-linear-gradient(top, #f83964, #d30c4b) !important;
+  background-image: -webkit-linear-gradient(top, #f83964, #d30c4b) !important;
+  background-image: linear-gradient(to bottom, #f83964, #d30c4b) !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #777 !important;
+  border: 1px solid #d30c4b !important;
+  color: #fff;
+  padding: 9px 13px 7px;
+}
+/* line 30, scss/custom_cp.scss */
+#mainContent .rightNav .submit:hover,
+.solspace_ui_wrapper .rightNav .submit:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5093e), color-stop(100%, #a3093a)) !important;
+  background-image: -moz-linear-gradient(top, #f5093e, #a3093a) !important;
+  background-image: -webkit-linear-gradient(top, #f5093e, #a3093a) !important;
+  background-image: linear-gradient(to bottom, #f5093e, #a3093a) !important;
+}
+/* line 220, scss/custom_cp.scss */
+#mainContent .rightNav .button a,
+#mainContent .rightNav .button a:visited,
+#mainContent .rightNav .button a:link,
+#mainContent .rightNav .button a:active,
+.solspace_ui_wrapper .rightNav .button a,
+.solspace_ui_wrapper .rightNav .button a:visited,
+.solspace_ui_wrapper .rightNav .button a:link,
+.solspace_ui_wrapper .rightNav .button a:active {
+  margin-left: 0 !important;
+}
+/* line 230, scss/custom_cp.scss */
+#mainContent .submit,
+.solspace_ui_wrapper .submit {
+  background: none;
+  -moz-box-shadow: inset 0px 1px #cfd8dc !important;
+  -webkit-box-shadow: inset 0px 1px #cfd8dc !important;
+  box-shadow: inset 0px 1px #cfd8dc !important;
+  background-color: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f83964), color-stop(100%, #d30c4b)) !important;
+  background-image: -moz-linear-gradient(top, #f83964, #d30c4b) !important;
+  background-image: -webkit-linear-gradient(top, #f83964, #d30c4b) !important;
+  background-image: linear-gradient(to bottom, #f83964, #d30c4b) !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #777 !important;
+  border: 1px solid #d30c4b !important;
+  color: #fff;
+  padding: 9px 13px 7px;
+  line-height: 13px !important;
+}
+/* line 30, scss/custom_cp.scss */
+#mainContent .submit:hover,
+.solspace_ui_wrapper .submit:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5093e), color-stop(100%, #a3093a)) !important;
+  background-image: -moz-linear-gradient(top, #f5093e, #a3093a) !important;
+  background-image: -webkit-linear-gradient(top, #f5093e, #a3093a) !important;
+  background-image: linear-gradient(to bottom, #f5093e, #a3093a) !important;
+}
+/* line 238, scss/custom_cp.scss */
+#mainContent .button a:hover,
+#mainContent .button a:link:hover,
+#mainContent .button a:visited:hover,
+.solspace_ui_wrapper .button a:hover,
+.solspace_ui_wrapper .button a:link:hover,
+.solspace_ui_wrapper .button a:visited:hover {
+  top: 0 !important;
+}
+/* line 248, scss/custom_cp.scss */
+#mainContent .solspace_ui_wrapper .form_label a,
+#mainContent .solspace_ui_wrapper .list_labels a,
+.solspace_ui_wrapper .solspace_ui_wrapper .form_label a,
+.solspace_ui_wrapper .solspace_ui_wrapper .list_labels a {
+  color: #5f6c74;
+}
+/* line 253, scss/custom_cp.scss */
+#mainContent .solspace_ui_wrapper .tooltip,
+.solspace_ui_wrapper .solspace_ui_wrapper .tooltip {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  background: #000;
+  border: none;
+  color: #fff;
+  margin-right: -115px;
+}
+/* line 261, scss/custom_cp.scss */
+#mainContent .solspace_ui_wrapper .tooltip:after,
+.solspace_ui_wrapper .solspace_ui_wrapper .tooltip:after {
+  border-top-color: #000;
+  left: 50%;
+}
+/* line 265, scss/custom_cp.scss */
+#mainContent .solspace_ui_wrapper .tooltip:before,
+.solspace_ui_wrapper .solspace_ui_wrapper .tooltip:before {
+  border-top-color: #000;
+  left: 50%;
+}
+/* line 271, scss/custom_cp.scss */
+#mainContent .solspace_ui_wrapper fieldset.search_fieldset .submit,
+#mainContent .solspace_ui_wrapper .right_side_filter .submit,
+.solspace_ui_wrapper .solspace_ui_wrapper fieldset.search_fieldset .submit,
+.solspace_ui_wrapper .solspace_ui_wrapper .right_side_filter .submit {
+  margin-top: 0;
+  padding: 5px 13px;
+  cursor: pointer;
+}
+/* line 278, scss/custom_cp.scss */
+#mainContent .solspace_ui_wrapper .right_side_filter,
+.solspace_ui_wrapper .solspace_ui_wrapper .right_side_filter {
+  top: 60px;
+}
+/* line 283, scss/custom_cp.scss */
+#mainContent .subtext,
+#mainContent .small_label,
+.solspace_ui_wrapper .subtext,
+.solspace_ui_wrapper .small_label {
+  color: #b6b6b6;
+}
+/* line 288, scss/custom_cp.scss */
+#mainContent .sub_box,
+.solspace_ui_wrapper .sub_box {
+  background-color: #dae3e8;
+  -moz-box-shadow: inset 0px 1px rgba(0, 0, 0, 0.075), 0px 1px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: inset 0px 1px rgba(0, 0, 0, 0.075), 0px 1px rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0px 1px rgba(0, 0, 0, 0.075), 0px 1px rgba(255, 255, 255, 0.75);
+  border-color: #d5dfe4;
+  padding: 10px 10px 0 10px;
+}
+/* line 294, scss/custom_cp.scss */
+#mainContent .sub_box p, #mainContent .sub_box h1, #mainContent .sub_box h2, #mainContent .sub_box h3, #mainContent .sub_box h4,
+.solspace_ui_wrapper .sub_box p,
+.solspace_ui_wrapper .sub_box h1,
+.solspace_ui_wrapper .sub_box h2,
+.solspace_ui_wrapper .sub_box h3,
+.solspace_ui_wrapper .sub_box h4 {
+  margin-bottom: 10px;
+}
+/* line 298, scss/custom_cp.scss */
+#mainContent .sub_box.search_fieldset,
+.solspace_ui_wrapper .sub_box.search_fieldset {
+  -moz-box-shadow: 0px 1px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0px 1px rgba(255, 255, 255, 0.75);
+  box-shadow: 0px 1px rgba(255, 255, 255, 0.75);
+}
+/* line 301, scss/custom_cp.scss */
+#mainContent .sub_box.search_fieldset legend,
+.solspace_ui_wrapper .sub_box.search_fieldset legend {
+  background-color: #fafafa;
+  padding: 3px 5px 2px;
+  border: 1px solid #d0d7df;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* line 312, scss/custom_cp.scss */
+#fancybox-content .sub_box {
+  background-color: #f4f6f6;
+}
+
+/* line 318, scss/custom_cp.scss */
+#edit_field_layout_holder .field_layout_head {
+  -moz-box-shadow: inset 0px 1px #cfd8dc !important;
+  -webkit-box-shadow: inset 0px 1px #cfd8dc !important;
+  box-shadow: inset 0px 1px #cfd8dc !important;
+  background-color: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #607983), color-stop(100%, #304249)) !important;
+  background-image: -moz-linear-gradient(top, #607983, #304249) !important;
+  background-image: -webkit-linear-gradient(top, #607983, #304249) !important;
+  background-image: linear-gradient(to bottom, #607983, #304249) !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #777 !important;
+  border: 1px solid #304249 !important;
+  font-weight: normal;
+  text-shadow: -1px -1px 0 #333;
+}
+/* line 323, scss/custom_cp.scss */
+#edit_field_layout_holder .field_layout_head h3 {
+  font-weight: normal;
+}
+
+/* line 334, scss/custom_cp.scss */
+#composer_elements .header .freeform_info_button {
+  margin-top: 4px;
+}
+
+/* line 338, scss/custom_cp.scss */
+#composer {
+  -moz-box-shadow: inset 0px 1px 8px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0px 1px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 1px 8px 0px rgba(0, 0, 0, 0.2);
+  background-color: #fdfdfd;
+}
+/* line 344, scss/custom_cp.scss */
+#composer table:first-child {
+  -moz-box-shadow: 0px 4px 7px -5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 4px 7px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 7px -5px rgba(0, 0, 0, 0.3);
+}
+/* line 349, scss/custom_cp.scss */
+#composer table:first-child tr:first-child td:first-child {
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+/* line 352, scss/custom_cp.scss */
+#composer table:first-child tr:first-child td:last-child {
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+/* line 362, scss/custom_cp.scss */
+#composer .element_control .freeform_cog_button .control_flyout .flyout_petal,
+#composer .row_control .freeform_cog_button .control_flyout .flyout_petal {
+  background-image: url("../images/custom_images/cog.png");
+}
+
+/* line 368, scss/custom_cp.scss */
+#composer_side_bar > div .field_list .field_tag .freeform_edit_button {
+  background-image: url("../images/custom_images/edit_icon.png");
+  right: -3px;
+}
+
+/* line 373, scss/custom_cp.scss */
+#composer_side_bar > div .header {
+  padding: 9px;
+}
+
+/* line 377, scss/custom_cp.scss */
+#new_field_button {
+  margin-top: -2px;
+  margin-right: -2px;
+}
+
+/* line 385, scss/custom_cp.scss */
+#dynrec_editor h4,
+#hidden_field_editor h4 {
+  -moz-box-shadow: inset 0px 1px #cfd8dc !important;
+  -webkit-box-shadow: inset 0px 1px #cfd8dc !important;
+  box-shadow: inset 0px 1px #cfd8dc !important;
+  background-color: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #607983), color-stop(100%, #304249)) !important;
+  background-image: -moz-linear-gradient(top, #607983, #304249) !important;
+  background-image: -webkit-linear-gradient(top, #607983, #304249) !important;
+  background-image: linear-gradient(to bottom, #607983, #304249) !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #777 !important;
+  border: 1px solid #304249 !important;
+  font-weight: normal;
+  text-shadow: -1px -1px 0 #333;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+/*#fancybox-content {
+		background-color:	#ecf1f4;
+		border-color:		#ecf1f4;
+}*/

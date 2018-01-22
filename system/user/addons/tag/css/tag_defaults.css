@@ -1,0 +1,29 @@
+/* This only seems to work as an after element and not directly
+onto the element.*/
+.tag_ico.lock:after {
+	color				: #999;
+	content				: '\E204';
+	font-size			: 12px;
+	margin-right		: 5px;
+	position			: relative;
+	top					: 1px;
+	/* loaded in CP automatically by EE*/
+	font-family			: 'Glyphicons Regular'
+}
+
+.alpha-tag-box {
+	border-right		: 1px solid #d0d7df;
+	border-bottom		: 1px solid #d0d7df;
+	padding				: 8px;
+	float				: left;
+	margin-bottom		: -1px;
+}
+
+	.alpha-tag-box a {
+		text-decoration	: none;
+	}
+
+		.alpha-tag-box a .small {
+			font-size		: 80%;
+			margin-left		: 3px;
+		}

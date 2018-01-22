@@ -1,0 +1,13 @@
+.opening-hours {
+	margin: 0 0 30px 0;
+	
+	.open {
+		background-color: rgba(#000, .03);
+	}
+
+	.closed {
+		td {
+			font-style: italic;
+		}
+	}
+}

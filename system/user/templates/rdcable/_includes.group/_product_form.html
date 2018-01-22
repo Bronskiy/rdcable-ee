@@ -1,0 +1,9 @@
+<form class="input-group" id="addToCart {entry_id}" method="post" action="" accept-charset="UTF-8">
+  <input type="hidden" name="csrf_token" value="{csrf_token}">
+  <input type="hidden" name="productId" value="{entry_id}">
+  <input type="hidden" name="productTitle" value="{title}">
+  <input type="text" name="productQty" class="form-control" placeholder="0">
+  <span class="input-group-btn">
+    <input class="btn btn-secondary" type="submit" name="submit" value="Заказать">
+  </span>
+</form>

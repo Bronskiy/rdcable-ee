@@ -1,0 +1,25 @@
+# Capistrano
+config
+capfile
+
+# Cache
+system/user/cache/*
+
+# Settings
+system/user/config/*
+
+#Images
+images/avatars/*
+!images/avatars/index.html
+images/captchas/*
+!images/captchas/index.html
+images/forum_attatchments/*
+images/forum_attatchments/index.html
+images/member_photos/*
+!images/member_photos/index.html
+images/signature_attatchments/*
+!images/signature_attatchments/index.html
+images/smileys/*
+!images/smileys/index.html
+images/uploads/*
+!images/uploads/index.html

@@ -1,0 +1,86 @@
+.pricing-col {
+  background-color: #fff;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 0 1px 1px rgba($color-black, .12);
+  border-radius: 2px;
+  margin: 0 0 30px 0;
+  position: relative;
+
+  &.pricing-col-light {
+    background-color: $color-black;
+  }
+}
+
+.pricing-title {
+  border-bottom: 1px solid rgba(#000, .06);
+  color: lighten($color-black, 15%);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 16px 0;
+  text-align: center;
+
+  .pricing-col-light & {
+    border-color: rgba(#fff, .2);
+    color: #fff;
+  }
+}
+
+.pricing-price {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.pricing-currency {
+  color: rgba($color-primary, .5);
+  font-weight: 600;
+  vertical-align: 18px;
+
+  .pricing-col-light & {
+    color: lighten($color-primary, 10%);
+  }
+}
+
+.pricing-value {
+    color: $color-primary;
+    font-size: 40px;
+    font-weight: 300;
+
+    .pricing-col-light & {
+      color: lighten($color-primary, 10%);
+    }
+}
+
+.pricing-features {
+  list-style: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+  text-align: center;
+
+  li {
+    color: lighten($color-black, 30%);
+    line-height: 24px;
+    padding: 10px 0;
+
+    .pricing-col-light & {
+      color: #fff;
+    }
+  }
+}
+
+.pricing-btn {
+  border-top: 1px solid rgba(#000, .06);
+  color: lighten($color-black, 30%);
+  display: block;
+  padding: 16px 0;
+  text-align: center;
+
+  .pricing-col-light & {
+    border-color: rgba(#fff, .2);
+    color: #fff;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}

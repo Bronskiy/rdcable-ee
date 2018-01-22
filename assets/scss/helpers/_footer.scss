@@ -1,0 +1,161 @@
+.footer-wrapper {
+	background-color: #fff;
+	box-shadow: 0 0 3px rgba($color-black, .2);	
+	color: lighten($color-black, 30%);
+	padding: 40px 0;
+	position: relative;
+	z-index: 10;
+
+	@include media-breakpoint-down(lg) {
+		.widget {
+			margin: 0 0 30px 0;
+		}
+	}
+
+	&.footer-line {
+		padding: 20px 0;
+	}
+
+	a {
+		color: lighten($color-black, 30%);
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+
+	h3 {
+		color: $color-black;
+		font-size: 14px;
+		font-weight: 700;
+
+		svg {
+			width: 34px;;
+		}
+		
+		img, svg {
+			float: left;					
+			height: 34px;
+			margin: 0 10px 0 0;			
+
+			#logo-background {
+				fill: $color-primary;
+			}
+
+			#Triangle-4 {
+				fill: $color-primary;
+			}			
+		}
+
+		span {
+			color: $color-primary;
+			display: block;
+			font-size: 11px;
+			font-weight: 700;
+			margin: 5px 0 0 0;
+		}
+	}
+
+	.nav {
+		display: block;
+	}
+
+	.nav-line {
+		float: right;
+
+		.nav-item {
+			float: left;
+			margin: 0 30px 0 0;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.nav-link {
+			padding: 0;
+		}
+	}
+
+	.nav-pills {
+		@include clearfix();
+
+		position: relative;
+
+		&:before {
+			background-color: #fff;
+			bottom: 0;
+			content: '';
+			display: block;
+			height: 1px;
+			left: 0;
+			position: absolute;
+			right: 0;
+		}
+
+		@include media-breakpoint-up(sm) {
+			.nav-item {		
+				float: left;
+				width: 47%;		
+
+				&:nth-child(2n) {
+					float: right;
+				}
+			}
+		}
+
+		.nav-link {
+			border-bottom: 1px solid $color-gray;
+			color: lighten($color-black, 30%);
+			padding: 10px 0;
+
+			&:hover {
+				color: $color-primary;
+			}
+
+			&:before {
+				-webkit-font-smoothing: antialiased;
+				content: '\f054';
+				color: $color-primary;
+				font-family: 'FontAwesome';
+				font-size: 8px;
+				margin: 0 6px 0 0;
+				vertical-align: 2px;
+			}
+		}
+	}
+}
+
+.footer-wrapper .footer-line-left, .footer-wrapper .footer-line-right {	
+	@include media-breakpoint-down(sm) {			
+		.nav-line {
+			float: none;
+			margin: 30px 0 0 0;
+		}
+
+		.nav-item { 
+			float: none;
+		}
+
+		.nav-link {
+			border-bottom: 1px solid rgba(#000, .04);
+			padding: 8px 0;
+		}
+	}	
+}
+
+.footer-line-left {
+	float: left;
+
+	@include media-breakpoint-down(sm) {
+		float: none;
+	}
+}
+
+.footer-line-right {
+	float: right;
+
+	@include media-breakpoint-down(sm) {
+		float: none;
+	}	
+}

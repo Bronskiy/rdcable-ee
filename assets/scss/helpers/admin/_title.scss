@@ -1,0 +1,62 @@
+.admin-page-title {	
+	background-color: #fff;
+	box-shadow: 0 0 3px rgba($color-black, .2);
+	margin: 0 0 40px 0;
+	padding: 22px 0;
+	position: relative;
+	z-index: 9;
+
+	h1 {	
+		display: inline-block;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 35px;
+		margin: 0;
+		padding: 0;
+		vertical-align: middle;
+
+		small {
+			color: lighten($color-black, 50%);
+			font-size: 15px;
+			font-weight: 400;
+
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+		}
+	}
+}
+
+.admin-page-title-back {
+	border: 2px solid $color-gray;
+	border-radius: 50%;
+	color: darken($color-gray, 10%);
+	display: inline-block;
+	font-size: 11px;
+	height: 28px;
+	line-height: 20px;
+	margin: 0 13px 0 0;
+	padding: 2px 6px;
+	text-align: center;
+	transition: all .2s ease;
+	vertical-align: middle;
+	width: 28px;
+
+	&:hover {
+		border-color: $color-primary;
+	}
+}
+
+.admin-page-title-actions {
+	float: right;
+
+	.btn {
+		line-height: 32px;
+		font-size: 12px;
+		margin: 3px 10px 0 0;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

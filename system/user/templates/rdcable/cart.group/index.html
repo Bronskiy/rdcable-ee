@@ -1,0 +1,250 @@
+<?php
+session_start();
+
+foreach ($_POST as $key => $val) {
+  if (!isset($_SESSION[$key]) || ($val !== $_SESSION[$key])) {
+    $_SESSION[$key] = $val;
+  }
+};
+/* Если корзина пуста и рандомный код пуст. Тогда статус пустой корзины. */
+
+if(empty($_SESSION['cart']) && empty($_POST['stopDuplicate']))
+{
+  $check_hash = 'cart-empty';
+}
+elseif (empty($_SESSION['cart']) && !empty($_POST['stopDuplicate']))
+{
+  $check_hash = false;
+}
+else
+{
+  $check_hash = array_search($_POST['stopDuplicate'], array_column($_SESSION['cart'], 'p_hash'));
+};
+
+if($check_hash || !isset($_POST['stopDuplicate']))
+{
+  /* Do nothing */
+} else {
+
+  $_SESSION['cart'][$check_hash]['p_hash'] = $_SESSION['stopDuplicate'];
+
+  /* Если не указано количество */
+
+  if($_SESSION['productQty'] == ''){
+    $quantity = 1;
+  } else {
+    $quantity = $_SESSION['productQty'];
+  };
+
+  /* Если такой товар уже в корзине. ПОиск по айди */
+
+  $ar_item = array_search($_SESSION['productId'], array_column($_SESSION['cart'], 'p_id'));
+
+  /* Если найден то присваиваем количество иначе добавляем новый */
+
+  if($ar_item ) {
+    $_SESSION['cart'][$ar_item]['p_qty'] += $quantity;
+
+  }else{
+    $cart = array (
+    'p_id' => $_SESSION['productId'],
+    'p_qty' => $quantity,
+    'p_title' => $_SESSION['productTitle'],
+    'p_price' => $_SESSION['productPrice'],
+    'p_hash' => $_SESSION['stopDuplicate']
+    );
+    $_SESSION['cart'][] = $cart;
+
+  };
+
+};
+
+?>
+
+{layout="_includes/_wrapper"}
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a class="breadcrumb-item" href="/">Каталог</a>
+    <span class="breadcrumb-item active">Корзина</span>
+  </nav>
+  <div class="table-header clearfix">
+    <h1>Корзина</h1>
+    <?php if($check_hash == 'cart-empty' ){
+      ?>
+      <div class="alert alert-success" role="alert">
+                      <strong>Корзина пуста.</strong>
+                    </div>
+      <?php
+    } else {
+    ?>
+    <div class="table-header-actions">
+      <a href="#" onclick="printJS('printJS-form', 'html')" class="btn"><i class="fa fa-download"></i> Скачать PDF</a>
+    </div>
+  <?php } ?>
+    <!-- /.table-header-actions -->
+  </div>
+  <!-- /.table-header -->
+  <?php if($check_hash == 'cart-empty' ){
+  } else { ?>
+  <div class="table-wrapper">
+    <table class="table table-bordered" id="printJS-form">
+      <thead>
+        <tr>
+          <th class="min-width center">
+            <div class="checkbox-wrapper">
+              <input type="checkbox"><span class="indicator"></span>
+            </div>
+          </th>
+          <th class="min-width center">№</th>
+          <th>Название</th>
+          <th class="min-width center">Кол-во</th>
+          <th class="min-width center">Цена</th>
+          <th class="min-width center">Наличие</th>
+          <th class="min-width"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $i = 0;
+        foreach ($_SESSION['cart'] as $item) {
+          if ($item['p_id'] > 0 ) {
+            $i++; ?>
+            <tr>
+              <td class="min-width center"><div class="checkbox-wrapper"><input type="checkbox"><span class="indicator"></span></div></td>
+              <td class="min-width center id"><?php echo $i; ?></td>
+              <td class="min-width">
+                <h2><?php echo $item['p_title']; ?></h2>
+              </td>
+              <td class="min-width no-wrap center">
+                <input type="text" name="cartProductQty" value="<?php echo $item['p_qty']; ?>" class="form-control" placeholder="0">
+
+              </td>
+              <td class="min-width price">
+                <?php echo $item['p_price']; ?>
+              </td>
+              <td class="min-width center">
+                <div class="status">
+                  <i class="fa fa-times"></i>
+                </div>
+                <!-- /.status -->
+              </td>
+              <td class="min-width">
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Действия
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Обновить</a>
+                    <a class="dropdown-item" href="#">Удалить</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          <?php };
+        } ?>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-lg-9">
+      <form method="post" action="#">
+        <div class="box">
+          <div class="box-inner">
+            <div class="box-title">
+              <h2>Личная информация</h2>
+            </div>
+            <!-- /.box-title -->
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>ФИО</label>
+                  <input class="form-control" type="text">
+                </div>
+                <!-- /.form-group -->
+                <div class="form-group">
+                  <label>E-mail</label>
+                  <input class="form-control" type="text">
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.col -->
+              <div class="col">
+                <div class="form-group">
+                  <label>Компания</label>
+                  <input class="form-control" type="text">
+                </div>
+                <!-- /.form-group -->
+                <div class="form-group">
+                  <label>Телефон</label>
+                  <input class="form-control" type="text">
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.box-inner -->
+        </div>
+        <!-- /.box -->
+
+      </form>
+      <div class="next-prev">
+        <div class="prev">
+          <a href="/" class="btn btn-secondary">Вернуться в каталог</a>
+        </div>
+        <div class="next">
+          <a href="#" class="btn btn-primary">Оформить</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-3">
+      <div class="sidebar">
+        <div class="widget">
+          <div class="total">
+            <div class="title">Итого</div>
+            <?php
+            $cart_sum = 0;
+            foreach ($_SESSION['cart'] as $item) {
+              $cart_sum += $item['p_qty'] * $item['p_price'];
+            }
+            echo '<div class="value">' . $cart_sum . '</div>'
+            ?>
+          </div>
+          <p>Итоговая сумма указана в качестве справочной информации.</p>
+          {if member_group == '1'}
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <?php
+                echo 'check_hash ' . $check_hash;
+
+                echo 'ar_item: '. $ar_item . '<br />';
+                foreach ($_SESSION['cart'] as $item) {
+                  echo 'p_id: ', $item['p_id'], '<br />';
+                  echo 'p_qty: ', $item['p_qty'], '<br />';
+                  echo 'p_title: ', $item['p_title'], '<br /><br />';
+                }
+                ?>
+              </div>
+              <h1>Dump Session</h1>
+              <pre>
+                <?php var_dump($_SESSION['cart']); ?>
+              </pre>
+              <h1>Dump POST</h1>
+              <pre>
+                <?php var_dump($_POST); ?>
+              </pre>
+
+            </div>
+          </div>
+          {/if}
+
+        </div>
+      </div>
+    </div>
+  </div>
+<?php }; ?>
+</div>

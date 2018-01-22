@@ -1,0 +1,65 @@
+<div class="col-md-4 col-lg-3">
+  <div class="sidebar">
+    <div class="widget">
+      <h3 class="widgettitle">Поиск</h3>
+      <div class="search">
+        {exp:search:simple_form channel="products"}
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-search"></i></span>
+          <input type="text" name="keywords" maxlength="100" id="keywords" placeholder="Поиск..." class="form-control">
+        </div>
+        {/exp:search:simple_form}
+      </div>
+    </div>
+    <div class="widget">
+      <h3 class="widgettitle">Информация</h3>
+      <div class="card">
+        <div class="card-inner">
+          <p><span style="color:#ff0000">Внимание!</span> <strong>Минимальная сумма заказа для физических и юридических лиц</strong> - 10.000 рублей. Доставка по всей России!</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <p>Если вы хотите заказать больше чем указано в остатках на сайте, каждый товар доступен под заказ в любом количестве!</p>
+          <a href="" class="btn btn-primary">Заказать</a>
+        </div>
+      </div>
+      <div class="card card-dark">
+        <div class="card-inner">
+          <img src="/assets/img/optochip_logo.svg" alt="optochip.org" style="margin: 0 0 10px;">
+          <p>В базе сайта <a href="https://optochip.org/" target="_blank">optochip.org</a> содержится информация о более 5 млн. электронных компонентов с актуальными остатками и ценами.</p>
+        </div>
+      </div>
+    </div>
+    <div class="widget">
+      <h2 class="widgettitle">Каталог</h2>
+      <ul class="menu nav flex-column">
+        {exp:channel:categories channel="product_categories" style="linear"}
+        <li class="nav-item">
+          <a href="{path='catalog/category/{category_url_title}'}" class="nav-link"><i class="fa fa-chevron-right"></i> <span>{category_name}</span></a>
+        </li>
+        {/exp:channel:categories}
+      </ul>
+    </div>
+    <div class="widget">
+      <h3 class="widgettitle">Новости</h3>
+      <div>
+        {exp:channel:entries channel="news" disable="categories|category_fields|member_data|pagination" limit="5" cache="yes" refresh="576" dynamic="no"}
+        <div class="listing-row-medium">
+          <div class="listing-row-medium-inner">
+
+            <div class="listing-row-medium-content">
+              <span class="listing-row-medium-category tag">{entry_date format="%d %F, %Y"}</span>
+              <h4 class="listing-row-medium-title"><a href="{url_title_path='news'}">{exp:snippet total="100" word="true" ellipsis="..."}{title}{/exp:snippet}</a></h4>
+              <div class="listing-row-medium-address">
+                {exp:snippet total="300" ellipsis="..."}{news_body}{/exp:snippet}
+                <a href="{url_title_path='news'}">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/exp:channel:entries}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,129 @@
+{embed="%prefix%inc/index" page_title="Entry View"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="entries"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>Entry View</h1>
+				<p class="lead">Below is an individual Freeform entry submission view, which allows you to see full details for the given entry.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-md-9">
+
+				{if segment_4 == "success" OR segment_4 == "updated"}
+					<div class="alert alert-success" role="alert">
+						<p class="lead">
+							{if segment_4 == "success"}
+                        		Freeform entry has been successfully submitted!
+							{/if}
+							{if segment_4 == "updated"}
+								Freeform entry has been successfully updated!
+							{/if}
+						</p>
+					</div>
+				{/if}
+
+				{exp:freeform:entries
+					form_name="contact"
+					entry_id="{segment_3}"
+					status="open|pending|closed"
+				}
+		{!-- Begin precautionary security risk member group / author checks --}
+			{if logged_in_group_id == "1" OR logged_in_member_id == "{freeform:author_id}"}
+				{if logged_out}
+					<div class="alert alert-danger" role="alert">
+						<p class="lead">Sorry, you do not have sufficient privileges to view this entry.</p>
+					</div>
+				{if:else}
+					{if logged_in_group_id == "1"}
+						<a href="{path='%prefix%main/edit'}/{freeform:entry_id}/" class="btn btn-warning btn-sm pull-right" style="margin-right:10px;" role="button">
+							<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;
+							Edit
+						</a>
+					{/if}
+					<h3>Submission from {freeform:field:first_name} {freeform:field:last_name} (ID#{freeform:entry_id})</h3>
+					<table class="table table-striped" style="margin-top: 20px;">
+						<tr>
+							<th style="width: 20%;">Date</th>
+							<td>
+								Submitted: {freeform:entry_date format="%F %j, %Y at %g:%i %a"}
+								{if freeform:edit_date != "0"}
+									<br />Last edited: {freeform:edit_date format="%F %j, %Y at %g:%i %a"}
+								{/if}
+							</td>
+						</tr>
+						<tr>
+							<th>Freeform Form</th>
+							<td>{freeform:form_label} (ID#{freeform:form_id})</td>
+						</tr>
+						<tr>
+							<th>Author</th>
+							<td>{if freeform:author}{freeform:author}{if:else}Guest{/if} </td>
+						</tr>
+						<tr>
+							<th>Status</th>
+							<td>
+							{if freeform:status == "open"}
+								<span class="label label-success">Open</span>
+							{if:elseif freeform:status == "pending"}
+								<span class="label label-warning">Pending</span>
+							{if:elseif freeform:status == "closed"}
+								<span class="label label-danger">Closed</span>
+							{if:else}
+								<span class="label label-info">{freeform:status}</span>
+							{/if}
+							</td>
+						</tr>
+						<tr>
+							<th>Name</th>
+							<td>{freeform:field:first_name} {freeform:field:last_name}</td>
+						</tr>
+						<tr>
+							<th>Email</th>
+							<td>{freeform:field:email}</td>
+						</tr>
+						<tr>
+							<th>Message</th>
+							<td>{freeform:field:user_message}</td>
+						</tr>
+					</table>
+					{if no_results}
+						<div class="alert alert-danger" role="alert">
+							<p class="lead">Sorry, no Freeform entry was found.</p>
+						</div>
+					{/if}
+		{!-- End precautionary security risk member group / author checks --}
+				{/if}
+			{if:else}
+					<div class="alert alert-danger" role="alert">
+						<p class="lead">Sorry, you are not the author of this entry, or do not have sufficient privileges to view it.</p>
+					</div>
+			{/if}
+					{/exp:freeform:entries}
+
+				</div>
+
+				<div class="col-md-3">				
+{embed="%prefix%inc/sidebar"}
+				</div>
+
+      		</div>
+
+			<div class="well ss-pageinfo">
+				<h2>About This Page</h2>
+				<p>This page makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/entries/">Freeform:Entries</a> to display the details of a Freeform entry submission.</li>
+				</ul>
+				<p>The global sidebar on the right makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/form_info">Freeform:Form_Info</a> to display a list of available Freeform forms.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

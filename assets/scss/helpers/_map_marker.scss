@@ -1,0 +1,139 @@
+.marker {
+	background-color: #fff;
+	border-radius: 50%;
+	cursor: pointer; 
+	filter: drop-shadow(0 2px 6px rgba($color-black, .44));
+	height: #{$marker-size}px;	
+	position: relative;
+	top: 0;
+	transition: all .2s ease;
+	width: #{$marker-size}px;
+
+	&.active {
+		background-color: $color-primary;
+
+		&:after {
+			border-top-color: $color-primary;
+		}
+	}
+
+	&:after {
+		border: 6px solid transparent;
+		border-width: 8px 9px;
+		border-top-color: #fff;
+		bottom: -13px;
+		content: '';		
+		display: block;
+		height: 0;
+		left: 50%;
+		position: absolute;
+		transform: translateX(-50%);
+		transition: all .2s ease;
+		width: 0;		
+	}
+
+	&:hover {
+		background-color: $color-primary;
+		top: -3px;
+
+		&:after {
+			border-top-color: $color-primary;
+		}
+
+		.marker-inner {
+			&:after {
+				bottom: -17px;
+			}
+		}
+
+		.marker-price {
+			opacity: 1;
+		}
+	}  	
+}
+
+.marker-inner { 	
+	background-color: #fff;	
+	border-radius: 50%;
+	box-sizing: border-box;
+	height: #{$marker-size - $marker-gap}px;
+	left: 50%;	
+	position: absolute;
+	text-align: center;	
+	transform: translateX(-50%) translateY(-50%);
+	top: 50%;
+	width: #{$marker-size - $marker-gap}px;
+
+	&:after {
+		background-color: rgba($color-black, .3);
+		border-radius: 50%;
+		bottom: -14px;
+		content: '';
+		display: block;
+		height: 5px;
+		left: 50%;		
+		position: absolute;
+		transform: translateX(-50%);
+		transition: all .2s ease;
+		width: 16px;
+	}
+}
+
+.marker-image {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	bottom: 0px;
+	border-radius: 50%;
+	display: block;
+	left: 0px;
+	overflow: hidden;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+	
+.marker-price {
+	background-color: #fff;
+	border-radius: 2px;
+	filter: drop-shadow(0 0 3px rgba($color-black, .2));
+	color: rgba($color-black, .8);
+	font-size: 10px;	
+	font-weight: 400;
+	line-height: 1;
+	left: -8px;
+	padding: 5px 7px;
+	position: absolute;	
+	top: 50%;
+	transform: translateX(-100%) translateY(-50%);
+	transition: all .2s ease;
+	white-space: nowrap;
+
+	&:after {
+		border: 3px solid transparent;
+		border-left-color: #fff;		
+		border-width: 3px 5px;
+		content: '';
+		display: block;
+		position: absolute;
+		right: -10px;
+		top: 50%;
+		transform: translateY(-50%);
+	}	
+}
+
+.marker-verified {
+	background-color: $color-primary;
+	color: #fff;
+	border-radius: 50%;	
+	font-size: 9px;
+	height: 15px;	
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 15px;
+
+	.fa {
+		margin: 2px 0 0 3px;
+	}
+}

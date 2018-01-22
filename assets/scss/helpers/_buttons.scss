@@ -1,0 +1,145 @@
+.btn {
+  background-color: $color-black;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 35px;
+  padding: 0 16px;
+  text-shadow: none;
+
+  &:active, &:active:focus, &:focus, &:hover {
+    border: 0;
+    box-shadow: none;
+    color: #fff;
+    outline: none;
+  }
+
+  .fa {
+    margin: 0 8px 0 -4px;
+  }
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  color: #fff;
+
+  &:active, &:active:focus, &:focus, &:hover {
+    background-color: darken($color-primary, 5%);
+    color: #fff;
+  }
+}
+
+.btn.btn-secondary {
+  background-color: $color-gray;
+  color: lighten($color-black, 30%);
+
+  &:active, &:active:focus, &:focus, &:hover {
+    background-color: darken($color-gray, 5%);
+    color: $color-black;
+  }
+
+  .fa {
+    color: lighten($color-black, 50%);
+  }
+}
+
+.btn.btn-success {
+  background-color: $color-green;
+  color: #fff;
+
+  &:active, &:active:focus, &:focus, &:hover {
+    background-color: darken($color-green, 5%);
+    color: #fff;
+  }
+
+  .fa {
+    color: #fff;
+  }
+}
+
+.btn.btn-white {
+  background-color: #fff;
+  color: rgba($color-black, .8);
+
+  &:active, &:active:focus, &:focus, &:hover {
+    background-color: #fff;
+    color: rgba($color-black, .8);
+  }
+
+  .fa {
+    color: rgba($color-black, .8);
+  }
+}
+
+.btn.btn-simple {
+  background-color: transparent;
+  color: $color-primary;
+  font-weight: 500;
+  padding-left: 0;
+  padding-right: 0;
+
+  &:active, &:active:focus, &:focus, &:hover {
+    background-color: transparent;
+    color: $color-primary;
+  }
+}
+
+.show .btn-primary.dropdown-toggle{
+  background-color: darken($color-primary, 5%);
+}
+
+.show .btn-secondary.dropdown-toggle {
+  background-color: darken($color-gray, 5%);
+}
+
+.btn-group {
+  .dropdown-menu {    
+    background-color: $color-black;
+    border: 0;
+    border-radius: 2px 0 2px 2px;
+    box-shadow: none;
+    left: auto;
+    margin: 10px 0 0 0;
+    padding: 0;
+    right: 0;
+
+    &:before {
+      border: 2px solid transparent;
+      border-bottom-color: $color-black;
+      border-right-color: $color-black;
+      content: '';
+      display: block;
+      height: 0;
+      position: absolute;
+      right: 0;
+      top: -4px;
+      width: 0;
+    }
+
+    .dropdown-item {
+      background-color: transparent;
+      border-bottom: 1px solid rgba(#fff, .2);
+      color: rgba(#fff, .8);
+      font-size: 12px;
+      padding: 8px 12px;
+      text-align: right;
+
+      &:hover {
+        background-color: transparent;
+        color: #fff;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }    
+  }
+}
+
+.btn-xl {
+  height: 44px;
+  font-size: 14px;
+}

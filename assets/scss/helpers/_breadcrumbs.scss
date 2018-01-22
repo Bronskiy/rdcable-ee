@@ -1,0 +1,22 @@
+.breadcrumb {	
+	background-color: transparent;
+	border-radius: 0;
+	font-size: 12px;
+	margin: -40px 0 40px 0;
+	padding-left: 0;
+	padding-right: 0;
+
+	.breadcrumb-item {
+		color: lighten($color-black, 45%);
+		font-weight: 400;
+
+		&:before {
+			color: rgba(#000, .2);
+		}
+
+		&.active {
+			color: $color-black;
+			font-weight: 600;
+		}
+	}	
+}

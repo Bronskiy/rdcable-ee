@@ -1,0 +1,47 @@
+{layout="_includes/_wrapper"}
+<div class="main-wrapper">
+  <div class="main">
+    <div class="main-inner">
+      <div class="container">
+        <div class="content">
+          <div class="block mt-80 pt30">
+            <div class="block-inner">
+              <div class="page-header">
+                <h1>Каталог кабельно-проводниковой продукции</h1>
+                <p>Вы можете узнать спецификацию и параметры, интересующего вас кабеля или провода и заказать его с доставкой на сайте или по телефону.</p>
+              </div>
+              <div class="categories-wrapper">
+                <div class="categories">
+                  <div class="row">
+                    {exp:gwcode_categories channel="products" entry_count="yes" style="linear" show_empty="no"}
+                    {if depth1_start}
+                    <div class="col-md-4">
+                      <div class="category-column">
+                        {if has_children}
+                        <h3><a href="{path='catalog/category/{cat_url_title}'}">{cat_name}</a></h3>
+                        <ul>
+                          {if:else}
+                          <h3><a href="{path='catalog/category/{cat_url_title}'}">{cat_name} <span>{entry_count}</span></a></h3>
+                          {/if}
+                          {/if}
+                          {if depth == 2}
+                          <li><a href="{path='catalog/category/{cat_url_title}'}">{cat_name} <span>{entry_count}</span></a></li>
+                          {/if}
+                          {if depth1_end}
+                          {if has_children}
+                        </ul>
+                        {/if}
+                      </div>
+                    </div>
+                    {/if}
+                    {/exp:gwcode_categories}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

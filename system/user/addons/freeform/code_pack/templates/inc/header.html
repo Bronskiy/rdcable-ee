@@ -1,0 +1,44 @@
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{path='%prefix%main'}">Freeform Demo</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li{if embed:page == "basic"} class="active"{/if}><a href="{path='%prefix%main'}">Basic Form</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Forms <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{path='%prefix%main/js-validation'}">JS Validation Form</a></li>
+								<li><a href="{path='%prefix%main/multi-page'}">Multi-page Form&nbsp; <span class="glyphicon glyphicon-star"></span> PRO</a></li>
+								<li><a href="{path='%prefix%main/composer'}">Composer-based Form&nbsp; <span class="glyphicon glyphicon-star"></span> PRO</a></li>
+								<li><a href="{path='%prefix%main/composer-bootstrap'}">Composer Bootstrap Template&nbsp; <span class="glyphicon glyphicon-star"></span> PRO</a></li>
+							</ul>
+						</li>
+						<li{if embed:page == "entries"} class="active"{/if}><a href="{path='%prefix%main/entries'}">Entries</a></li>
+						<li{if embed:page == "troubleshooting"} class="active"{/if}>
+							<a href="{path='%prefix%main/troubleshooting'}">
+								<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>&nbsp;
+								Troubleshooting
+							</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="https://solspace.com">Solspace.com</a></li>
+								<li><a href="https://solspace.com/expressionengine/freeform/docs">Documentation</a></li>
+								<li><a href="https://solspace.com/expressionengine/support">Support</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>

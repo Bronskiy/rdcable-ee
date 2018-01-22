@@ -1,0 +1,112 @@
+.map-wrapper {	
+	position: relative;
+}
+
+.map-inner {	
+	height: calc(100vh - 60px);
+	overflow: hidden;
+	width: 100%;
+
+	.fullscreen & {
+		height: 100vh;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100vw;
+		z-index: 9999999;
+	}
+}
+
+.map-object {	
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	position: absolute;
+	z-index: 1;
+}
+
+#map-object {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.map-results {
+	background-color: #fff;		
+	padding: 0;
+	position: relative;	
+	transition: all .3s ease;
+	width: 420px;
+	z-index: 9999;	
+
+	.tse-scrollable {
+		width: 100%;
+	}
+
+	.tse-scrollbar {
+		left: 2px;
+		right: auto;
+	}
+
+	&.compressed {
+		transform: translateX(-420px);
+	}	
+}
+
+.map-results-inner {
+	width: 420px;
+}
+
+.map-results-header {
+	border-bottom: 1px solid rgba(#000, .09);
+	padding: 20px;
+
+	p {
+		line-height: 20px;		
+		margin: 0;
+	}
+
+	h3 {
+		color: $color-primary;		
+	}
+}
+
+.map-results-toggle {
+	background-color: rgba(#fff, .8);
+	border-right: 1px solid rgba(#000, .09);
+	bottom: 0;
+	cursor: pointer;
+	position: absolute;
+	right: 0;	
+	top: 0;
+	transform: translateX(100%);
+	transition: all .3s ease;
+	width: 46px;
+	z-index: 1;
+
+	.expanded & {
+		transform: translateX(calc(100% + 420px));
+	}
+
+	.fa {
+		color: $color-primary;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transition: all .2s ease;
+		transform: translateX(-50%) translateY(-50%);
+
+		.compressed & {
+			transform: translateX(-50%) translateY(-50%) rotate(180deg);
+		}
+	}
+}
+
+.map-results-count {
+	font-size: 14px;
+	font-weight: 500;
+	margin: 20px 0 -10px 0;
+}

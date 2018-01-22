@@ -1,0 +1,13 @@
+.map-results-list {		
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba($color-black, .3);
+	box-sizing: border-box;
+	height: calc(100vh - 60px);			
+	position: relative;
+	width: 420px;
+	z-index: 11;
+
+	.fullscreen & {
+		height: 100vh;
+	}
+}

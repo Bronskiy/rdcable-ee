@@ -1,0 +1,192 @@
+{embed="%prefix%inc/index" page_title="Multi-page Form"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="multi-page"}
+
+		<div class="container">
+
+			<div class="page-header">
+				<h1>
+					Multi-page Form&nbsp;
+					<small><span class="label label-warning">
+						<span class="glyphicon glyphicon-star"></span> Freeform Pro only
+					</span></small>
+				</h1>
+				<p class="lead">This page contains a basic example multi-page form built with Freeform using the EE Template-based approach. It's a limited example since it works with the few pre-installed Freeform fields, but it should give you a good idea how to set up a multi-page form.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-md-9">
+
+					<h3>Contact Us</h3>
+					<p>Please fill out the form below to get in touch with us.</p>
+					{exp:freeform:form
+						form_name="contact"
+						status="open"
+						multipage="yes"
+						multipage_page_names="name|email|message|confirm"
+						inline_errors="yes"
+						return="%prefix%main/entry/%%entry_id%%/success"
+					}
+						{if freeform:general_errors}
+							<p class="text-danger"><strong>There were some error(s) with your submission:</strong></p>
+							<ul class="text-danger">
+							{freeform:general_errors}
+								<li>{freeform:error_message}</li>
+							{/freeform:general_errors}
+							</ul>
+						{/if}
+					{freeform:page:name required="first_name|last_name"}
+						<div class="progress">
+							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+								<span>Page {freeform:form_page} of {freeform:form_page_total}</span>
+							</div>
+						</div>
+						<div class="form-group{if freeform:error:first_name OR freeform:error:last_name} has-error{/if}">
+							<label for="first_name" class="control-label">Name</label>
+							<div class="row">
+								<div class="col-sm-6">
+									{freeform:field:first_name
+										attr:id="first_name"
+										attr:class="form-control"
+										attr:placeholder="Your first name"
+									}
+								</div>
+								<div class="clearfix visible-xs" style="height: 10px;"></div>
+								<div class="col-sm-6">
+									{freeform:field:last_name
+										attr:id="last_name"
+										attr:class="form-control"
+										attr:placeholder="Your last name"
+									}
+								</div>
+							</div>
+							{if freeform:error:first_name}
+								<span class="help-block">{freeform:error:first_name}</span>
+							{/if}
+							{if freeform:error:last_name}
+								<span class="help-block">{freeform:error:last_name}</span>
+							{/if}
+						</div>
+						{freeform:submit
+							attr:class="btn btn-md btn-success pull-right"
+							attr:value="Continue"
+						}
+					{/freeform:page:name}
+					{freeform:page:email required="email"}
+						<div class="progress">
+							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+								<span>Page {freeform:form_page} of {freeform:form_page_total}</span>
+							</div>
+						</div>
+						<div class="form-group{if freeform:error:email} has-error{/if}">
+							<label for="email" class="control-label">Email</label>
+							{freeform:field:email
+								attr:id="email"
+								attr:class="form-control"
+								attr:placeholder="Your email address"
+							}
+							{if freeform:error:email}
+								<span class="help-block">{freeform:error:email}</span>
+							{/if}
+						</div>
+						{freeform:submit
+							attr:class="btn btn-md btn-success pull-right"
+							attr:value="Continue"
+						}
+						{freeform:submit_previous
+							attr:class="btn btn-md btn-info"
+							attr:value="Previous"
+						}
+					{/freeform:page:email}
+					{freeform:page:message required="user_message"}
+						<div class="progress">
+							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+								<span>Page {freeform:form_page} of {freeform:form_page_total}</span>
+							</div>
+						</div>
+						<div class="form-group{if freeform:error:user_message} has-error{/if}">
+							<label for="user_message" class="control-label">Message</label>
+							{freeform:field:user_message
+								attr:id="user_message"
+								attr:class="form-control"
+								attr:rows="6"
+								attr:placeholder="Your message"
+							}
+							{if freeform:error:user_message}
+								<span class="help-block">{freeform:error:user_message}</span>
+							{/if}
+						</div>
+						{freeform:submit
+							attr:class="btn btn-md btn-success pull-right"
+							attr:value="Continue"
+						}
+						{freeform:submit_previous
+							attr:class="btn btn-md btn-info"
+							attr:value="Previous"
+						}
+					{/freeform:page:message}
+					{freeform:page:confirm}
+						<div class="progress">
+							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+								<span>Page {freeform:form_page} of {freeform:form_page_total}</span>
+							</div>
+						</div>
+						<h4>Confirm Your Details</h4>
+						<table class="table table-striped" style="margin-top: 20px;">
+							<tr>
+								<th style="width: 20%;"><span class="glyphicon glyphicon-ok text-success"></span>&nbsp; Name</th>
+								<td>{freeform:mp_data:first_name} {freeform:mp_data:last_name}</td>
+							</tr>
+							<tr>
+								<th><span class="glyphicon glyphicon-ok text-success"></span>&nbsp; Email</th>
+								<td>{freeform:mp_data:email}</td>
+							</tr>
+							<tr>
+								<th><span class="glyphicon glyphicon-ok text-success"></span>&nbsp; Message</th>
+								<td>{freeform:mp_data:user_message}</td>
+							</tr>
+						</table>
+						{freeform:submit
+							attr:class="btn btn-md btn-success pull-right"
+							attr:value="Submit"
+						}
+						{freeform:submit_previous
+							attr:class="btn btn-md btn-info"
+							attr:value="Previous"
+						}
+					{/freeform:page:confirm}
+					{if freeform:no_results}
+						<div class="alert alert-warning">
+							<h4>Form Not Found</h4>
+							<p>
+								Please make sure you're specifying the correct Freeform form short name,
+								or be sure to create a form in the Freeform control panel.
+							</p>
+						</div>
+					{/if}
+					{/exp:freeform:form}
+
+				</div>
+
+				<div class="col-md-3">				
+{embed="%prefix%inc/sidebar"}
+				</div>
+
+      		</div>
+
+			<div class="well ss-pageinfo">
+				<h2>About This Page</h2>
+				<p>This page makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/form">Freeform:Form</a> in <a href="https://solspace.com/expressionengine/freeform/docs/form/#multipage">multipage mode</a> to display a multi-page form for users to fill out and submit.</li>
+				</ul>
+				<p>The global sidebar on the right makes use of the following tags:</p>
+				<ul>
+					<li><a href="https://solspace.com/expressionengine/freeform/docs/form_info">Freeform:Form_Info</a> to display a list of available Freeform forms.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

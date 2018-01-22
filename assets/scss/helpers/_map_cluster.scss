@@ -1,0 +1,16 @@
+.map-wrapper .map .map-object {
+    .cluster {
+        color: #fff;
+
+      > div {
+        background-color: $color-black;
+        border-radius: 50%;
+        box-shadow: 0 0 0 6px rgba($color-black, .2);
+        color: #fff;
+        font-family: $font-family;
+        font-weight: 700;
+        height: 36px;
+        width: 36px;
+      }
+    }
+}

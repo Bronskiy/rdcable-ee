@@ -1,0 +1,115 @@
+.demos {
+	margin: 80px 0;
+}
+
+.demo {	
+	border-radius: 2px;	
+	box-shadow: 0 1px 1px rgba($color-black, .12);
+	margin: 0 0 30px 0;
+	overflow: hidden;
+
+	&:hover {
+		.demo-image {
+			bottom: 0;
+		}
+
+		.btn {
+			opacity: 1;
+		}
+	}
+}
+
+.demo-image-holder {	
+	// background-image: linear-gradient(to right, darken($color-gray, 10%), $color-gray);	
+	background-color: $color-gray;
+	overflow: hidden;	
+	padding: 20px 20px 0 20px;
+	position: relative;
+
+	&.green {
+		// background-image: linear-gradient(to right, darken($color-green, 10%), lighten($color-green, 4%));	
+		background-color: rgba($color-green, .3);
+	}
+
+	&.blue {
+		background-color: rgba($color-blue, .3);
+	}
+
+	&.purple {
+		background-color: rgba($color-purple, .3);
+	}
+
+	&.red {
+		background-color: rgba($color-red, .3);
+	}
+
+	&.orange {
+		background-color: rgba($color-orange, .3);
+	}
+
+	&.gold {
+		background-color: rgba($color-gold, .3);
+	}
+
+	&.turquoise {
+		background-color: rgba($color-turquoise, .3);
+	}
+
+	img {
+		box-shadow: 0 0 20px rgba(#000, .12);
+	}
+
+	.btn {
+		left: 50%;
+		opacity: 0;
+		position: absolute;
+		transform: translateX(-50%);
+		top: 50%;
+	}	
+}
+
+.demo-image {
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;	
+	border-radius: 0;	
+	bottom: -5px;
+	box-shadow: 0 0 15px rgba($color-black, .16);
+	display: block;	
+	height: 260px;	
+	position: relative;
+	transition: all .2s ease;
+}
+
+.demo-content {		
+	background-color: #fff;
+	border-top: 1px solid $color-gray;
+	padding: 8px 20px;	
+
+	h3 {
+		color: rgba($color-black, .8);
+		display: inline-block;
+		font-size: 14px;
+		margin: 0;
+		padding: 5px 0;
+	}
+}
+
+.demo-browser {
+	background-color: $color-black;
+	border-radius: 2px 2px 0 0;
+	height: 18px;
+	line-height: 14px;
+	padding: 0 12px;
+	position: relative;
+	z-index: 10;
+
+	span {
+		background-color: rgba(#fff, .3);
+		border-radius: 50%;
+		display: inline-block;
+		height: 5px;
+		margin: 0px 4px 0 0;
+		width: 5px;
+	}
+}

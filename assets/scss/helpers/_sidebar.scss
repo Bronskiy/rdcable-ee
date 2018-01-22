@@ -1,0 +1,85 @@
+.sidebar-wrapper-col {
+	background-color: #fff;
+	box-shadow: 0 0 3px rgba($color-black, .2);	
+	margin-top: -40px;	
+	padding-top: 40px;
+}
+
+.sidebar {
+	margin-bottom: 80px;	
+
+	.widgettitle {
+		color: $color-primary;
+		font-size: 20px;
+		font-weight: 300;
+	}
+
+	.widget {
+		margin: 0 0 30px 0;
+	}
+
+	.actions {
+		background-color: $color-primary;
+		
+		.nav-item {
+			background-color: $color-primary;
+			margin: 0;
+
+			@for $i from 1 through 10 {
+				&:nth-child(#{$i}) {    
+					background-color: darken($color-primary, 10% / $i);
+				}
+			}			
+		}
+
+		.nav-link {			
+			background-image: linear-gradient(to top, rgba($color-black, .04), transparent);
+			color: #fff;			
+			padding: 13px 10px;
+
+			&:hover {
+				background-color: rgba($color-black, .04);
+			}
+
+			.fa {
+				color: rgba(#fff, .8);
+				font-size: 14px;
+				margin: 0 5px 0 0;
+				vertical-align: baseline;
+				text-align: center;
+				width: 26px;
+			}
+		}
+	}
+
+	.menu {
+		.fa {
+			color: darken($color-gray, 20%);
+			font-size: 8px;
+			margin: 0 6px 0 0;
+			vertical-align: middle;
+		}
+	
+		span {
+			vertical-align: middle;
+		}
+
+		a {
+			color: lighten($color-black, 30%);			
+
+			&:hover {
+				color: $color-primary;
+			}
+		}
+
+		.nav-link {
+			padding: 8px 0;
+		}
+	}
+
+	.listing-row-medium {
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+}

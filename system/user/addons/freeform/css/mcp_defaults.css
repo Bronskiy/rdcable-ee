@@ -1,0 +1,191 @@
+.toolbar li.composer a:after {
+	content: '\e808';
+	font-family: 'solspace-fa'
+}
+
+table td {
+	white-space:normal;
+}
+
+	table td label {
+		font-weight: bold;
+	}
+
+table div.subtext {
+	margin-top		: 10px;
+	font-size		: 87.5%;
+	color			: #666;
+}
+
+.inc-message {
+	margin-bottom: 10px;
+}
+
+	.inc-message .alert.inline {
+		margin:0;
+	}
+
+.version-number {
+	font-size		: 80%;
+	color			: #999;
+	float			: right;
+}
+
+input.right-pull-submit,
+button.right-pull-submit {
+	float			: right;
+}
+
+.ss_clearfix:before,
+.ss_clearfix:after,
+.ss_clearfix_left:before,
+.ss_clearfix_left:after,
+.right-pull-submit:before,
+.right-pull-submit:after {
+	content:	"";
+	display:	table;
+}
+.ss_clearfix:after,
+.right-pull-submit:after {
+	clear:		both;
+}
+
+.ss_clearfix_left:after {
+	clear:		left;
+}
+
+/* This only seems to work as an after element and not directly
+onto the element.*/
+.ico.view:after {
+	color				: #999;
+	content				: '\E052';
+	font-size			: 12px;
+	margin-right		: 5px;
+	position			: relative;
+	top					: 1px;
+	font-weight			: 100;
+	/* loaded in CP automatically by EE*/
+	font-family			: 'Glyphicons Regular'
+}
+
+.code_pack_box .alert {
+	display:none;
+}
+
+.code_pack_templates tr td {
+	padding-left: 25px;
+}
+
+	.code_pack_templates tr.sub-heading td {
+		padding-left: 10px;
+	}
+
+	.code_pack_templates tr td span.icon:after {
+		color: #b5b5b5;
+		content: '\e80b';
+		margin-right: 5px;
+		position: relative;
+		top: 1px;
+		font-weight: normal;
+		font-family: 'solspace-fa'
+	}
+
+	.code_pack_templates tr.sub-heading td span.icon:after {
+		color: #77bce6;
+		content: '\e80c';
+		margin-right: 5px;
+		position: relative;
+		top: 1px;
+		font-weight: normal;
+		font-family: 'solspace-fa'
+	}
+
+
+/*tested these width values with various responsive sizes and
+these are the max we can use without accidentally breaking
+the .freeform_delete_button down to the enxt line*/
+.list_holder_input input  {
+	width: 93%;
+}
+.value_label_header_sub,
+.value_label_holder_input input {
+	width: 45%;
+}
+
+.value_label_header_sub {
+	display			: inline-block;
+	font-weight		: bold;
+}
+
+.freeform_delete_button {
+	float			: right;
+	width			: 16px;
+	height			: 16px;
+}
+
+	.freeform_delete_button:after {
+		color				: #999;
+		content				: '\E198';
+		font-size			: 12px;
+		margin-right		: 5px;
+		position			: relative;
+		top					: 5px;
+		font-weight			: 100;
+		/* loaded in CP automatically by EE*/
+		font-family			: 'Glyphicons Regular'
+	}
+
+
+/*
+I am too tired to deal with getting this change with EL.
+ https://support.ellislab.com/bugs/detail/21600/overlay-and-modal-classes-used-for-the-session-timeout-form-have-very-low-z
+These overrides are very explicit so that if they decide to do !important
+to prevent this sort of thing, it will not override ours even still because
+we have stated the entire node stack in the CSS style.
+
+(Without this complex items like composer appear above their rediculously low
+z-index settings for the 'You are logged out because you went to the bathroom
+for 30 seconds haha you cannot change this in any pref because we don't
+think you are smart enough to handle it on your own' modal CP login.)
+*/
+
+html body div.overlay {
+	z-index: 100 !important;
+}
+html body div#idle-modal {
+	z-index: 103 !important;
+}
+
+
+/*gives us hideable toolbar items*/
+.toolbar li.hide-toolbar-item {
+	display:none;
+}
+
+.toolbar-wrap {
+	min-width: 105px !important;
+}
+
+.modal .relate-wrap.col {
+	margin-bottom: 0;
+}
+
+/* removing the weird spacing here
+https://ellislab.com/forums/viewthread/248792/
+*/
+.toolbar li.remove:last-child {
+	margin-left: -1px;
+}
+
+#freeform-shared-model-errors {
+	padding: 0 20px ;
+	color: red;
+}
+
+.scroll-wrap {
+	max-height: 215px;
+}
+
+.scroll-wrap.setting-field {
+	padding: 0 10px 0 0;
+}

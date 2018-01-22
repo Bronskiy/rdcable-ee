@@ -1,0 +1,239 @@
+.table-wrapper {  
+  @include media-breakpoint-down(md) {
+	  background-image:
+	    linear-gradient(to top left, #f9f9f9, #f9f9f9),
+	    radial-gradient(100% 50%, rgba(#000, .12), transparent 50%),
+	    linear-gradient(to top right, #f9f9f9, #f9f9f9),
+	    radial-gradient(100% 50%, rgba(#000, .12), transparent 50%);
+
+	  background-attachment: local, scroll, local, scroll;
+	  background-position: left top, left top, right top, right top;
+	  background-repeat: no-repeat;
+	  background-size: 12px 100%, 12px 100%, 12px 100%, 12px 100%;
+	  margin: 0;  	
+	  overflow-x: auto;  
+	}
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: rgba(#000, .03);
+}
+
+.table-hover tbody tr:hover {
+	background-color: rgba(#000, .03);	
+}
+
+.table {
+	background-color: #fff;
+	margin: 0 0 30px 0;
+
+	.box & {
+		margin: -21px -20px -20px -20px;
+		max-width: calc(100% + 40px);
+		width: calc(100% + 40px);
+	}
+
+	&.table-bordered {
+		.box & {
+			margin: -21px -21px -21px -21px;
+			max-width: calc(100% + 42px);
+			width: calc(100% + 42px);
+		}
+
+	}
+
+	th {
+		color: lighten($color-black, 30%);
+		font-size: 12px;
+		font-weight: 400;
+		text-align: left;
+	}
+
+	td {
+		vertical-align: middle;
+	}
+	
+	th, td {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	h2 {		
+		display: inline-block;
+		font-size: 13px;
+		font-weight: 500;
+		margin: 0;
+		vertical-align: middle;
+		white-space: nowrap;
+
+		img {
+			display: inline-block;
+			height: 28px;
+			margin: 0 10px 0 0;
+			max-height: inherit;
+			vertical-align: middle;
+			width: auto;
+		}
+
+		a {
+			color: lighten($color-black, 20%) ;
+
+			&:hover {
+				color: $color-primary;
+				text-decoration: none;
+			}
+		}
+
+		span {
+			color: lighten($color-black, 50%);
+			display: block;
+			font-size: 12px;
+			font-weight: 400;
+			margin: 5px 0 0 0;
+			vertical-align: middle;
+		}
+	}
+
+	img {
+		display: block;
+		max-height: 24px;
+	}
+
+	.btn {
+		font-size: 12px;
+		line-height: 32px;
+	}
+
+	.tag {
+		margin: 0;
+	}
+
+	.checkbox-wrapper {
+		margin: 0;
+	}
+
+	.min-width {
+		width: 1px;
+	}
+
+	.center {
+		text-align: center;
+	}
+
+	.no-wrap {
+		white-space: nowrap;
+	}
+
+	.small {
+		color: lighten($color-black, 30%);
+		font-size: 12px;
+	}
+	
+	.title {
+		white-space: nowrap;
+	}
+	
+	.price, .number {
+		color: lighten($color-black, 30%);
+		font-style: italic;
+		text-align: right;
+	}
+
+	.id {
+		color: lighten($color-black, 50%);
+		font-size: 12px;
+		font-weight: 400;
+	}
+
+	.status {
+		text-align: center;
+
+		.fa {
+			font-size: 10px;
+		}
+
+		.fa-check {
+			color: $color-green;
+		}
+
+		.fa-times {
+			color: $color-red;
+		}
+	}
+
+	.label {
+		&:before {
+			background-color: $color-black;
+			border-radius: 50%;
+			content: '';
+			display: inline-block;
+			height: 4px;
+			margin: 0 6px 0 0;
+			vertical-align: 2px;
+			width: 4px;
+		}
+
+		&.label-success {
+			&:before {
+				background-color: $color-green;
+			}
+		}
+
+		&.label-danger {
+			&:before {
+				background-color: $color-red;
+			}
+		}
+	}
+
+	.separator {
+		background-color: rgba(#000, .02);
+		color: lighten($color-black, 30%);
+		font-size: 12px;
+	}
+}
+
+.table thead th {
+	border-bottom-width: 1px;
+	position: relative;
+
+	&:after {
+		background-color: #eceeef;
+		bottom: 1px;
+		content: '';
+		display: block;
+		height: 1px;
+		left: 0;
+		position: absolute;
+		right: 0;
+	}
+}
+
+.table-header {	
+	margin: 0 0 15px 0;
+}
+
+.table-header-count {
+	color: lighten($color-black, 30%);
+	float: left;	
+	line-height: 32px;
+
+	strong {
+		color: $color-black;
+	}
+}
+
+.table-header-actions {
+	float: right;
+
+	.btn {
+		font-size: 12px;
+		height: 32px;
+		line-height: 32px;		
+		margin: 0 10px 0 0;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

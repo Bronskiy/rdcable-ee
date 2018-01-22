@@ -1,0 +1,18 @@
+{layout="_includes/_wrapper"}
+{exp:channel:entries channel="pages" limit="1"}
+<div class="main-wrapper">
+  <div class="main">
+    <div class="main-inner">
+      <div class="page-title">
+        <div class="container">
+          <h1>{title}</h1>
+          {embed="_includes/_contact_info"}
+        </div>
+      </div>
+      <div class="container">
+        {page_body}
+      </div>
+    </div>
+  </div>
+</div>
+{/exp:channel:entries}

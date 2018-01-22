@@ -1,0 +1,151 @@
+.listing-row-medium {
+	border-bottom: 1px solid rgba(#000, .09);
+	padding: 14px 0;
+	position: relative;
+
+	.map & {
+		padding: 20px;
+	}
+
+	&.active, &.active:hover {
+		background-color: rgba($color-primary, .08);				
+	}
+
+	&:hover {
+		background-color: #fafafa;
+	}
+
+	.clickable & {
+		cursor: pointer;		
+	}
+
+	h4 {
+		font-size: 14px;
+		margin: 0 0 7px 0;
+	}
+
+	p {
+		font-size: 13px;
+		margin: 0;
+	}
+}
+
+.listing-row-medium-inner {
+	.clickable & {
+		pointer-events: none;
+	}	
+}
+
+.listing-row-medium-image {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 2px;
+	display: block;
+	float: left;
+	height: 62px;
+	margin: 0 14px 0 0;
+	position: relative;
+	width: 80px;
+
+	&:after {
+		background-color: rgba($color-black, .25);
+		bottom: 0;
+		content: '';
+		display: block;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+.listing-row-medium-featured {
+	background-color: $color-primary;
+	border-radius: 2px 2px 0 2px;
+	color: #fff;
+	display: block;
+	font-size: 9px;
+	height: 18px;
+	line-height: 18px;
+	padding: 0 8px;
+	position: absolute;
+	right: -6px;
+	top: -6px;
+	text-align: center;
+	text-transform: uppercase;
+	z-index: 2;
+
+	&:after {
+		border: 3px solid transparent;
+		border-left-color: darken($color-primary, 20%);		
+		border-top-color: darken($color-primary, 20%);		
+		bottom: -6px;
+		content: '';
+		display: block;
+		height: 0;
+		position: absolute;
+		right: 0;
+		width: 0;
+	}
+}
+
+.listing-row-medium-content {
+	overflow: hidden;
+	padding: 0;
+}
+
+.listing-row-medium-price {
+	background-color: $color-black;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px rgba($color-black, .3);
+	color: #fff; 	
+	display: inline-block;
+	font-size: 9px;
+	font-weight: 700;
+	line-height: 1;
+	margin: 0 5px 10px 0; 
+	padding: 4px 7px;
+	text-transform: uppercase;
+	vertical-align: top;
+
+	&:hover {
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+.listing-row-medium-title {
+	margin: 0 0 10px 0;
+
+	a {
+		color: $color-black;
+		display: block;
+		overflow: hidden;
+		text-decoration: none;
+		text-overflow: ellipsis;;
+		white-space: nowrap;
+	}
+}
+
+.listing-row-medium-rating {
+	color: $color-primary;
+	float: right;
+	font-size: 12px;
+
+	span {
+		color: lighten($color-black, 60%);
+		margin: 0 5px 0 0;
+		font-size: 10px;
+	}
+}
+
+.listing-row-medium-address {
+	color: lighten($color-black, 30%);
+	display: block;
+	font-size: 12px;
+	margin: -5px 0 0 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

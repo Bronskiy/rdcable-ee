@@ -1,0 +1,95 @@
+{layout="_includes/_wrapper"}
+{exp:switchee variable="{segment_2}" parse="inward"}
+<div class="main-wrapper">
+  <div class="main">
+    <div class="main-inner">
+      {case value="|category|#P([0-9]+)#"}
+      <div class="page-title">
+        <div class="container">
+          <h1>Новости</h1>
+          {embed="_includes/_contact_info"}
+        </div>
+      </div>
+      <div class="container">
+        <nav class="breadcrumb">
+          <a class="breadcrumb-item" href="/">Главная</a>
+          <span class="breadcrumb-item active">Новости</span>
+        </nav>
+        <div class="row">
+          <div class="col-md-8 col-lg-9">
+            <div class="posts">
+              {exp:channel:entries channel="news" disable="member_data" limit="12" cache="yes" refresh="576" paginate="bottom"}
+              <div class="post">
+                <div class="post-title">
+                  <h2><a href="{url_title_path='news'}">{title}</a></h2>
+                </div>
+                <div class="post-meta">
+                  <div class="post-meta-item">
+                    <i class="fa fa-calendar"></i> {entry_date format="%d %F, %Y"}
+                  </div>
+                </div>
+                <div class="post-content">
+                  {exp:snippet total="1500" word="true" ellipsis="..."}{news_body}{/exp:snippet}
+                </div>
+                <div class="post-read-more">
+                  <a href="{url_title_path='news'}" class="btn btn-primary">Подробнее <i class="fa fa-chevron-right"></i></a>
+                </div>
+              </div>
+              {paginate}
+            </div>
+            {pagination_links}
+            <ul class="pagination pull-right">
+              {previous_page}
+              <li class="page-item"><a class="page-link" href="{pagination_url}">Назад</a></li>
+              {/previous_page}
+
+              {page}
+              <li class="page-item {if current_page}active{/if}"><a class="page-link" href="{pagination_url}">{pagination_page_number}</a></li>
+              {/page}
+
+              {next_page}
+              <li class="page-item"><a class="page-link" href="{pagination_url}">Вперед</a></li>
+              {/next_page}
+            </ul>
+            {/pagination_links}
+            {/paginate}
+
+            {/exp:channel:entries}
+          </div>
+          {embed="_includes/_sidebar"}
+        </div>
+      </div>
+      {/case}
+
+      {case default="Yes"}
+      {exp:channel:entries channel="news" disable="categories|category_fields|member_data|pagination" require_entry="yes" cache="yes" refresh="576"}
+      {if no_results}
+      {redirect="404"}
+      {/if}
+      <div class="page-title">
+        <div class="container">
+          <h1>{title}</h1>
+          {embed="_includes/_contact_info"}
+        </div>
+      </div>
+      <div class="container">
+        <nav class="breadcrumb">
+          <a class="breadcrumb-item" href="/">Главная</a>
+          <a class="breadcrumb-item" href="/news">Новости</a>
+          <span class="breadcrumb-item active">{title}</span>
+        </nav>
+        <div class="row">
+          <div class="col-md-8 col-lg-9">
+            <div class="post-detail">
+              {news_body}
+            </div>
+          </div>
+          {embed="_includes/_sidebar"}
+        </div>
+      </div>
+      {/exp:channel:entries}
+      {/case}
+    </div>
+  </div>
+</div>
+{/exp:switchee}

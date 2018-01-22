@@ -1,0 +1,53 @@
+.sort-options {
+	@include clearfix();
+	margin-bottom: 20px;
+
+	ul {
+		@include clearfix();
+
+		background-color: $color-black; 		
+		border-radius: 2px;
+		margin: 0 20px 0 0;
+		overflow: hidden;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		float: left;
+
+		&.active {
+			background-color: $color-primary;			
+
+			a {
+				color: #fff;
+			}
+		}
+	} 
+
+	a {
+		color: rgba(#fff, .8);
+		display: block;
+		font-size: 12px;
+		padding: 6px 12px;
+
+		&:hover {
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}
+
+.sort-options ul.sort-display {
+	float: left;
+	margin-right: 0;
+}
+
+.sort-by {
+	float: right;	
+}
+
+ul.sort-order {
+	float: right;
+	margin: 0;
+}

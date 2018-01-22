@@ -1,0 +1,200 @@
+<?php
+session_start();
+
+foreach ($_POST as $key => $val) {
+  if (!isset($_SESSION[$key]) || ($val !== $_SESSION[$key])) {
+    $_SESSION[$key] = $val;
+  }
+}
+
+?>
+{layout="_includes/_wrapper"}
+
+{exp:gwcode_categories channel="products" limit="1" cat_url_title="{segment_3}" style="linear"}
+<?php
+$val_category = '{cat_name}';
+$val_parent_id = {parent_id};
+$val_parent_url = '{parent_url_title}';
+$val_parent_name = '{parent_name}';
+?>
+{/exp:gwcode_categories}
+
+<?php if ($val_parent_id == 0){ ?>
+  {exp:switchee variable="{segment_2}" parse="inward"}
+  {case value="|category|#P([0-9]+)#"}
+  <div class="main-wrapper">
+    <div class="main">
+      <div class="main-inner">
+        <div class="page-title">
+          <div class="container">
+            <h1><?php echo $val_category; ?></h1>
+            <div class="page-title-actions">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <nav class="breadcrumb">
+            <a class="breadcrumb-item" href="/">Каталог</a>
+            <span class="breadcrumb-item active"><?php echo $val_category; ?></span>
+          </nav>
+          <div class="row">
+            <div class="col-md-8 col-lg-9">
+              {exp:gwcode_categories cat_url_title="{segment_3}" style="linear" depth="2"}
+              <div class="listing-row">
+                <div class="listing-row-inner">
+                  <div class="listing-row-content">
+                    <div class="listing-row-content-header">
+                      <h3><a href="/catalog/category/{cat_url_title}">{cat_name}</a></h3>
+                    </div>
+                    <div class="listing-row-content-body">
+                      Nulla sed tortor luctus, scelerisque velit facilisis, euismod eros. Suspendisse varius dolor sit amet velit ullamcorper, in vestibulum mi efficitur. Fusce ipsum lorem, eleifend eget urna at
+                      <div class="listing-row-content-read-more">
+                        <a href="/catalog/category/{cat_url_title}">Продукция</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/exp:gwcode_categories}
+            </div>
+            {embed="_includes/_sidebar"}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {/case}
+  {/exp:switchee}
+<?php } else { ?>
+  {exp:switchee variable="{segment_2}" parse="inward"}
+  {case value="|category|#P([0-9]+)#"}
+  <div class="main-wrapper">
+    <div class="main">
+      <div class="main-inner">
+        <div class="page-title">
+          <div class="container">
+            <h1><?php echo $val_category; ?></h1>
+            <div class="page-title-actions">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <nav class="breadcrumb">
+            <a class="breadcrumb-item" href="/">Каталог</a>
+            <a class="breadcrumb-item" href="/catalog/category/<?php echo $val_parent_url; ?>"><?php echo $val_parent_name; ?></a>
+            <span class="breadcrumb-item active"><?php echo $val_category; ?></span>
+          </nav>
+
+          <div class="box">
+            <div class="box-inner">
+              {exp:channel:entries channel="products" orderby="title" sort="asc" disable="categories|member_data" limit="50" paginate="bottom" cache="yes" refresh="60"}
+              {if count == 1}
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Наименование</th>
+                    <th>Описание</th>
+                    <th>Ед.изм.</th>
+                    <th>Наличие</th>
+                    <th>Цена</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/if}
+                  <tr>
+                    <td>{title}</td>
+                    <td>{if product_desc}{product_desc}{if:else}-{/if}</td>
+                    <td>{if product_measure}{product_measure}{if:else}-{/if}</td>
+                    <td>{if product_qty}{product_qty}{if:else}-{/if}</td>
+                    <td>{if product_price}{product_price}{if:else}-{/if}</td>
+                    <td>
+                      <form class="input-group" id="addToCart {entry_id}" method="post" action="" accept-charset="UTF-8">
+                        <input type="hidden" name="csrf_token" value="{csrf_token}">
+                        <input type="hidden" name="productId" value="{entry_id}">
+                        <input type="text" name="productQty" class="form-control" placeholder="0">
+                        <span class="input-group-btn">
+                          <input class="btn btn-secondary" type="submit" name="submit" value="Заказать">
+                        </span>
+                      </form>
+                    </td>
+                  </tr>
+                  {if count == 50 || count == total_results}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          {/if}
+
+          {paginate}
+          <div class="row">
+            <div class="col-md-12">
+              {pagination_links}
+              <ul class="pagination pull-right">
+                {previous_page}
+                <li class="page-item"><a class="page-link" href="{pagination_url}">Назад</a></li>
+                {/previous_page}
+
+                {page}
+                <li class="page-item {if current_page}active{/if}"><a class="page-link" href="{pagination_url}">{pagination_page_number}</a></li>
+                {/page}
+
+                {next_page}
+                <li class="page-item"><a class="page-link" href="{pagination_url}">Вперед</a></li>
+                {/next_page}
+              </ul>
+              {/pagination_links}
+            </div>
+          </div>
+          {/paginate}
+          {/exp:channel:entries}
+
+          <div class="listing-tabs">
+            <div class="listing-tabs-header">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#tab-all" data-toggle="tab">Описание</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tab-rent" data-toggle="tab">Характеристики</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tab-sale" data-toggle="tab">Свойства</a>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab-all" role="tabpanel">
+                <div class="listing-boxes">
+                  <div class="row">
+                    <p>1</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="tab-rent" role="tabpanel">
+                <div class="listing-boxes">
+                  <div class="row">
+                    <p>2</p>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-sale" role="tabpanel">
+                <div class="listing-boxes">
+                  <div class="row">
+                    <p>3</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="cart-results">
+        test
+      </div>
+
+      {/case}
+      {/exp:switchee}
+    <?php } ?>
